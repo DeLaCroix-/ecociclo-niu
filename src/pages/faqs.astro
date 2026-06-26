@@ -2,62 +2,53 @@
 import Layout from '../layouts/Layout.astro';
 
 const faqs = [
-  { q: '¿Qué tipos de residuos gestionáis?', a: 'Gestionamos todo tipo de residuos: banales, especiales sólidos y líquidos, fibrocemento, residuos industriales, comerciales y domiciliarios. Contamos con las autorizaciones necesarias para cada tipo de residuo.' },
-  { q: '¿Cuánto tardáis en realizar un servicio?', a: 'El tiempo de ejecución depende del volumen y tipo de residuo. Un vaciado estándar puede realizarse en 1-3 días. Para servicios urgentes, contacta con nosotros y te daremos una estimación personalizada.' },
-  { q: '¿Ofrecéis presupuesto sin compromiso?', a: 'Sí, todos nuestros presupuestos son gratuitos y sin compromiso. Evaluamos tu caso y te proporcionamos una estimación detallada antes de cualquier trabajo.' },
-  { q: '¿Estáis autorizados para gestionar residuos peligrosos?', a: 'Sí, Ecociclo cuenta con todas las autorizaciones y licencias necesarias para la gestión de residuos peligrosos y no peligrosos, cumpliendo estrictamente la normativa vigente.' },
-  { q: '¿En qué zonas de Barcelona trabajáis?', a: 'Damos servicio en toda el área metropolitana de Barcelona y provincia. Consulta con nosotros si tu ubicación está dentro de nuestra zona de cobertura.' },
-  { q: '¿Cómo se realiza el transporte de residuos especiales líquidos?', a: 'El transporte se realiza en vehículos especialmente acondicionados con sistemas de contención, cumpliendo toda la normativa ADR para mercancías peligrosas.' },
-  { q: '¿Qué es la limpieza de Diógenes?', a: 'La limpieza de Diógenes (también conocido como Síndrome de Diógenes) es un servicio especializado de limpieza y vaciado de viviendas con acumulación extrema de objetos y residuos. Nuestro equipo actúa con máxima discreción y profesionalidad.' },
-  { q: '¿Gestionáis la documentación de residuos?', a: 'Sí, nos encargamos de toda la documentación necesaria: cartas de porte, documentos de aceptación, certificados de gestión y cualquier documentación requerida por la normativa.' },
-  { q: '¿Cuál es el coste de vuestros servicios?', a: 'El coste varía según el tipo de servicio, volumen y tipo de residuo. Solicitamos una evaluación previa para proporcionar un presupuesto ajustado y sin compromiso.' },
-  { q: '¿Recicláis los residuos que recogéis?', a: 'Sí, nuestro compromiso es con la economía circular. Separamos y clasificamos los residuos para maximizar el reciclaje y la valorización, minimizando el depósito en vertedero.' },
-  { q: '¿Qué es el fibrocemento y por qué es peligroso?', a: 'El fibrocemento contiene amianto (asbesto), un material cancerígeno cuando se inhala. Su retirada requiere empresas autorizadas, equipos de protección especiales y protocolos estrictos de seguridad.' },
-  { q: '¿Ofrecéis servicio de urgencias?', a: 'Sí, disponemos de servicio urgente para situaciones que requieran una intervención inmediata. Contacta por teléfono para activar el protocolo de urgencia.' },
+  { q: '¿Qué tipo de servicios ofrece Ecociclo en Cataluña?', a: 'Ofrecemos servicios de vaciado, limpieza, retirada de residuos, gestión de residuos banales, residuos especiales líquidos, residuos especiales sólidos, retirada de fibrocemento, limpieza de terrenos, limpieza de síndrome de Diógenes y trasvases y acondicionamiento de residuos peligrosos y no peligrosos.' },
+  { q: '¿Trabajáis solo con empresas o también con particulares?', a: 'Principalmente trabajamos con empresas, industria, locales, oficinas, almacenes y espacios profesionales, aunque también realizamos determinados servicios para particulares cuando el proyecto lo requiere.' },
+  { q: '¿Prestáis servicio en toda Cataluña?', a: 'Sí, Ecociclo ofrece servicios de gestión de residuos en Cataluña, adaptándose a la ubicación, al volumen de trabajo y a las necesidades logísticas de cada proyecto.' },
+  { q: '¿Puedo solicitar presupuesto sin compromiso?', a: 'Sí. Estudiamos cada caso y preparamos una propuesta adaptada al servicio necesario y sin compromiso.' },
+  { q: '¿Podéis actuar con rapidez?', a: 'Sí. Siempre que la planificación lo permita, priorizamos una respuesta ágil para que el cliente pueda resolver el problema cuanto antes.' },
+  { q: '¿Qué tipo de espacios podéis vaciar o limpiar?', a: 'Trabajamos en naves industriales, locales, oficinas, almacenes, pisos, terrenos, parcelas, solares y otros espacios que necesitan vaciado, limpieza o gestión de residuos.' },
+  { q: '¿Gestionáis residuos no peligrosos y también residuos especiales?', a: 'Sí. En Ecociclo trabajamos tanto con residuos banales o no peligrosos como con residuos especiales líquidos y sólidos, ajustando el servicio a cada caso según la normativa aplicable.' },
+  { q: '¿Qué diferencia a Ecociclo de otras empresas?', a: 'Nuestra experiencia, con más de 10 años y más de 2.500 servicios realizados, junto con una operativa rápida, profesional y orientada a empresa, nos permite ofrecer soluciones eficaces donde otros no llegan.' },
+  { q: '¿Ofrecéis certificación de gestión de residuos?', a: 'Sí. Todos nuestros servicios incluyen la documentación legal necesaria: certificados de gestión, documentos de aceptación y justificantes de entrega a gestor autorizado.' },
+  { q: '¿Qué normativa aplicáis en la gestión de residuos?', a: 'Cumplimos estrictamente la Ley 7/2022 de residuos y suelos contaminados, la normativa ADR para transporte de mercancías peligrosas, y toda la legislación autonómica y local aplicable en Cataluña.' },
 ];
 ---
 
 <Layout 
-  title="Preguntas Frecuentes"
-  description="Preguntas frecuentes sobre gestión de residuos en Barcelona. Resuelve tus dudas sobre nuestros servicios, precios, plazos y tipos de residuos."
-  canonical="https://ecociclo-niu.netlify.app/faqs"
+  title="FAQs"
+  description="Preguntas frecuentes sobre gestión de residuos en Barcelona. Resuelve tus dudas sobre vaciado de naves, limpieza de Diógenes, retirada de fibrocemento y más."
+  canonical="https://ecociclonew.netlify.app/faqs"
 >
 
-<!-- Hero -->
-<section class="bg-gradient-to-br from-[#36611C] to-[#00312D] text-white py-20">
-  <div class="container-site text-center">
-    <h1 class="text-3xl md:text-5xl font-bold mb-4">Preguntas Frecuentes</h1>
-    <p class="text-lg text-gray-200 max-w-3xl mx-auto">Resuelve todas tus dudas sobre nuestros servicios de gestión de residuos en Barcelona</p>
+<section class="bg-[#192a3d] text-white py-16 md:py-20">
+  <div class="container-site px-4 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold">Preguntas Frecuentes</h1>
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="py-20 bg-white">
-  <div class="container-site max-w-3xl mx-auto">
-    <div class="space-y-4">
+  <div class="container-site px-4 max-w-3xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#192a3d] text-center mb-4">Preguntas frecuentes sobre gestión de residuos en barcelona</h2>
+    <p class="text-gray-600 text-lg text-center mb-14">Resolvemos tus dudas principales para que puedas planificar el vaciado de tu inmueble o la retirada de materiales con total tranquilidad y transparencia.</p>
+
+    <div class="divide-y divide-gray-100">
       {faqs.map((faq) => (
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <details class="group">
-            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-[#EAFDE7] transition-colors font-semibold text-[#192a3d]">
-              {faq.q}
-              <span class="text-[#65C132] text-xl group-open:rotate-180 transition-transform">▾</span>
-            </summary>
-            <div class="px-6 py-4 bg-gray-50 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
-              {faq.a}
-            </div>
-          </details>
-        </div>
+        <details class="group py-1">
+          <summary class="flex items-center justify-between py-4 cursor-pointer font-semibold text-[#192a3d] hover:text-[#36611C] transition-colors text-left">
+            <span class="pr-4">{faq.q}</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-[#65C132] group-open:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="pb-4 text-gray-600 text-sm leading-relaxed">{faq.a}</div>
+        </details>
       ))}
     </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="py-16 bg-gradient-to-r from-[#36611C] to-[#45891E] text-white">
-  <div class="container-site text-center">
-    <h2 class="text-2xl md:text-3xl font-bold mb-4">¿No encuentras tu respuesta?</h2>
-    <p class="text-lg text-gray-100 mb-6">Contacta con nosotros y te responderemos lo antes posible</p>
-    <a href="/contacto" class="inline-block bg-white text-[#36611C] px-8 py-3 rounded-full font-bold hover:bg-[#EAFDE7] transition-colors">Contactar</a>
+    <div class="text-center mt-14 p-8 bg-[#EAFDE7] rounded-xl">
+      <p class="text-lg font-semibold text-[#192a3d] mb-2">¿No encuentras lo que buscas?</p>
+      <p class="text-gray-600 mb-6">Contacta con nosotros y te ayudaremos personalmente.</p>
+      <a href="/contacto" class="inline-block bg-[#65C132] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#45891E] transition-colors">Contactar ahora</a>
+    </div>
   </div>
 </section>
 

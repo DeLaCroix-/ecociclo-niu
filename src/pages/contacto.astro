@@ -3,117 +3,96 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Contacto"
-  description="Contacta con Ecociclo para gestión de residuos en Barcelona. Teléfono +34 93 123 45 67, email info@ecociclo.es. Solicita presupuesto sin compromiso."
-  canonical="https://ecociclo-niu.netlify.app/contacto"
+  title="Solicita Presupuesto de Gestión de Residuos"
+  description="Solicita tu presupuesto de vaciado y gestión ambiental en Barcelona. Presupuesto gratuito sin compromiso en menos de 24 horas. Respuesta rápida."
+  canonical="https://ecociclonew.netlify.app/contacto"
 >
 
-<!-- Hero -->
-<section class="bg-gradient-to-br from-[#36611C] to-[#00312D] text-white py-20">
-  <div class="container-site text-center">
-    <h1 class="text-3xl md:text-5xl font-bold mb-4">Contacto</h1>
-    <p class="text-lg text-gray-200 max-w-3xl mx-auto">Estamos aquí para ayudarte. Solicita tu presupuesto sin compromiso o consúltanos cualquier duda.</p>
+<!-- Page Header -->
+<section class="bg-[#192a3d] text-white py-16 md:py-20">
+  <div class="container-site px-4 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">Contacto</h1>
   </div>
 </section>
 
-<!-- Contact Section -->
 <section class="py-20 bg-white">
-  <div class="container-site">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <!-- Contact Form -->
-      <div class="bg-[#EAFDE7] rounded-xl p-8 shadow-sm">
-        <h2 class="text-2xl font-bold text-[#192a3d] mb-6">Solicita tu presupuesto</h2>
-        <form class="space-y-5">
-          <div>
-            <label class="block text-sm font-semibold text-[#192a3d] mb-1">Nombre completo *</label>
-            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#65C132] focus:ring-2 focus:ring-[#65C132] outline-none transition-colors" placeholder="Tu nombre" />
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-[#192a3d] mb-1">Email *</label>
-            <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#65C132] focus:ring-2 focus:ring-[#65C132] outline-none transition-colors" placeholder="tu@email.com" />
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-[#192a3d] mb-1">Teléfono *</label>
-            <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#65C132] focus:ring-2 focus:ring-[#65C132] outline-none transition-colors" placeholder="+34 600 000 000" />
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-[#192a3d] mb-1">Servicio de interés</label>
-            <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#65C132] focus:ring-2 focus:ring-[#65C132] outline-none transition-colors bg-white">
-              <option>Selecciona un servicio</option>
-              <option>Vaciado de naves industriales</option>
-              <option>Limpieza de Diógenes</option>
-              <option>Trasvases y acondicionamiento</option>
-              <option>Residuos Banales</option>
-              <option>Residuos Especiales Sólidos</option>
-              <option>Residuos Especiales Líquidos</option>
-              <option>Retirada de Fibrocemento</option>
-              <option>Limpieza de Terrenos</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-[#192a3d] mb-1">Mensaje *</label>
-            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#65C132] focus:ring-2 focus:ring-[#65C132] outline-none transition-colors" placeholder="Cuéntanos qué necesitas..."></textarea>
-          </div>
-          <div>
-            <label class="flex items-start gap-2 text-sm text-gray-600">
-              <input type="checkbox" class="mt-1" />
-              <span>Acepto la política de privacidad y el tratamiento de mis datos personales.</span>
-            </label>
-          </div>
-          <button type="submit" class="w-full bg-[#65C132] text-white py-3 rounded-lg font-bold text-lg hover:bg-[#45891E] transition-colors shadow-lg">
-            Enviar solicitud
-          </button>
-        </form>
+  <div class="container-site px-4 max-w-4xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#192a3d] text-center mb-8">Solicita tu presupuesto de vaciado y gestión ambiental hoy mismo</h2>
+    <p class="text-gray-600 text-lg text-center mb-14 max-w-2xl mx-auto">
+      Cuéntanos qué necesitas y te prepararemos un presupuesto personalizado sin compromiso en menos de 24 horas.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
+      <div class="text-center p-6 bg-[#f8faf9] rounded-xl">
+        <div class="w-14 h-14 bg-[#36611C] text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">📞</div>
+        <h3 class="font-bold text-[#192a3d] mb-2">Teléfono</h3>
+        <a href="tel:+34692063213" class="text-[#36611C] font-semibold hover:text-[#45891E] transition-colors">692 06 32 13</a>
+        <p class="text-gray-500 text-sm mt-2">Lun-Vie: 8:30h - 13:30h / 15:00h - 18:00h</p>
       </div>
-      
-      <!-- Contact Info -->
-      <div>
-        <h2 class="text-2xl font-bold text-[#192a3d] mb-6">Información de contacto</h2>
-        
-        <div class="space-y-6">
-          <div class="flex items-start gap-4 bg-[#f2f5f7] p-5 rounded-lg">
-            <span class="text-3xl">📍</span>
-            <div>
-              <h3 class="font-bold text-[#192a3d] mb-1">Dirección</h3>
-              <p class="text-gray-600">Barcelona, España</p>
-            </div>
-          </div>
-          
-          <div class="flex items-start gap-4 bg-[#f2f5f7] p-5 rounded-lg">
-            <span class="text-3xl">📞</span>
-            <div>
-              <h3 class="font-bold text-[#192a3d] mb-1">Teléfono</h3>
-              <p class="text-gray-600">
-                <a href="tel:+34931234567" class="text-[#36611C] hover:underline font-semibold">+34 93 123 45 67</a>
-              </p>
-            </div>
-          </div>
-          
-          <div class="flex items-start gap-4 bg-[#f2f5f7] p-5 rounded-lg">
-            <span class="text-3xl">✉️</span>
-            <div>
-              <h3 class="font-bold text-[#192a3d] mb-1">Email</h3>
-              <p class="text-gray-600">
-                <a href="mailto:info@ecociclo.es" class="text-[#36611C] hover:underline font-semibold">info@ecociclo.es</a>
-              </p>
-            </div>
-          </div>
-          
-          <div class="flex items-start gap-4 bg-[#f2f5f7] p-5 rounded-lg">
-            <span class="text-3xl">🕐</span>
-            <div>
-              <h3 class="font-bold text-[#192a3d] mb-1">Horario</h3>
-              <p class="text-gray-600">Lunes a Viernes: 09:00 - 18:00</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="mt-8 p-6 bg-[#00312D] text-white rounded-xl">
-          <h3 class="font-bold text-lg mb-2">🚀 Respuesta rápida</h3>
-          <p class="text-sm text-gray-300">Respondemos en menos de 24 horas. Si es urgente, llámanos directamente.</p>
-        </div>
+      <div class="text-center p-6 bg-[#f8faf9] rounded-xl">
+        <div class="w-14 h-14 bg-[#36611C] text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">✉️</div>
+        <h3 class="font-bold text-[#192a3d] mb-2">Email</h3>
+        <a href="mailto:info@ecociclo.es" class="text-[#36611C] font-semibold hover:text-[#45891E] transition-colors">info@ecociclo.es</a>
+        <p class="text-gray-500 text-sm mt-2">Respondemos en menos de 24h</p>
+      </div>
+      <div class="text-center p-6 bg-[#f8faf9] rounded-xl">
+        <div class="w-14 h-14 bg-[#36611C] text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">📍</div>
+        <h3 class="font-bold text-[#192a3d] mb-2">Ubicación</h3>
+        <p class="text-gray-600 font-medium">Barcelona</p>
+        <p class="text-gray-500 text-sm mt-2">Servicio en toda Cataluña</p>
       </div>
     </div>
+
+    <!-- Contact Form -->
+    <form class="max-w-2xl mx-auto bg-[#f8faf9] rounded-xl p-8 border border-gray-100" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contacto" />
+      <p class="hidden" style="display:none !important">
+        <label>No rellenar: <input name="bot-field" /></label>
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Nombre *</label>
+          <input type="text" name="nombre" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#65C132] focus:border-transparent outline-none transition" placeholder="Tu nombre" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Email *</label>
+          <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#65C132] focus:border-transparent outline-none transition" placeholder="tu@email.com" />
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Teléfono *</label>
+          <input type="tel" name="telefono" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#65C132] focus:border-transparent outline-none transition" placeholder="+34 6XX XXX XXX" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Servicio</label>
+          <select name="servicio" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#65C132] focus:border-transparent outline-none transition bg-white">
+            <option value="">Selecciona un servicio</option>
+            <option>Vaciado de naves, pisos y locales</option>
+            <option>Limpieza de Diógenes</option>
+            <option>Trasvases y acondicionamiento</option>
+            <option>Gestión de Residuos Banales</option>
+            <option>Residuos Especiales Sólidos</option>
+            <option>Residuos Especiales Líquidos</option>
+            <option>Retirada de Fibrocemento</option>
+            <option>Limpieza de Terrenos</option>
+            <option>Otro / Consulta general</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="mb-6">
+        <label class="block text-sm font-medium text-gray-700 mb-1.5">Mensaje *</label>
+        <textarea name="mensaje" required rows="5" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#65C132] focus:border-transparent outline-none transition resize-y" placeholder="Describe qué necesitas: tipo de espacio, volumen aproximado, urgencia..."></textarea>
+      </div>
+      
+      <button type="submit" class="w-full bg-[#65C132] text-white py-4 rounded-full font-bold text-lg hover:bg-[#45891E] transition-all shadow-md hover:shadow-lg">
+        Solicitar presupuesto gratuito
+      </button>
+      <p class="text-xs text-gray-400 text-center mt-3">Te responderemos en menos de 24 horas. Sin compromiso.</p>
+    </form>
   </div>
 </section>
 

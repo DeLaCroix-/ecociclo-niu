@@ -1,70 +1,36 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-
-const faqs = [
-  { q: '¿Qué son los trasvases de residuos?', a: 'Los trasvases son operaciones de transferencia de residuos (especialmente peligrosos) de un contenedor a otro. Requieren equipos especializados y personal cualificado para garantizar la seguridad.' },
-  { q: '¿Qué tipo de residuos trasvasáis?', a: 'Realizamos trasvases de residuos peligrosos líquidos y sólidos: aceites, disolventes, pinturas, productos químicos, lodos, etc. Siempre cumpliendo la normativa ADR y REACH.' },
-  { q: '¿Ofrecéis servicio de acondicionamiento?', a: 'Sí, acondicionamos residuos para su correcto almacenamiento y transporte: embalaje, etiquetado, paletizado y preparación según normativa.' },
-];
 ---
 
 <Layout 
-  title="Trasvases y acondicionamiento de residuos en Barcelona"
-  description="Servicio de trasvases y acondicionamiento de residuos peligrosos en Barcelona. Manipulación segura, personal cualificado y cumplimiento de normativa ADR."
-  canonical="https://ecociclo-niu.netlify.app/servicios/acondicionamiento-de-residuos-peligrosos-en-barcelona"
+  title="Trasvases y acondicionamiento de residuos peligrosos y no peligrosos en Barcelona"
+  description="Realizamos el trasvase de residuos peligrosos y no peligrosos. Manipulación, envasado y etiquetado según normativa ADR."
+  canonical="https://ecociclonew.netlify.app/servicios/acondicionamiento-de-residuos-peligrosos-en-barcelona"
 >
 
-<section class="bg-gradient-to-br from-[#36611C] to-[#00312D] text-white py-20">
-  <div class="container-site">
-    <h1 class="text-3xl md:text-5xl font-bold mb-4">Trasvases y acondicionamiento de residuos en Barcelona</h1>
-    <p class="text-lg text-gray-200 max-w-3xl">Servicio especializado de trasvases y acondicionamiento de residuos peligrosos. Máxima seguridad y cumplimiento normativo.</p>
+<section class="bg-[#192a3d] text-white py-16 md:py-20">
+  <div class="container-site px-4 text-center">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Trasvases y acondicionamiento de residuos peligrosos y no peligrosos</h1>
   </div>
 </section>
 
 <section class="py-20 bg-white">
-  <div class="container-site max-w-4xl">
-    <div class="prose prose-lg max-w-none">
-      <p class="text-gray-700 leading-relaxed text-lg mb-8">
-        Los <strong>trasvases y el acondicionamiento de residuos</strong> son operaciones críticas que requieren personal cualificado, equipos adecuados y estrictos protocolos de seguridad. En <strong>Ecociclo</strong> cumplimos con toda la normativa ADR y ofrecemos un servicio 100% seguro.
-      </p>
+  <div class="container-site px-4 max-w-4xl mx-auto">
+    <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-6">
+      <p class="text-xl text-[#192a3d] font-medium">Realizamos el trasvase de residuos peligrosos y no peligrosos. Manipulación, envasado y etiquetado según normativa ADR.</p>
+      <p>El trasvase y acondicionamiento de residuos es una operación crítica que requiere conocimientos técnicos, equipamiento especializado y cumplimiento estricto de la normativa de transporte de mercancías peligrosas (ADR).</p>
       
-      <h2 class="text-2xl font-bold text-[#192a3d] mt-10 mb-4">Servicios de trasvase y acondicionamiento</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
-        <div class="bg-[#EAFDE7] p-5 rounded-lg"><h4 class="font-bold text-[#36611C] mb-2">🔄 Trasvase de líquidos</h4><p class="text-sm text-gray-700">Trasvase de aceites, disolventes, pinturas, ácidos y otros líquidos peligrosos con equipos de bombeo seguros.</p></div>
-        <div class="bg-[#EAFDE7] p-5 rounded-lg"><h4 class="font-bold text-[#36611C] mb-2">📦 Acondicionamiento</h4><p class="text-sm text-gray-700">Embalaje, etiquetado y preparación de residuos para su transporte conforme a la normativa ADR.</p></div>
-        <div class="bg-[#EAFDE7] p-5 rounded-lg"><h4 class="font-bold text-[#36611C] mb-2">🧪 Identificación</h4><p class="text-sm text-gray-700">Identificación y clasificación de residuos desconocidos por personal técnico cualificado.</p></div>
-        <div class="bg-[#EAFDE7] p-5 rounded-lg"><h4 class="font-bold text-[#36611C] mb-2">📋 Documentación ADR</h4><p class="text-sm text-gray-700">Preparamos toda la documentación necesaria para el transporte de mercancías peligrosas.</p></div>
-      </div>
-      
-      <h2 class="text-2xl font-bold text-[#192a3d] mt-10 mb-4">Nuestras garantías</h2>
-      <ul class="space-y-2 text-gray-700">
-        <li>🛡️ Personal con formación específica en manipulación de residuos peligrosos</li>
-        <li>🧤 Equipos de protección individual (EPIs) adecuados para cada tipo de residuo</li>
-        <li>🚛 Vehículos autorizados para el transporte de mercancías peligrosas (ADR)</li>
-        <li>📜 Seguro de responsabilidad civil y medioambiental</li>
-        <li>✅ Cumplimiento estricto de la normativa REACH y CLP</li>
+      <h2 class="text-2xl font-bold text-[#192a3d] !mt-10">¿Qué incluye nuestro servicio?</h2>
+      <ul class="space-y-2">
+        <li>Evaluación técnica de los residuos a trasvasar</li><li>Manipulación segura con EPIs adecuados</li><li>Envasado en contenedores homologados</li><li>Etiquetado según normativa ADR</li><li>Transporte a gestor autorizado</li><li>Documentación legal completa</li>
       </ul>
     </div>
-    
-    <h2 class="text-2xl font-bold text-[#192a3d] mt-12 mb-6">Preguntas frecuentes</h2>
-    <div class="space-y-4">
-      {faqs.map((faq) => (
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <details class="group">
-            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-[#EAFDE7] transition-colors font-semibold text-[#192a3d]">{faq.q}<span class="text-[#65C132] text-xl group-open:rotate-180 transition-transform">▾</span></summary>
-            <div class="px-6 py-4 bg-gray-50 text-gray-600 text-sm leading-relaxed border-t border-gray-100">{faq.a}</div>
-          </details>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
 
-<section class="py-16 bg-gradient-to-r from-[#36611C] to-[#45891E] text-white">
-  <div class="container-site text-center">
-    <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Necesitas trasvasar residuos peligrosos?</h2>
-    <p class="text-lg text-gray-100 mb-6">Solicita tu presupuesto y te asesoraremos sin compromiso</p>
-    <a href="/contacto" class="inline-block bg-white text-[#36611C] px-8 py-3 rounded-full font-bold hover:bg-[#EAFDE7] transition-colors">Solicitar presupuesto →</a>
+    <div class="text-center mt-14 p-8 bg-[#EAFDE7] rounded-xl">
+      <p class="text-lg font-semibold text-[#192a3d] mb-2">¿Necesitas este servicio?</p>
+      <p class="text-gray-600 mb-6">Solicita tu presupuesto gratuito sin compromiso.</p>
+      <a href="/contacto" class="inline-block bg-[#65C132] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#45891E] transition-colors">Solicitar presupuesto</a>
+    </div>
   </div>
 </section>
 

@@ -1,166 +1,302 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const features = [
+  { icon: '♻️', title: 'Residuo Cero', desc: 'Trabajamos para minimizar el impacto ambiental, asegurando que cada residuo reciba el tratamiento adecuado según su tipología.' },
+  { icon: '📋', title: 'Garantía Legal Certificada', desc: 'Toda la documentación legal necesaria para que cumplas con la normativa vigente sin preocupaciones.' },
+  { icon: '⚡', title: 'Acción en 24/48h', desc: 'Respuesta inmediata. Nos adaptamos a tu urgencia para liberar tu espacio cuanto antes.' },
+  { icon: '💰', title: 'Recuperación de Activos', desc: 'Identificamos materiales y equipos con valor residual para reducir el coste total del servicio.' },
+];
+
 const services = [
-  { icon: '🏭', title: 'Vaciado de naves', desc: 'Vaciado de naves industriales, pisos y locales en Barcelona. Servicio rápido y profesional.', href: '/servicios/vaciado-de-naves-industriales-pisos-y-locales-en-barcelona' },
-  { icon: '🏠', title: 'Limpieza de Diógenes', desc: 'Limpieza de Diógenes en Barcelona. Tratamiento especializado con máxima discreción.', href: '/servicios/limpieza-de-diogenes-en-barcelona' },
-  { icon: '🔄', title: 'Trasvases', desc: 'Trasvases y acondicionamiento de residuos peligrosos. Manipulación segura.', href: '/servicios/acondicionamiento-de-residuos-peligrosos-en-barcelona' },
-  { icon: '🗑️', title: 'Residuos Banales', desc: 'Gestión de residuos banales en Barcelona. Recogida y transporte eficiente.', href: '/servicios/gestion-de-residuos-banales-en-barcelona' },
-  { icon: '⚠️', title: 'Residuos Especiales Sólidos', desc: 'Transporte de residuos especiales sólidos con todas las garantías de seguridad.', href: '/servicios/transporte-de-residuos-especiales-solidos-en-barcelona' },
-  { icon: '🧪', title: 'Residuos Especiales Líquidos', desc: 'Transporte de residuos especiales líquidos. Gestión integral conforme a normativa.', href: '/servicios/transporte-de-residuos-especiales-liquidos-en-barcelona' },
-  { icon: '🧱', title: 'Fibrocemento', desc: 'Retirada de fibrocemento en Barcelona. Desamiantado profesional y seguro.', href: '/servicios/retirada-de-fibrocemento-en-barcelona' },
-  { icon: '🌿', title: 'Limpieza de Terrenos', desc: 'Limpieza de terrenos y parcelas. Desbroce y acondicionamiento de espacios.', href: '/servicios/limpieza-de-terrenos-y-parcelas-en-barcelona' },
+  { title: 'VACIADOS Y LIMPIEZA', desc: 'Vaciado de naves industriales, pisos, trasteros, locales y oficina.', href: '/servicios/vaciado-de-naves-industriales-pisos-y-locales-en-barcelona' },
+  { title: 'GESTIÓN DE RESIDUOS BANALES', desc: 'Contenedores para la gestión de residuos industriales.', href: '/servicios/gestion-de-residuos-banales-en-barcelona' },
+  { title: 'RESIDUOS ESPECIALES LÍQUIDOS', desc: 'Gestión y transporte de residuos especiales líquidos.', href: '/servicios/transporte-de-residuos-especiales-liquidos-en-barcelona' },
+  { title: 'RESIDUOS ESPECIALES SÓLIDOS', desc: 'Gestión y transporte de residuos especiales sólidos con todas las garantías de seguridad.', href: '/servicios/transporte-de-residuos-especiales-solidos-en-barcelona' },
+  { title: 'RETIRADA DE FIBROCEMENTO', desc: 'Servicio profesional de retirada de fibrocemento y uralita en Barcelona.', href: '/servicios/retirada-de-fibrocemento-en-barcelona' },
+  { title: 'LIMPIEZA DE TERRENOS', desc: 'Servicio de limpieza y desbroce de terrenos y parcelas.', href: '/servicios/limpieza-de-terrenos-y-parcelas-en-barcelona' },
+  { title: 'LIMPIEZA DE SÍNDROME DE DIÓGENES', desc: 'Limpieza de lugares afectados por el síndrome de Diógenes.', href: '/servicios/limpieza-de-diogenes-en-barcelona' },
+  { title: 'TRASVASES Y ACONDICIONAMIENTO', desc: 'Realizamos el trasvase de residuos peligrosos y no peligrosos.', href: '/servicios/acondicionamiento-de-residuos-peligrosos-en-barcelona' },
+];
+
+const steps = [
+  { num: '1', title: 'Análisis técnico sin compromiso', desc: 'Estudiamos el espacio, el volumen, el tipo de residuos y las necesidades operativas para preparar una propuesta clara y ajustada.' },
+  { num: '2', title: 'Vaciado y logística avanzada', desc: 'Ejecutamos la retirada con rapidez, orden y planificación para reducir molestias y recuperar el espacio cuanto antes.' },
+  { num: '3', title: 'Documentación legal de gestión', desc: 'Organizamos cada intervención para que la gestión de residuos siga el procedimiento correspondiente y se realice de forma documentada y responsable.' },
+];
+
+const valores = [
+  { icon: '🏭', title: 'Experiencia Real', desc: 'Llevamos más de una década ayudando a empresas a vaciar, limpiar y gestionar residuos de forma profesional y organizada.' },
+  { icon: '🚛', title: 'Capacidad Logística', desc: 'Podemos actuar en servicios puntuales, urgentes o planificados en naves, oficinas, locales, terrenos y espacios industriales.' },
+  { icon: '✅', title: 'Seguridad Legal', desc: 'Cada intervención se prepara con criterio profesional para ofrecer orden, tranquilidad y una gestión responsable.' },
+];
+
+const stats = [
+  { number: '+2.500', label: 'Servicios realizados', sub: 'Nuestra experiencia práctica nos permite adaptarnos a distintos tipos de clientes, residuos y espacios.' },
+  { number: '+10', label: 'Años de experiencia', sub: 'Más de una década ofreciendo soluciones de gestión de residuos en toda Cataluña.' },
+  { number: '24/48h', label: 'Respuesta rápida', sub: 'Priorizamos la agilidad para que las empresas recuperen operatividad y espacio útil lo antes posible.' },
 ];
 
 const faqs = [
-  { q: '¿Qué tipos de residuos gestionáis?', a: 'Gestionamos todo tipo de residuos: banales, especiales sólidos y líquidos, fibrocemento, residuos industriales, comerciales y domiciliarios. Contamos con las autorizaciones necesarias para cada tipo de residuo.' },
-  { q: '¿Cuánto tardáis en realizar un servicio?', a: 'El tiempo de ejecución depende del volumen y tipo de residuo. Un vaciado estándar puede realizarse en 1-3 días. Para servicios urgentes, contacta con nosotros y te daremos una estimación personalizada.' },
-  { q: '¿Ofrecéis presupuesto sin compromiso?', a: 'Sí, todos nuestros presupuestos son gratuitos y sin compromiso. Evaluamos tu caso y te proporcionamos una estimación detallada antes de cualquier trabajo.' },
-  { q: '¿Estáis autorizados para gestionar residuos peligrosos?', a: 'Sí, Ecociclo cuenta con todas las autorizaciones y licencias necesarias para la gestión de residuos peligrosos y no peligrosos, cumpliendo estrictamente la normativa vigente.' },
-  { q: '¿En qué zonas de Barcelona trabajáis?', a: 'Damos servicio en toda el área metropolitana de Barcelona y provincia. Consulta con nosotros si tu ubicación está dentro de nuestra zona de cobertura.' },
-  { q: '¿Cómo se realiza el transporte de residuos especiales líquidos?', a: 'El transporte se realiza en vehículos especialmente acondicionados con sistemas de contención, cumpliendo toda la normativa ADR para mercancías peligrosas.' },
+  { q: '¿Qué tipo de servicios ofrece Ecociclo en Cataluña?', a: 'Ofrecemos servicios de vaciado, limpieza, retirada de residuos, gestión de residuos banales, residuos especiales líquidos, residuos especiales sólidos, retirada de fibrocemento, limpieza de terrenos, limpieza de síndrome de Diógenes y trasvases y acondicionamiento de residuos peligrosos y no peligrosos.' },
+  { q: '¿Trabajáis solo con empresas o también con particulares?', a: 'Principalmente trabajamos con empresas, industria, locales, oficinas, almacenes y espacios profesionales, aunque también realizamos determinados servicios para particulares cuando el proyecto lo requiere.' },
+  { q: '¿Prestáis servicio en toda Cataluña?', a: 'Sí, Ecociclo ofrece servicios de gestión de residuos en Cataluña, adaptándose a la ubicación, al volumen de trabajo y a las necesidades logísticas de cada proyecto.' },
+  { q: '¿Puedo solicitar presupuesto sin compromiso?', a: 'Sí. Estudiamos cada caso y preparamos una propuesta adaptada al servicio necesario y sin compromiso.' },
+  { q: '¿Podéis actuar con rapidez?', a: 'Sí. Siempre que la planificación lo permita, priorizamos una respuesta ágil para que el cliente pueda resolver el problema cuanto antes.' },
+  { q: '¿Qué tipo de espacios podéis vaciar o limpiar?', a: 'Trabajamos en naves industriales, locales, oficinas, almacenes, pisos, terrenos, parcelas, solares y otros espacios que necesitan vaciado, limpieza o gestión de residuos.' },
+  { q: '¿Gestionáis residuos no peligrosos y también residuos especiales?', a: 'Sí. En Ecociclo trabajamos tanto con residuos banales o no peligrosos como con residuos especiales líquidos y sólidos, ajustando el servicio a cada caso según la normativa aplicable.' },
+  { q: '¿Qué diferencia a Ecociclo de otras empresas?', a: 'Nuestra experiencia, con más de 10 años y más de 2.500 servicios realizados, junto con una operativa rápida, profesional y orientada a empresa, nos permite ofrecer soluciones eficaces donde otros no llegan.' },
 ];
 
+const testimonials = [
+  { name: 'Barbara Yuste', text: 'Muy buena experiencia con esta empresa. Super puntuales (incluso han llegado 30 min antes y ya han empezado a trabajar), muy cuidadosos con el suelo y las paredes. Sin duda los recomendaré.' },
+  { name: 'Natalia Rivallo Pena', text: 'Los contraté para vaciar el piso de mis padres y quedé muy contenta. Fueron muy puntuales y vaciaron todo en menos de 5 horas. Muy profesionales y precio ajustado.' },
+  { name: 'Wils Casallas', text: 'Les hemos contratado para vaciar el piso de mi suegro y la verdad que han sido muy profesionales, entendiendo lo que les pedíamos y siendo cuidadosos.' },
+  { name: 'Maria Lluisa Lopez Robles', text: 'Muchas gracias a Rubén, a Carlos y a todo el equipo por su profesionalidad y por su trabajo impecable. Recomendamos V.P.B.' },
+];
 ---
+
 <Layout 
-  title="Gestión de residuos en Barcelona"
-  description="Ecociclo: empresa líder en gestión de residuos en Barcelona para empresas, industria y locales. Vaciado de naves, limpieza de Diógenes, retirada de fibrocemento y más."
-  canonical="https://ecociclo-niu.netlify.app/"
+  title="Gestión de Residuos en Barcelona"
+  description="Expertos en gestión de residuos en Barcelona. Soluciones rápidas, seguras y profesionales para empresas, industria y locales. Más de 2.500 servicios realizados."
+  canonical="https://ecociclonew.netlify.app/"
 >
 
-<!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-[#36611C] via-[#00312D] to-[#192a3d] text-white py-20 md:py-32 overflow-hidden">
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-10 left-10 w-72 h-72 bg-[#65C132] rounded-full blur-3xl"></div>
-    <div class="absolute bottom-10 right-10 w-96 h-96 bg-[#65C132] rounded-full blur-3xl"></div>
-  </div>
-  <div class="container-site relative z-10">
-    <div class="max-w-3xl">
+<!-- ===== HERO ===== -->
+<section class="relative bg-gradient-to-br from-[#0a1628] via-[#192a3d] to-[#36611C] text-white py-20 md:py-28 overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_30%_20%,#65C132_0%,transparent_50%),radial-gradient(circle_at_70%_80%,#65C132_0%,transparent_50%)]"></div>
+  <div class="container-site relative z-10 px-4">
+    <div class="max-w-3xl mx-auto text-center">
       <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6">
         Gestión de residuos en Barcelona para empresas, industria y locales
       </h1>
-      <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
-        Somos líderes en gestión integral de residuos en Barcelona. Ofrecemos soluciones rápidas, seguras y profesionales para liberar tus espacios de cualquier tipo de residuo.
+      <p class="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed max-w-2xl mx-auto">
+        En Ecociclo ayudamos a empresas, naves industriales, locales, oficinas y almacenes a gestionar sus residuos de forma profesional, rápida y responsable.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="/contacto" class="bg-[#65C132] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#45891E] transition-colors text-center shadow-lg">
-          Solicitar presupuesto
-        </a>
-        <a href="/servicios-de-gestion-ambiental" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#36611C] transition-colors text-center">
-          Ver servicios
-        </a>
+      <a href="/contacto" class="inline-block bg-[#65C132] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#45891E] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+        Solicitar presupuesto
+      </a>
+
+      <!-- 3 Feature Cards under hero -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+        <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
+          <div class="text-3xl mb-3">📱</div>
+          <h3 class="font-semibold text-sm mb-2">Gestión legal de residuos electrónicos</h3>
+          <p class="text-gray-300 text-xs">Cumplimos con toda la normativa RAEE para electrodomésticos y equipos electrónicos.</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
+          <div class="text-3xl mb-3">🛡️</div>
+          <h3 class="font-semibold text-sm mb-2">Operaciones 100% aseguradas y garantizadas.</h3>
+          <p class="text-gray-300 text-xs">Todos nuestros trabajos cuentan con seguro de responsabilidad civil.</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
+          <div class="text-3xl mb-3">📍</div>
+          <h3 class="font-semibold text-sm mb-2">Sabes donde termina cada residuo</h3>
+          <p class="text-gray-300 text-xs">Trazabilidad completa desde la recogida hasta el gestor final autorizado.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- What We Do Section -->
+<!-- ===== FILOSOFÍA ===== -->
 <section class="py-20 bg-white">
-  <div class="container-site">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-[#192a3d] mb-4">¿Qué hacemos en ecociclo?</h2>
-      <p class="text-gray-600 text-lg max-w-2xl mx-auto">Ofrecemos una amplia gama de servicios de gestión ambiental adaptados a las necesidades de empresas, industrias y particulares en Barcelona.</p>
+  <div class="container-site px-4">
+    <div class="text-center mb-12">
+      <span class="text-[#65C132] font-semibold text-sm uppercase tracking-wider">Nuestra Filosofía</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#192a3d] mt-3 mb-6">Más que una limpieza, una empresa de gestión ambiental en BARCELONA</h2>
+      <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+        En Ecociclo entendemos que una empresa no necesita solo retirar residuos. Necesita una solución eficaz, bien organizada y capaz de resolver el problema de principio a fin, con criterio profesional y compromiso ambiental.
+      </p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {services.map((service) => (
-        <a href={service.href} class="group bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-lg hover:border-[#65C132] transition-all duration-300 flex flex-col items-center text-center">
-          <span class="text-4xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</span>
-          <h3 class="font-bold text-[#192a3d] mb-2 group-hover:text-[#36611C] transition-colors">{service.title}</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
+
+    <!-- 4 Pillars -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+      {features.map((f) => (
+        <div class="text-center p-6 rounded-xl border border-gray-100 hover:border-[#65C132] hover:shadow-md transition-all duration-300 bg-white">
+          <div class="text-4xl mb-4">{f.icon}</div>
+          <h3 class="font-bold text-[#192a3d] mb-3">{f.title}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="/empresa-de-gestion-de-residuos" class="inline-flex items-center gap-2 text-[#36611C] font-semibold hover:text-[#45891E] transition-colors">
+        Conoce más sobre nosotros
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS ===== -->
+<section class="py-20 bg-[#f8faf9]">
+  <div class="container-site px-4">
+    <div class="text-center mb-14">
+      <span class="text-[#65C132] font-semibold text-sm uppercase tracking-wider">Soluciones integrales a medida</span>
+      <div class="text-3xl md:text-4xl font-bold text-[#192a3d] mt-3">¿Qué hacemos en ecociclo?</div>
+      <p class="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
+        Nos encargamos del vaciado de naves industriales, locales y oficinas, asegurando una gestión de residuos responsable y eficiente.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {services.map((s) => (
+        <a href={s.href} class="group bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-[#65C132] transition-all duration-300 flex flex-col">
+          <h3 class="font-bold text-[#192a3d] text-sm mb-2 group-hover:text-[#36611C] transition-colors">{s.title}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed flex-1">{s.desc}</p>
+          <span class="inline-flex items-center gap-1 text-[#65C132] text-sm font-medium mt-4 group-hover:gap-2 transition-all">
+            Ver Servicio
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
         </a>
       ))}
     </div>
-  </div>
-</section>
 
-<!-- 3 Steps Section -->
-<section class="py-20 bg-[#EAFDE7]">
-  <div class="container-site">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-[#192a3d] mb-4">Tu espacio libre de residuos en tres pasos</h2>
-      <p class="text-gray-600 text-lg">Así de fácil es trabajar con nosotros</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="text-center">
-        <div class="w-20 h-20 bg-[#36611C] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg">1</div>
-        <h3 class="text-xl font-bold text-[#192a3d] mb-3">Solicita tu presupuesto</h3>
-        <p class="text-gray-600">Cuéntanos qué necesitas. Te ofrecemos un presupuesto sin compromiso en menos de 24 horas.</p>
-      </div>
-      <div class="text-center">
-        <div class="w-20 h-20 bg-[#45891E] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg">2</div>
-        <h3 class="text-xl font-bold text-[#192a3d] mb-3">Realizamos el servicio</h3>
-        <p class="text-gray-600">Nuestro equipo profesional se encarga de todo: recogida, transporte y gestión de residuos.</p>
-      </div>
-      <div class="text-center">
-        <div class="w-20 h-20 bg-[#65C132] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg">3</div>
-        <h3 class="text-xl font-bold text-[#192a3d] mb-3">Tu espacio, libre</h3>
-        <p class="text-gray-600">Disfruta de un espacio limpio y libre de residuos, con certificación de gestión responsable.</p>
-      </div>
+    <div class="text-center mt-12">
+      <a href="/servicios-de-gestion-ambiental" class="inline-block border-2 border-[#36611C] text-[#36611C] px-8 py-3 rounded-full font-semibold hover:bg-[#36611C] hover:text-white transition-colors">
+        Ver todos los servicios
+      </a>
     </div>
   </div>
 </section>
 
-<!-- Stats Section -->
-<section class="py-20 bg-[#00312D] text-white">
-  <div class="container-site">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Líderes en gestión de residuos en Barcelona</h2>
-      <p class="text-gray-300 text-lg">Nuestra experiencia nos avala</p>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div>
-        <div class="text-4xl md:text-5xl font-bold text-[#65C132] mb-2">+2.500</div>
-        <p class="text-gray-300">Servicios realizados</p>
-      </div>
-      <div>
-        <div class="text-4xl md:text-5xl font-bold text-[#65C132] mb-2">+10</div>
-        <p class="text-gray-300">Años de experiencia</p>
-      </div>
-      <div>
-        <div class="text-4xl md:text-5xl font-bold text-[#65C132] mb-2">98%</div>
-        <p class="text-gray-300">Clientes satisfechos</p>
-      </div>
-      <div>
-        <div class="text-4xl md:text-5xl font-bold text-[#65C132] mb-2">24h</div>
-        <p class="text-gray-300">Respuesta rápida</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ Section -->
+<!-- ===== PROCESO 3 PASOS ===== -->
 <section class="py-20 bg-white">
-  <div class="container-site">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-[#192a3d] mb-4">Preguntas frecuentes</h2>
-      <p class="text-gray-600 text-lg">Resolvemos tus dudas</p>
+  <div class="container-site px-4">
+    <div class="text-center mb-14">
+      <span class="text-[#65C132] font-semibold text-sm uppercase tracking-wider">Proceso de Gestión</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#192a3d] mt-3 mb-4">Tu espacio libre de residuos en tres pasos</h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        Hemos simplificado nuestro sistema de trabajo para ofrecer un servicio de gestión de residuos en Barcelona rápido, eficaz y adaptado a cada cliente.
+      </p>
     </div>
-    <div class="max-w-3xl mx-auto space-y-4">
-      {faqs.map((faq, i) => (
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <details class="group">
-            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-[#EAFDE7] transition-colors font-semibold text-[#192a3d]">
-              {faq.q}
-              <span class="text-[#65C132] text-xl group-open:rotate-180 transition-transform">▾</span>
-            </summary>
-            <div class="px-6 py-4 bg-gray-50 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
-              {faq.a}
-            </div>
-          </details>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {steps.map((step, i) => (
+        <div class="relative text-center">
+          {i < 2 && <div class="hidden md:block absolute top-10 left-[60%] w-full h-0.5 bg-[#EAFDE7] z-0"></div>}
+          <div class="relative z-10 w-20 h-20 rounded-full bg-[#36611C] text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg">{step.num}</div>
+          <h3 class="font-bold text-[#192a3d] text-lg mb-3">{step.title}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
         </div>
       ))}
     </div>
   </div>
 </section>
 
-<!-- CTA Section -->
+<!-- ===== EXPERIENCIA / LÍDERES ===== -->
+<section class="py-20 bg-[#f8faf9]">
+  <div class="container-site px-4">
+    <div class="text-center mb-14">
+      <span class="text-[#65C132] font-semibold text-sm uppercase tracking-wider">Experiencia Comprobada</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#192a3d] mt-3 mb-4">Líderes en gestión de residuos</h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        Más de 10 años de trayectoria y 2.500 servicios realizados con éxito avalan nuestra profesionalidad.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {valores.map((v) => (
+        <div class="text-center p-8 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-4xl mb-4">{v.icon}</div>
+          <h3 class="font-bold text-[#192a3d] text-lg mb-3">{v.title}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="py-20 bg-[#192a3d] text-white">
+  <div class="container-site px-4">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Líderes en gestión de residuos en Barcelona</h2>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+        Más de 10 años de trayectoria y más de 2.500 servicios realizados nos posicionan como una empresa especializada en vaciados, limpiezas y gestión de residuos.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-4xl mx-auto text-center">
+      {stats.map((s) => (
+        <div>
+          <div class="text-5xl md:text-6xl font-bold text-[#65C132] mb-3">{s.number}</div>
+          <p class="text-lg font-semibold mb-2">{s.label}</p>
+          <p class="text-gray-400 text-sm leading-relaxed">{s.sub}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
 <section class="py-20 bg-gradient-to-r from-[#36611C] to-[#45891E] text-white">
-  <div class="container-site text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Recupera tu espacio hoy mismo</h2>
-    <p class="text-lg text-gray-100 mb-8 max-w-2xl mx-auto">Solicita tu presupuesto gratuito sin compromiso. Nuestro equipo te responderá en menos de 24 horas.</p>
-    <a href="/contacto" class="inline-block bg-white text-[#36611C] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#EAFDE7] transition-colors shadow-lg">
+  <div class="container-site px-4 text-center">
+    <span class="text-white/80 font-semibold text-sm uppercase tracking-wider">Transformación Ambiental</span>
+    <h2 class="text-3xl md:text-4xl font-bold mt-3 mb-6">Recupera tu espacio hoy mismo en cualquier punto de barcelona</h2>
+    <p class="text-lg text-gray-100 max-w-3xl mx-auto leading-relaxed mb-10">
+      No dejes que la acumulación de residuos, materiales o elementos innecesarios afecte la imagen, la seguridad o el funcionamiento de tu empresa. En Ecociclo te ofrecemos una solución completa, rápida y profesional para que recuperes el control de tus espacios.
+    </p>
+    <a href="/contacto" class="inline-block bg-white text-[#36611C] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#EAFDE7] transition-all shadow-lg transform hover:-translate-y-0.5">
       Solicitar presupuesto →
     </a>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="py-20 bg-white">
+  <div class="container-site px-4">
+    <div class="text-center mb-14">
+      <span class="text-[#65C132] font-semibold text-sm uppercase tracking-wider">Centro de Ayuda y Soporte</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#192a3d] mt-3 mb-4">Preguntas frecuentes sobre gestión de residuos en barcelona</h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        Resolvemos tus dudas principales para que puedas planificar el vaciado de tu inmueble o la retirada de materiales con total tranquilidad y transparencia.
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto divide-y divide-gray-100">
+      {faqs.map((faq, i) => (
+        <details class="group py-1">
+          <summary class="flex items-center justify-between py-4 cursor-pointer font-semibold text-[#192a3d] hover:text-[#36611C] transition-colors text-left">
+            <span class="pr-4">{faq.q}</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-[#65C132] group-open:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="pb-4 text-gray-600 text-sm leading-relaxed pl-0">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="py-20 bg-[#f8faf9]">
+  <div class="container-site px-4">
+    <div class="text-center mb-14">
+      <span class="text-[#65C132] font-semibold text-sm uppercase tracking-wider">Testimonios</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#192a3d] mt-3">Confianza avalada por más de 2.500 servicios</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      {testimonials.map((t) => (
+        <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+          <div class="flex items-center gap-1.5 mb-3">
+            {[1,2,3,4,5].map(() => <span class="text-yellow-400 text-sm">★</span>)}
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4 italic">"{t.text}"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#36611C] text-white flex items-center justify-center font-bold text-sm">{t.name.charAt(0)}</div>
+            <div>
+              <p class="font-semibold text-[#192a3d] text-sm">{t.name}</p>
+              <p class="text-gray-400 text-xs">Publicado en Google</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   </div>
 </section>
 

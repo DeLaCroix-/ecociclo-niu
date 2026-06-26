@@ -1,72 +1,36 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-
-const faqs = [
-  { q: '¿Qué son los residuos especiales sólidos?', a: 'Son residuos que requieren un tratamiento específico por sus características: inflamables, tóxicos, corrosivos, reactivos, etc. Incluyen pinturas, disolventes solidificados, absorbentes contaminados, baterías, filtros contaminados, etc.' },
-  { q: '¿Cómo transportáis los residuos especiales?', a: 'Utilizamos vehículos autorizados ADR, con sistemas de contención y personal formado específicamente para el transporte de mercancías peligrosas.' },
-  { q: '¿Qué documentación necesito?', a: 'Nosotros nos encargamos de todo: carta de porte, documento de aceptación del gestor, certificado de gestión final y cualquier documento requerido por la normativa vigente.' },
-];
 ---
 
 <Layout 
-  title="Transporte de residuos especiales sólidos en Barcelona"
-  description="Transporte de residuos especiales sólidos en Barcelona. Servicio autorizado ADR, máxima seguridad y certificación incluida. Presupuesto sin compromiso."
-  canonical="https://ecociclo-niu.netlify.app/servicios/transporte-de-residuos-especiales-solidos-en-barcelona"
+  title="Residuos Especiales Sólidos en Barcelona"
+  description="Gestión y transporte de residuos especiales sólidos con todas las garantías de seguridad y cumpliendo estrictamente la normativa vigente."
+  canonical="https://ecociclonew.netlify.app/servicios/transporte-de-residuos-especiales-solidos-en-barcelona"
 >
 
-<section class="bg-gradient-to-br from-[#36611C] to-[#00312D] text-white py-20">
-  <div class="container-site">
-    <h1 class="text-3xl md:text-5xl font-bold mb-4">Transporte de residuos especiales sólidos en Barcelona</h1>
-    <p class="text-lg text-gray-200 max-w-3xl">Transporte autorizado de residuos especiales sólidos. Máxima seguridad, cumplimiento ADR y documentación completa.</p>
+<section class="bg-[#192a3d] text-white py-16 md:py-20">
+  <div class="container-site px-4 text-center">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Residuos Especiales Sólidos</h1>
   </div>
 </section>
 
 <section class="py-20 bg-white">
-  <div class="container-site max-w-4xl">
-    <div class="prose prose-lg max-w-none">
-      <p class="text-gray-700 leading-relaxed text-lg mb-8">
-        El <strong>transporte de residuos especiales sólidos</strong> está sujeto a una estricta normativa. En <strong>Ecociclo</strong> somos transportistas autorizados ADR y garantizamos un servicio seguro, legal y eficiente.
-      </p>
+  <div class="container-site px-4 max-w-4xl mx-auto">
+    <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-6">
+      <p class="text-xl text-[#192a3d] font-medium">Gestión y transporte de residuos especiales sólidos con todas las garantías de seguridad y cumpliendo estrictamente la normativa vigente.</p>
+      <p>La gestión de residuos especiales sólidos requiere un conocimiento profundo de la normativa y procedimientos específicos para cada tipo de residuo. En Ecociclo gestionamos estos residuos con la máxima seguridad.</p>
       
-      <h2 class="text-2xl font-bold text-[#192a3d] mt-10 mb-4">Residuos que transportamos</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 not-prose my-8">
-        <div class="bg-[#EAFDE7] p-4 rounded-lg text-center"><span class="text-3xl">🔋</span><p class="font-semibold text-sm mt-2">Baterías y pilas</p></div>
-        <div class="bg-[#EAFDE7] p-4 rounded-lg text-center"><span class="text-3xl">🎨</span><p class="font-semibold text-sm mt-2">Pinturas y barnices</p></div>
-        <div class="bg-[#EAFDE7] p-4 rounded-lg text-center"><span class="text-3xl">🧹</span><p class="font-semibold text-sm mt-2">Absorbentes contaminados</p></div>
-        <div class="bg-[#EAFDE7] p-4 rounded-lg text-center"><span class="text-3xl">🔧</span><p class="font-semibold text-sm mt-2">Filtros de aceite</p></div>
-        <div class="bg-[#EAFDE7] p-4 rounded-lg text-center"><span class="text-3xl">💡</span><p class="font-semibold text-sm mt-2">Lámparas y fluorescentes</p></div>
-        <div class="bg-[#EAFDE7] p-4 rounded-lg text-center"><span class="text-3xl">⚗️</span><p class="font-semibold text-sm mt-2">Reactivos de laboratorio</p></div>
-      </div>
-      
-      <h2 class="text-2xl font-bold text-[#192a3d] mt-10 mb-4">Garantías del servicio</h2>
-      <ul class="space-y-2 text-gray-700">
-        <li>🚛 Flota de vehículos autorizados ADR para mercancías peligrosas</li>
-        <li>👷 Personal con formación específica y certificada</li>
-        <li>📦 Embalaje y etiquetado según normativa</li>
-        <li>📜 Documentación completa: carta de porte, aceptación y certificado final</li>
-        <li>🛡️ Seguro de responsabilidad civil y medioambiental</li>
+      <h2 class="text-2xl font-bold text-[#192a3d] !mt-10">¿Qué incluye nuestro servicio?</h2>
+      <ul class="space-y-2">
+        <li>Identificación y clasificación del residuo</li><li>Envasado y etiquetado reglamentario</li><li>Transporte ADR con vehículos autorizados</li><li>Entrega a gestor autorizado</li><li>Documentación: documento de aceptación, notificación previa, documento de seguimiento</li><li>Certificado de gestión final</li>
       </ul>
     </div>
-    
-    <h2 class="text-2xl font-bold text-[#192a3d] mt-12 mb-6">Preguntas frecuentes</h2>
-    <div class="space-y-4">
-      {faqs.map((faq) => (
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <details class="group">
-            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-[#EAFDE7] transition-colors font-semibold text-[#192a3d]">{faq.q}<span class="text-[#65C132] text-xl group-open:rotate-180 transition-transform">▾</span></summary>
-            <div class="px-6 py-4 bg-gray-50 text-gray-600 text-sm leading-relaxed border-t border-gray-100">{faq.a}</div>
-          </details>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
 
-<section class="py-16 bg-gradient-to-r from-[#36611C] to-[#45891E] text-white">
-  <div class="container-site text-center">
-    <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Necesitas transportar residuos especiales sólidos?</h2>
-    <p class="text-lg text-gray-100 mb-6">Solicita tu presupuesto y te responderemos en menos de 24 horas</p>
-    <a href="/contacto" class="inline-block bg-white text-[#36611C] px-8 py-3 rounded-full font-bold hover:bg-[#EAFDE7] transition-colors">Solicitar presupuesto →</a>
+    <div class="text-center mt-14 p-8 bg-[#EAFDE7] rounded-xl">
+      <p class="text-lg font-semibold text-[#192a3d] mb-2">¿Necesitas este servicio?</p>
+      <p class="text-gray-600 mb-6">Solicita tu presupuesto gratuito sin compromiso.</p>
+      <a href="/contacto" class="inline-block bg-[#65C132] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#45891E] transition-colors">Solicitar presupuesto</a>
+    </div>
   </div>
 </section>
 
