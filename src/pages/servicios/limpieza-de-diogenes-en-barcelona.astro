@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqs = [
+  { q: '¿Qué es el Síndrome de Diógenes?', a: 'El Síndrome de Diógenes es un trastorno del comportamiento que se caracteriza por el abandono extremo del autocuidado, la acumulación compulsiva de objetos y residuos en el hogar, y el aislamiento social voluntario.' },
+  { q: '¿Cómo realizáis la limpieza?', a: 'Nuestro equipo actúa con máxima discreción y profesionalidad. Incluye: evaluación inicial, retirada de residuos, limpieza profunda, desinfección y desinsectación si es necesario. Todo ello con apoyo psicológico si se requiere.' },
+  { q: '¿Es confidencial el servicio?', a: 'Absolutamente. La confidencialidad es un pilar de nuestro servicio. Todo el personal firma acuerdos de confidencialidad y trabajamos con vehículos no rotulados si la situación lo requiere.' },
+];
+---
+
+<Layout 
+  title="Limpieza de Diógenes en Barcelona"
+  description="Servicio profesional de limpieza de Diógenes en Barcelona. Máxima discreción, profesionalidad y sensibilidad. Presupuesto confidencial sin compromiso."
+  canonical="https://ecociclo-niu.netlify.app/servicios/limpieza-de-diogenes-en-barcelona"
+>
+
+<section class="bg-gradient-to-br from-[#36611C] to-[#00312D] text-white py-20">
+  <div class="container-site">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Limpieza de Diógenes en Barcelona</h1>
+    <p class="text-lg text-gray-200 max-w-3xl">Servicio especializado y confidencial de limpieza de viviendas con acumulación extrema. Actuamos con la máxima sensibilidad y profesionalidad.</p>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="container-site max-w-4xl">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-gray-700 leading-relaxed text-lg mb-8">
+        La <strong>limpieza de Diógenes</strong> requiere un enfoque especializado y humano. En <strong>Ecociclo</strong> contamos con un equipo formado específicamente para este tipo de intervenciones, garantizando un servicio <strong>discreto, respetuoso y profesional</strong>.
+      </p>
+      
+      <h2 class="text-2xl font-bold text-[#192a3d] mt-10 mb-4">Nuestro proceso de limpieza de Diógenes</h2>
+      <div class="space-y-4">
+        <div class="flex gap-4 items-start">
+          <div class="w-10 h-10 bg-[#36611C] text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+          <div><h4 class="font-bold text-[#192a3d]">Evaluación inicial</h4><p class="text-gray-600 text-sm">Visitamos el espacio sin compromiso para evaluar el alcance del trabajo y ofrecer un presupuesto cerrado.</p></div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="w-10 h-10 bg-[#45891E] text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+          <div><h4 class="font-bold text-[#192a3d]">Planificación</h4><p class="text-gray-600 text-sm">Diseñamos un plan de actuación personalizado, coordinando con familiares o servicios sociales si procede.</p></div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="w-10 h-10 bg-[#65C132] text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+          <div><h4 class="font-bold text-[#192a3d]">Vaciado y limpieza</h4><p class="text-gray-600 text-sm">Retirada de residuos, limpieza profunda, desinfección y desinsectación. Máxima confidencialidad.</p></div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="w-10 h-10 bg-[#00312D] text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
+          <div><h4 class="font-bold text-[#192a3d]">Entrega</h4><p class="text-gray-600 text-sm">El espacio queda completamente limpio, desinfectado y habitable. Entregamos certificación de gestión de residuos.</p></div>
+        </div>
+      </div>
+      
+      <h2 class="text-2xl font-bold text-[#192a3d] mt-10 mb-4">¿Por qué confiar en Ecociclo?</h2>
+      <ul class="space-y-2 text-gray-700">
+        <li>🔒 <strong>Confidencialidad absoluta</strong> en todas nuestras intervenciones</li>
+        <li>❤️ <strong>Equipo humano y sensible</strong> formado para situaciones complejas</li>
+        <li>📋 <strong>Certificación de gestión</strong> de todos los residuos retirados</li>
+        <li>🏠 <strong>Limpieza integral</strong>: desinfección, desinsectación y desodorización</li>
+      </ul>
+    </div>
+    
+    <h2 class="text-2xl font-bold text-[#192a3d] mt-12 mb-6">Preguntas frecuentes</h2>
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <details class="group">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-[#EAFDE7] transition-colors font-semibold text-[#192a3d]">{faq.q}<span class="text-[#65C132] text-xl group-open:rotate-180 transition-transform">▾</span></summary>
+            <div class="px-6 py-4 bg-gray-50 text-gray-600 text-sm leading-relaxed border-t border-gray-100">{faq.a}</div>
+          </details>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-gradient-to-r from-[#36611C] to-[#45891E] text-white">
+  <div class="container-site text-center">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Necesitas ayuda con un caso de Diógenes?</h2>
+    <p class="text-lg text-gray-100 mb-6">Contacta con total confidencialidad. Estamos aquí para ayudarte.</p>
+    <a href="/contacto" class="inline-block bg-white text-[#36611C] px-8 py-3 rounded-full font-bold hover:bg-[#EAFDE7] transition-colors">Solicitar presupuesto confidencial →</a>
+  </div>
+</section>
+
+</Layout>

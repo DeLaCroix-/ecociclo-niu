@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Contacto"
+  description="Contacta con Ecociclo para gestión de residuos en Barcelona. Teléfono +34 93 123 45 67, email info@ecociclo.es. Solicita presupuesto sin compromiso."
+  canonical="https://ecociclo-niu.netlify.app/contacto"
+>
+
+<!-- Hero -->
+<section class="bg-gradient-to-br from-[#36611C] to-[#00312D] text-white py-20">
+  <div class="container-site text-center">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Contacto</h1>
+    <p class="text-lg text-gray-200 max-w-3xl mx-auto">Estamos aquí para ayudarte. Solicita tu presupuesto sin compromiso o consúltanos cualquier duda.</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-20 bg-white">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div class="bg-[#EAFDE7] rounded-xl p-8 shadow-sm">
+        <h2 class="text-2xl font-bold text-[#192a3d] mb-6">Solicita tu presupuesto</h2>
+        <form class="space-y-5">
+          <div>
+            <label class="block text-sm font-semibold text-[#192a3d] mb-1">Nombre completo *</label>
+            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#65C132] focus:ring-2 focus:ring-[#65C132] outline-none transition-colors" placeholder="Tu nombre" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-[#192a3d] mb-1">Email *</label>
+            <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#65C132] focus:ring-2 focus:ring-[#65C132] outline-none transition-colors" placeholder="tu@email.com" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-[#192a3d] mb-1">Teléfono *</label>
+            <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#65C132] focus:ring-2 focus:ring-[#65C132] outline-none transition-colors" placeholder="+34 600 000 000" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-[#192a3d] mb-1">Servicio de interés</label>
+            <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#65C132] focus:ring-2 focus:ring-[#65C132] outline-none transition-colors bg-white">
+              <option>Selecciona un servicio</option>
+              <option>Vaciado de naves industriales</option>
+              <option>Limpieza de Diógenes</option>
+              <option>Trasvases y acondicionamiento</option>
+              <option>Residuos Banales</option>
+              <option>Residuos Especiales Sólidos</option>
+              <option>Residuos Especiales Líquidos</option>
+              <option>Retirada de Fibrocemento</option>
+              <option>Limpieza de Terrenos</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-[#192a3d] mb-1">Mensaje *</label>
+            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#65C132] focus:ring-2 focus:ring-[#65C132] outline-none transition-colors" placeholder="Cuéntanos qué necesitas..."></textarea>
+          </div>
+          <div>
+            <label class="flex items-start gap-2 text-sm text-gray-600">
+              <input type="checkbox" class="mt-1" />
+              <span>Acepto la política de privacidad y el tratamiento de mis datos personales.</span>
+            </label>
+          </div>
+          <button type="submit" class="w-full bg-[#65C132] text-white py-3 rounded-lg font-bold text-lg hover:bg-[#45891E] transition-colors shadow-lg">
+            Enviar solicitud
+          </button>
+        </form>
+      </div>
+      
+      <!-- Contact Info -->
+      <div>
+        <h2 class="text-2xl font-bold text-[#192a3d] mb-6">Información de contacto</h2>
+        
+        <div class="space-y-6">
+          <div class="flex items-start gap-4 bg-[#f2f5f7] p-5 rounded-lg">
+            <span class="text-3xl">📍</span>
+            <div>
+              <h3 class="font-bold text-[#192a3d] mb-1">Dirección</h3>
+              <p class="text-gray-600">Barcelona, España</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 bg-[#f2f5f7] p-5 rounded-lg">
+            <span class="text-3xl">📞</span>
+            <div>
+              <h3 class="font-bold text-[#192a3d] mb-1">Teléfono</h3>
+              <p class="text-gray-600">
+                <a href="tel:+34931234567" class="text-[#36611C] hover:underline font-semibold">+34 93 123 45 67</a>
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 bg-[#f2f5f7] p-5 rounded-lg">
+            <span class="text-3xl">✉️</span>
+            <div>
+              <h3 class="font-bold text-[#192a3d] mb-1">Email</h3>
+              <p class="text-gray-600">
+                <a href="mailto:info@ecociclo.es" class="text-[#36611C] hover:underline font-semibold">info@ecociclo.es</a>
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 bg-[#f2f5f7] p-5 rounded-lg">
+            <span class="text-3xl">🕐</span>
+            <div>
+              <h3 class="font-bold text-[#192a3d] mb-1">Horario</h3>
+              <p class="text-gray-600">Lunes a Viernes: 09:00 - 18:00</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-8 p-6 bg-[#00312D] text-white rounded-xl">
+          <h3 class="font-bold text-lg mb-2">🚀 Respuesta rápida</h3>
+          <p class="text-sm text-gray-300">Respondemos en menos de 24 horas. Si es urgente, llámanos directamente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>

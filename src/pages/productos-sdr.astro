@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const products = [
+  { img: 'https://ecociclo.es/wp-content/uploads/2024/01/contenedor-azul-reciclaje.jpg', title: 'Contenedor Azul Reciclaje', desc: 'Contenedor para papel y cartón. Ideal para oficinas y comercios.' },
+  { img: 'https://ecociclo.es/wp-content/uploads/2024/01/contenedor-amarillo.jpg', title: 'Contenedor Amarillo', desc: 'Para envases ligeros: plásticos, latas y briks. Gestión responsable.' },
+  { img: 'https://ecociclo.es/wp-content/uploads/2024/01/contenedor-organico.jpg', title: 'Contenedor Orgánico', desc: 'Gestión de residuos orgánicos para hostelería y restauración.' },
+  { img: 'https://ecociclo.es/wp-content/uploads/2024/01/contenedor-industrial.jpg', title: 'Contenedor Industrial', desc: 'Contenedores de gran capacidad para residuos industriales.' },
+  { img: 'https://ecociclo.es/wp-content/uploads/2024/01/bidones-residuos.jpg', title: 'Bidones para Residuos', desc: 'Bidones homologados para residuos especiales líquidos y sólidos.' },
+  { img: 'https://ecociclo.es/wp-content/uploads/2024/01/saco-escombro.jpg', title: 'Sacos de Escombro', desc: 'Sacos resistentes para obras, reformas y vaciados.' },
+];
+---
+
+<Layout 
+  title="Productos SDR"
+  description="Productos SDR de Ecociclo: contenedores, bidones y sacos para la gestión de residuos en Barcelona. Soluciones para empresas y particulares."
+  canonical="https://ecociclo-niu.netlify.app/productos-sdr"
+>
+
+<!-- Hero -->
+<section class="bg-gradient-to-br from-[#36611C] to-[#00312D] text-white py-20">
+  <div class="container-site text-center">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Productos SDR</h1>
+    <p class="text-lg text-gray-200 max-w-3xl mx-auto">Contenedores, bidones y soluciones para la correcta segregación y gestión de tus residuos</p>
+  </div>
+</section>
+
+<!-- Products Grid -->
+<section class="py-20 bg-white">
+  <div class="container-site">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {products.map((product) => (
+        <div class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group">
+          <div class="h-56 bg-[#EAFDE7] flex items-center justify-center overflow-hidden">
+            <div class="text-6xl group-hover:scale-110 transition-transform">
+              {product.title.includes('Azul') ? '📘' : 
+               product.title.includes('Amarillo') ? '📒' :
+               product.title.includes('Orgánico') ? '📗' :
+               product.title.includes('Industrial') ? '📦' :
+               product.title.includes('Bidones') ? '🛢️' : '📮'}
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-[#192a3d] text-lg mb-2">{product.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{product.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-16 bg-[#EAFDE7]">
+  <div class="container-site text-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-[#192a3d] mb-4">¿Necesitas contenedores para tu negocio?</h2>
+    <p class="text-gray-600 mb-6">Te asesoramos sobre la mejor solución para tu empresa</p>
+    <a href="/contacto" class="inline-block bg-[#65C132] text-white px-8 py-3 rounded-full font-bold hover:bg-[#45891E] transition-colors shadow-lg">Solicitar información</a>
+  </div>
+</section>
+
+</Layout>

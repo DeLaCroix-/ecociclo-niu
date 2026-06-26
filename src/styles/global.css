@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "@fontsource-variable/outfit";
+
+@theme {
+  --color-primary-900: #192a3d;
+  --color-primary-800: #00312D;
+  --color-primary-700: #36611C;
+  --color-primary-600: #45891E;
+  --color-primary-500: #65C132;
+  --color-primary-50: #EAFDE7;
+  --color-light: #f2f5f7;
+  --font-sans: 'Outfit Variable', 'Outfit', system-ui, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit Variable', 'Outfit', system-ui, sans-serif;
+  color: #333;
+  background-color: #ffffff;
+}
+
+/* Custom utilities */
+@utility container-site {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

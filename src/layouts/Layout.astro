@@ -1,23 +1,206 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/global.css';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonical = 'https://ecociclo-niu.netlify.app',
+  ogImage = 'https://ecociclo.es/wp-content/uploads/2026/03/Ecociclo-Logo-Horizontal3-scaled.png',
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://ecociclo.es/wp-content/uploads/2026/03/Ecociclo-Logo-Horizontal3-scaled.png" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO -->
+    <title>{title} | Ecociclo</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={`${title} | Ecociclo`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Ecociclo" />
+    <meta property="og:locale" content="es_ES" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | Ecociclo`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Ecociclo",
+        "url": "https://ecociclo-niu.netlify.app",
+        "logo": "https://ecociclo.es/wp-content/uploads/2026/03/Ecociclo-Logo-Horizontal3-scaled.png",
+        "description": "Gestión de residuos en Barcelona para empresas, industria y locales",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Barcelona",
+          "addressCountry": "ES"
+        },
+        "telephone": "+34 93 123 45 67",
+        "priceRange": "€€",
+        "openingHours": "Mo-Fr 09:00-18:00"
+      }
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header class="bg-[#36611C] text-white sticky top-0 z-50 shadow-lg">
+      <nav class="container-site flex items-center justify-between py-3">
+        <a href="/" class="flex-shrink-0">
+          <img 
+            src="https://ecociclo.es/wp-content/uploads/2026/03/Ecociclo-Logo-Horizontal3-scaled.png" 
+            alt="Ecociclo Logo" 
+            class="h-10 md:h-12 w-auto brightness-0 invert"
+            width="200"
+            height="50"
+          />
+        </a>
+        
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="/" class={`font-medium transition-colors ${currentPath === '/' ? 'text-[#65C132]' : 'text-white hover:text-[#65C132]'}`}>Inicio</a>
+          <a href="/empresa-de-gestion-de-residuos" class={`font-medium transition-colors ${currentPath === '/empresa-de-gestion-de-residuos' ? 'text-[#65C132]' : 'text-white hover:text-[#65C132]'}`}>Quiénes somos</a>
+          
+          <!-- Services Dropdown -->
+          <div class="relative group">
+            <a href="/servicios-de-gestion-ambiental" class={`font-medium transition-colors flex items-center gap-1 ${currentPath.startsWith('/servicios') ? 'text-[#65C132]' : 'text-white hover:text-[#65C132]'}`}>
+              Servicios
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+            <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="bg-white text-gray-800 rounded-lg shadow-xl py-2 min-w-[320px] border border-gray-100">
+                <a href="/servicios/vaciado-de-naves-industriales-pisos-y-locales-en-barcelona" class="block px-4 py-2.5 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors text-sm">Vaciado de naves industriales, pisos y locales</a>
+                <a href="/servicios/limpieza-de-diogenes-en-barcelona" class="block px-4 py-2.5 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors text-sm">Limpieza de Diógenes</a>
+                <a href="/servicios/acondicionamiento-de-residuos-peligrosos-en-barcelona" class="block px-4 py-2.5 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors text-sm">Trasvases y acondicionamiento</a>
+                <a href="/servicios/gestion-de-residuos-banales-en-barcelona" class="block px-4 py-2.5 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors text-sm">Residuos Banales</a>
+                <a href="/servicios/transporte-de-residuos-especiales-solidos-en-barcelona" class="block px-4 py-2.5 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors text-sm">Residuos Especiales Sólidos</a>
+                <a href="/servicios/transporte-de-residuos-especiales-liquidos-en-barcelona" class="block px-4 py-2.5 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors text-sm">Residuos Especiales Líquidos</a>
+                <a href="/servicios/retirada-de-fibrocemento-en-barcelona" class="block px-4 py-2.5 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors text-sm">Retirada de Fibrocemento</a>
+                <a href="/servicios/limpieza-de-terrenos-y-parcelas-en-barcelona" class="block px-4 py-2.5 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors text-sm">Limpieza de Terrenos</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="/productos-sdr" class={`font-medium transition-colors ${currentPath === '/productos-sdr' ? 'text-[#65C132]' : 'text-white hover:text-[#65C132]'}`}>Productos</a>
+          <a href="/contacto" class={`font-medium transition-colors ${currentPath === '/contacto' ? 'text-[#65C132]' : 'text-white hover:text-[#65C132]'}`}>Contacto</a>
+          <a href="/contacto" class="bg-[#65C132] text-white px-5 py-2 rounded-full font-semibold hover:bg-[#45891E] transition-colors text-sm">Solicitar presupuesto</a>
+        </div>
+        
+        <!-- Mobile Hamburger -->
+        <button id="hamburger" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
+          <span class="block w-6 h-0.5 bg-white transition-transform"></span>
+          <span class="block w-6 h-0.5 bg-white transition-opacity"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform"></span>
+        </button>
+      </nav>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="lg:hidden hidden bg-[#36611C] border-t border-[#45891E]">
+        <div class="container-site py-4 flex flex-col space-y-3">
+          <a href="/" class="text-white hover:text-[#65C132] transition-colors font-medium">Inicio</a>
+          <a href="/empresa-de-gestion-de-residuos" class="text-white hover:text-[#65C132] transition-colors font-medium">Quiénes somos</a>
+          <a href="/servicios-de-gestion-ambiental" class="text-white hover:text-[#65C132] transition-colors font-medium">Servicios</a>
+          <a href="/productos-sdr" class="text-white hover:text-[#65C132] transition-colors font-medium">Productos</a>
+          <a href="/contacto" class="text-white hover:text-[#65C132] transition-colors font-medium">Contacto</a>
+          <a href="/contacto" class="bg-[#65C132] text-white px-5 py-2 rounded-full font-semibold hover:bg-[#45891E] transition-colors text-center text-sm">Solicitar presupuesto</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#192a3d] text-white pt-16 pb-8">
+      <div class="container-site">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+          <!-- Logo & About -->
+          <div>
+            <img 
+              src="https://ecociclo.es/wp-content/uploads/2026/03/Ecociclo-Logo-Horizontal3-scaled.png" 
+              alt="Ecociclo Logo" 
+              class="h-10 w-auto brightness-0 invert mb-4"
+              width="180"
+              height="45"
+            />
+            <p class="text-gray-300 text-sm leading-relaxed">
+              Empresa líder en gestión de residuos en Barcelona. Ofrecemos soluciones integrales para empresas, industrias y locales comerciales.
+            </p>
+          </div>
+          
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-bold mb-4 text-[#65C132]">Enlaces rápidos</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/" class="text-gray-300 hover:text-[#65C132] transition-colors">Inicio</a></li>
+              <li><a href="/empresa-de-gestion-de-residuos" class="text-gray-300 hover:text-[#65C132] transition-colors">Quiénes somos</a></li>
+              <li><a href="/servicios-de-gestion-ambiental" class="text-gray-300 hover:text-[#65C132] transition-colors">Servicios</a></li>
+              <li><a href="/productos-sdr" class="text-gray-300 hover:text-[#65C132] transition-colors">Productos</a></li>
+              <li><a href="/contacto" class="text-gray-300 hover:text-[#65C132] transition-colors">Contacto</a></li>
+              <li><a href="/faqs" class="text-gray-300 hover:text-[#65C132] transition-colors">FAQs</a></li>
+            </ul>
+          </div>
+          
+          <!-- Contact -->
+          <div>
+            <h3 class="text-lg font-bold mb-4 text-[#65C132]">Contacto</h3>
+            <ul class="space-y-3 text-sm text-gray-300">
+              <li class="flex items-start gap-2">
+                <span>📍</span>
+                <span>Barcelona, España</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span>📞</span>
+                <span><a href="tel:+34931234567" class="hover:text-[#65C132] transition-colors">+34 93 123 45 67</a></span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span>✉️</span>
+                <span><a href="mailto:info@ecociclo.es" class="hover:text-[#65C132] transition-colors">info@ecociclo.es</a></span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span>🕐</span>
+                <span>Lun-Vie: 09:00 - 18:00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+          <p>&copy; 2026 Ecociclo. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+      document.getElementById('hamburger')?.addEventListener('click', () => {
+        document.getElementById('mobile-menu')?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

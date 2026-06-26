@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  { icon: '🏭', title: 'Vaciado de naves', desc: 'Vaciado de naves industriales, pisos y locales en Barcelona. Servicio rápido y profesional para liberar cualquier espacio.', href: '/servicios/vaciado-de-naves-industriales-pisos-y-locales-en-barcelona' },
+  { icon: '🏠', title: 'Limpieza de Diógenes', desc: 'Limpieza de Diógenes en Barcelona. Tratamiento especializado con máxima discreción y sensibilidad.', href: '/servicios/limpieza-de-diogenes-en-barcelona' },
+  { icon: '🔄', title: 'Trasvases y acondicionamiento', desc: 'Trasvases y acondicionamiento de residuos peligrosos. Manipulación segura con personal cualificado.', href: '/servicios/acondicionamiento-de-residuos-peligrosos-en-barcelona' },
+  { icon: '🗑️', title: 'Residuos Banales', desc: 'Gestión de residuos banales en Barcelona. Recogida, transporte y tratamiento eficiente.', href: '/servicios/gestion-de-residuos-banales-en-barcelona' },
+  { icon: '⚠️', title: 'Residuos Especiales Sólidos', desc: 'Transporte de residuos especiales sólidos con todas las garantías de seguridad y normativa.', href: '/servicios/transporte-de-residuos-especiales-solidos-en-barcelona' },
+  { icon: '🧪', title: 'Residuos Especiales Líquidos', desc: 'Transporte de residuos especiales líquidos. Gestión integral conforme a la normativa ADR.', href: '/servicios/transporte-de-residuos-especiales-liquidos-en-barcelona' },
+  { icon: '🧱', title: 'Retirada de Fibrocemento', desc: 'Retirada de fibrocemento en Barcelona. Desamiantado profesional y seguro con todas las autorizaciones.', href: '/servicios/retirada-de-fibrocemento-en-barcelona' },
+  { icon: '🌿', title: 'Limpieza de Terrenos', desc: 'Limpieza de terrenos y parcelas. Desbroce, limpieza y acondicionamiento de espacios exteriores.', href: '/servicios/limpieza-de-terrenos-y-parcelas-en-barcelona' },
+];
+---
+
+<Layout 
+  title="Servicios de Gestión Ambiental"
+  description="Servicios de Gestión Ambiental en Barcelona: vaciado de naves, limpieza de Diógenes, retirada de fibrocemento, residuos banales y especiales. Presupuesto sin compromiso."
+  canonical="https://ecociclo-niu.netlify.app/servicios-de-gestion-ambiental"
+>
+
+<!-- Hero -->
+<section class="bg-gradient-to-br from-[#36611C] to-[#00312D] text-white py-20">
+  <div class="container-site text-center">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Servicios de Gestión Ambiental en Barcelona</h1>
+    <p class="text-lg text-gray-200 max-w-3xl mx-auto">Ofrecemos soluciones integrales de gestión de residuos para empresas, industrias y particulares. Todos nuestros servicios cumplen con la normativa vigente y están realizados por profesionales cualificados.</p>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section class="py-20 bg-white">
+  <div class="container-site">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {services.map((service) => (
+        <a href={service.href} class="group bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-lg hover:border-[#65C132] transition-all duration-300 flex flex-col items-center text-center">
+          <span class="text-5xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</span>
+          <h3 class="font-bold text-[#192a3d] mb-3 group-hover:text-[#36611C] transition-colors">{service.title}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed flex-1">{service.desc}</p>
+          <span class="mt-4 text-[#65C132] font-semibold text-sm group-hover:underline">Más información →</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-16 bg-[#EAFDE7]">
+  <div class="container-site text-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-[#192a3d] mb-4">¿No encuentras lo que buscas?</h2>
+    <p class="text-gray-600 mb-6">Contacta con nosotros y te asesoraremos sin compromiso</p>
+    <a href="/contacto" class="inline-block bg-[#65C132] text-white px-8 py-3 rounded-full font-bold hover:bg-[#45891E] transition-colors shadow-lg">Solicitar presupuesto</a>
+  </div>
+</section>
+
+</Layout>
