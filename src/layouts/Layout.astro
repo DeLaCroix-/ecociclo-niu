@@ -91,7 +91,8 @@ const navItems = [
         <div class="container-site header-main-grid">
           <!-- Logo -->
           <a href="/" class="logo-link">
-            <img src="/images/logo.webp" alt="Ecociclo" class="logo-img" width="2560" height="949" />
+            <img src="/images/logo-white.webp" alt="Ecociclo" class="logo-img logo-default" width="2560" height="949" />
+            <img src="/images/logo-dark.webp" alt="Ecociclo" class="logo-img logo-sticky" width="2560" height="949" />
           </a>
 
           <!-- Desktop Nav -->
@@ -252,6 +253,10 @@ const navItems = [
     width: auto;
     display: block;
   }
+  /* Logo swap: white on hero, dark on scroll */
+  .logo-sticky { display: none; }
+  .scrolled .logo-default { display: none; }
+  .scrolled .logo-sticky { display: block; }
 
   /* Desktop Nav */
   .desktop-nav {
