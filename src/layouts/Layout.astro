@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
 
 export interface Props {
   title: string;
@@ -147,11 +148,7 @@ const navItems = [
       <slot />
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-container">
-        <p style="color:white;text-align:center;padding:40px">Footer — paso 2</p>
-      </div>
-    </footer>
+    <Footer />
 
     <script>
       document.getElementById('mobile-toggle')?.addEventListener('click', () => {

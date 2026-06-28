@@ -1,0 +1,334 @@
+---
+// Servicios.astro — EXACT pixel-perfect reproduction of ecociclo.es servicios section
+// Extracted via Playwright from https://ecociclo.es/
+// Greenshift row gspb_row-id-gsbp-b0a856b, y=1461, h=908
+// 8 service cards in 4-column grid
+
+const services = [
+  {
+    title: 'VACIADOS Y LIMPIEZA',
+    desc: 'Vaciado de naves industriales, pisos, trasteros, locales y oficina.',
+    href: '/servicios/vaciado-de-naves-industriales-pisos-y-locales-en-barcelona',
+  },
+  {
+    title: 'GESTIÓN DE RESIDUOS BANALES',
+    desc: 'Contenedores para la gestión de residuos industriales',
+    href: '/servicios/gestion-de-residuos-banales-en-barcelona',
+  },
+  {
+    title: 'RESIDUOS ESPECIALES LÍQUIDOS',
+    desc: 'Gestión y transporte de residuos especiales líquidos',
+    href: '/servicios/transporte-de-residuos-especiales-liquidos-en-barcelona',
+  },
+  {
+    title: 'RESIDUOS ESPECIALES SÓLIDOS',
+    desc: 'Gestión y transporte de residuos especiales sólidos con todas las garantías de seguridad.',
+    href: '/servicios/transporte-de-residuos-especiales-solidos-en-barcelona',
+  },
+  {
+    title: 'RETIRADA DE FIBROCEMENTO',
+    desc: 'Servicio profesional de retirada de fibrocemento y uralita en Barcelona',
+    href: '/servicios/retirada-de-fibrocemento-en-barcelona',
+  },
+  {
+    title: 'LIMPIEZA DE TERRENOS',
+    desc: 'Servicio de limpieza y desbroce de terrenos y parcelas',
+    href: '/servicios/limpieza-de-terrenos-y-parcelas-en-barcelona',
+  },
+  {
+    title: 'LIMPIEZA DE síndrome de DIÓGENES',
+    desc: 'Limpieza de lugares afectados por el síndrome de Diógenes',
+    href: '/servicios/limpieza-de-diogenes-en-barcelona',
+  },
+  {
+    title: 'trasvases y acondicionamiento',
+    desc: 'Realizamos el trasvase de residuos peligrosos y no peligrosos',
+    href: '/servicios/acondicionamiento-de-residuos-peligrosos-en-barcelona',
+  },
+];
+
+// Split title on whitespace and wrap each line in <strong> — matches original HTML pattern
+function formatTitle(title: string): { line1: string; line2: string } {
+  // Split roughly in half — original uses <br> to split title into two lines
+  const words = title.split(' ');
+  const mid = Math.ceil(words.length / 2);
+  return {
+    line1: words.slice(0, mid).join(' '),
+    line2: words.slice(mid).join(' '),
+  };
+}
+---
+
+<!-- ================================================================
+     SERVICIOS SECTION — Exact reproduction of ecociclo.es
+     Greenshift block gspb_row-id-gsbp-b0a856b
+     Section label: "Soluciones integrales a medida"
+     H2: "¿Qué hacemos en ecociclo?"
+  ================================================================ -->
+<section class="servicios">
+
+  <!-- ===== Section Header ===== -->
+  <div class="servicios__header">
+    <div class="servicios__label-row">
+      <img
+        src="/images/servicios/ECOCICLO.webp"
+        alt=""
+        width="28"
+        height="28"
+        class="servicios__label-icon"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="servicios__label">Soluciones integrales a medida</span>
+    </div>
+    <h2 class="servicios__title">
+      <strong>¿QUÉ HACEMOS</strong><br /><strong>EN ECOCICLO?</strong>
+    </h2>
+  </div>
+
+  <!-- ===== 4-Column Services Grid ===== -->
+  <div class="servicios__grid">
+    {
+      services.map((s) => {
+        const { line1, line2 } = formatTitle(s.title);
+        return (
+          <div class="servicio-card">
+            <!-- Icon Box -->
+            <div class="servicio-card__icon-wrap">
+              <div class="servicio-card__icon-box">
+                <img
+                  src="/images/servicios/35.webp"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            <!-- Title -->
+            <h3 class="servicio-card__title">
+              <strong>{line1}</strong><br /><strong>{line2}</strong>
+            </h3>
+
+            <!-- Description -->
+            <p class="servicio-card__desc">{s.desc}</p>
+
+            <!-- Button -->
+            <div class="servicio-card__btn-wrap">
+              <a href={s.href} class="servicio-card__btn">Ver Servicio</a>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+
+</section>
+
+<style>
+  /* ================================================================
+     SERVICIOS SECTION STYLES
+     Exact computed CSS from ecociclo.es
+  ================================================================ */
+
+  /* ---- Section ---- */
+  .servicios {
+    position: relative;
+    padding: 15px 20px 20px;
+    box-sizing: border-box;
+  }
+
+  /* ---- Header ---- */
+  .servicios__header {
+    margin-bottom: 30px;
+  }
+
+  /* Label row: icon + text */
+  .servicios__label-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .servicios__label-icon {
+    width: 28px;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  .servicios__label {
+    color: #65C132;                          /* --palette-color-3 */
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  /* H2 title */
+  .servicios__title {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.5;                         /* 52.5px / 35px */
+    color: #00312D;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .servicios__title strong {
+    font-weight: 700;
+  }
+
+  /* ---- 4-Column Grid ---- */
+  .servicios__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  /* ---- Service Card ---- */
+  .servicio-card {
+    background-color: #00312D;                /* dark green */
+    border-radius: 15px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+  }
+
+  /* Hover: card background changes to light green, text to dark green */
+  .servicio-card:hover {
+    background-color: #EAFDE7;
+  }
+
+  .servicio-card:hover .servicio-card__title,
+  .servicio-card:hover .servicio-card__title strong,
+  .servicio-card:hover .servicio-card__desc {
+    color: #00312D !important;
+    fill: #00312D !important;
+  }
+
+  /* ---- Icon Box ---- */
+  .servicio-card__icon-wrap {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+
+  .servicio-card__icon-box {
+    display: inline-flex;
+    background-color: #65C132;               /* green */
+    border-radius: 10px;
+    padding: 20px;
+    border: 0 solid #65C132;
+  }
+
+  .servicio-card__icon-box img {
+    height: 40px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    display: block;
+    margin: 0 !important;
+  }
+
+  /* ---- Title (H3) ---- */
+  .servicio-card__title {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.2;
+    color: #ffffff;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    transition: color 0.2s ease;
+  }
+
+  .servicio-card__title strong {
+    font-weight: 700;
+    color: inherit;
+  }
+
+  /* ---- Description ---- */
+  .servicio-card__desc {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #ffffff;
+    margin: 0;
+    padding-bottom: 15px;
+    flex: 1 0 auto;
+    transition: color 0.2s ease;
+  }
+
+  /* ---- Button ---- */
+  .servicio-card__btn-wrap {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .servicio-card__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #45891E;
+    color: #ffffff;
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.6;                         /* 24px / 15px */
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 0 none;
+    transition: background-color 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+                color 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+
+  .servicio-card__btn:hover {
+    background-color: #65C132;
+    color: #00312D;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 999.98px) {
+    .servicios__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 689.98px) {
+    .servicios {
+      padding: 15px 20px 20px;
+    }
+
+    .servicios__label {
+      font-size: 14px;
+    }
+
+    .servicios__title {
+      font-size: 28px;
+    }
+
+    .servicios__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .servicio-card {
+      padding: 30px;
+    }
+  }
+</style>
