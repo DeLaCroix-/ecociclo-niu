@@ -68,6 +68,9 @@ const ecoCicloIconSvg = `<svg width="28" height="28" viewBox="0 0 120 120" xmlns
      Schema.org Question/Answer microdata on every item
   ================================================================ -->
 <section class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+  <!-- Background overlay: industrial/truck image at very low opacity -->
+  <div class="faq-bg-overlay"></div>
+
   <div class="faq-container">
     <!-- Section Label -->
     <div class="faq-label-row">
@@ -163,7 +166,24 @@ const ecoCicloIconSvg = `<svg width="28" height="28" viewBox="0 0 120 120" xmlns
   .faq-section {
     padding: 70px 0;
     position: relative;
+    isolation: isolate;
     box-sizing: border-box;
+  }
+
+  /* ---- Background Overlay: industrial/truck image at very low opacity ---- */
+  .faq-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.08;
+    background-image: url('/images/19.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    mix-blend-mode: multiply;
   }
 
   .faq-container {

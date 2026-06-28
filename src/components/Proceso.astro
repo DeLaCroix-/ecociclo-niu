@@ -126,7 +126,7 @@ const steps = [
     overflow: hidden;
   }
 
-  /* Background overlay: decorative image at 0.6 opacity */
+  /* Background overlay: decorative image at 0.6 opacity, multiply for darkness */
   .proceso__left-overlay {
     position: absolute;
     top: 0;
@@ -139,6 +139,7 @@ const steps = [
     background-repeat: no-repeat;
     background-position: 34% 48%;
     background-size: cover;
+    mix-blend-mode: multiply;
   }
 
   /* Label row: icon + text */

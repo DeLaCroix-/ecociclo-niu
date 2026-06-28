@@ -1,0 +1,108 @@
+[
+  {
+    "site": "original",
+    "sections": [
+      {
+        "file": "original-HEADER.png",
+        "label": "HEADER",
+        "y": 0,
+        "h": 160
+      },
+      {
+        "file": "original-M\u00e1s-que-una-limpieza,-una-empresa-de-ges.png",
+        "label": "M\u00e1s que una limpieza, una empresa de gesti\u00f3n ambiental en BA",
+        "y": 792,
+        "h": 614
+      },
+      {
+        "file": "original-\u00bfQu\u00e9-hacemos-en-ecociclo?.png",
+        "label": "\u00bfQu\u00e9 hacemos en ecociclo?",
+        "y": 1531,
+        "h": 174
+      },
+      {
+        "file": "original-Tu-espacio-libre-de-residuos-en-tres-pas.png",
+        "label": "Tu espacio libre de residuos en tres pasos",
+        "y": 2368,
+        "h": 771
+      },
+      {
+        "file": "original-L\u00edderes-en-gesti\u00f3n-de-residuos-en-Barcel.png",
+        "label": "L\u00edderes en gesti\u00f3n de residuos en Barcelona",
+        "y": 3209,
+        "h": 258
+      },
+      {
+        "file": "original-Recupera-tu-espacio-hoy-mismo-en-cualqui.png",
+        "label": "Recupera tu espacio hoy mismo en cualquier punto de barcelon",
+        "y": 4056,
+        "h": 440
+      },
+      {
+        "file": "original-Preguntas-frecuentes-sobre-gesti\u00f3n-de-re.png",
+        "label": "Preguntas frecuentes sobre gesti\u00f3n de residuos en barcelona",
+        "y": 4566,
+        "h": 914
+      },
+      {
+        "file": "original-Confianza-avalada-por-m\u00e1s-de-2.500-servi.png",
+        "label": "Confianza avalada por m\u00e1s de 2.500 servicios",
+        "y": 5480,
+        "h": 334
+      }
+    ]
+  },
+  {
+    "site": "clone",
+    "sections": [
+      {
+        "file": "clone-HEADER.png",
+        "label": "HEADER",
+        "y": 0,
+        "h": 160
+      },
+      {
+        "file": "clone-M\u00e1s-que-una-limpieza,-una-empresa-de-ges.png",
+        "label": "M\u00e1s que una limpieza, una empresa de gesti\u00f3n ambiental en BA",
+        "y": 727,
+        "h": 654
+      },
+      {
+        "file": "clone-\u00bfQU\u00c9-HACEMOSEN-ECOCICLO?.png",
+        "label": "\u00bfQU\u00c9 HACEMOSEN ECOCICLO?",
+        "y": 1381,
+        "h": 782
+      },
+      {
+        "file": "clone-Tu-espacio-libre-de-residuos-en-tres-pas.png",
+        "label": "Tu espacio libre de residuos en tres pasos",
+        "y": 2162,
+        "h": 713
+      },
+      {
+        "file": "clone-L\u00edderes-en-gesti\u00f3n-de-residuos-en-Barcel.png",
+        "label": "L\u00edderes en gesti\u00f3n de residuos en Barcelona",
+        "y": 2876,
+        "h": 761
+      },
+      {
+        "file": "clone-Recupera-tu-espacio-hoy-mismo-en-cualqui.png",
+        "label": "Recupera tu espacio hoy mismo en cualquier punto de barcelon",
+        "y": 3743,
+        "h": 105
+      },
+      {
+        "file": "clone-Preguntas-frecuentes-sobre-gesti\u00f3n-de-re.png",
+        "label": "Preguntas frecuentes sobre gesti\u00f3n de residuos en barcelona",
+        "y": 4114,
+        "h": 938
+      },
+      {
+        "file": "clone-Confianza-avalada-por-m\u00e1s-de-2.500-servi.png",
+        "label": "Confianza avalada por m\u00e1s de 2.500 servicios",
+        "y": 5052,
+        "h": 498
+      }
+    ]
+  }
+]

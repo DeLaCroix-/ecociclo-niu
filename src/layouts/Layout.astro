@@ -114,13 +114,13 @@ const navItems = [
             ))}
           </nav>
 
-          <!-- CTA Button -->
-          <a href="tel:692063213" class="cta-btn">Llámanos</a>
-
           <!-- Search icon -->
           <button class="search-btn" aria-label="Buscar">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </button>
+
+          <!-- CTA Button -->
+          <a href="tel:692063213" class="cta-btn">Llámanos</a>
 
           <!-- Mobile toggle -->
           <button class="mobile-toggle" id="mobile-toggle" aria-label="Menú">
@@ -217,7 +217,7 @@ const navItems = [
     margin: 0;
     font-family: 'SoinSans', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1;
     color: #fff;
     text-align: left;
@@ -236,6 +236,7 @@ const navItems = [
     display: flex;
     align-items: center;
     transition: background 0.2s;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
   .header-main-grid {
     display: flex;
@@ -289,6 +290,9 @@ const navItems = [
   }
 
   /* Dropdown */
+  .dropdown-arrow {
+    margin-left: 4px;
+  }
   .dropdown {
     display: none;
     position: absolute;
@@ -325,7 +329,7 @@ const navItems = [
   .cta-btn {
     display: inline-flex;
     align-items: center;
-    background: #65C132;
+    background: linear-gradient(135deg, #65C132 0%, #45891E 100%);
     color: #f2f5f7;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
@@ -406,7 +410,7 @@ const navItems = [
   .mobile-cta {
     display: inline-block;
     margin-top: 20px;
-    background: #65C132;
+    background: linear-gradient(135deg, #65C132 0%, #45891E 100%);
     color: #fff;
     padding: 12px 24px;
     border-radius: 20px;
@@ -437,7 +441,7 @@ const navItems = [
     background: #00312D;
   }
   .site-header.scrolled .cta-btn {
-    background: #65C132;
+    background: linear-gradient(135deg, #65C132 0%, #45891E 100%);
     color: #fff;
   }
   .header-main {
