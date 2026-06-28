@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import Filosofia from '../components/Filosofia.astro';
 import Servicios from '../components/Servicios.astro';
 import Lideres from '../components/Lideres.astro';
 import Proceso from '../components/Proceso.astro';
@@ -18,37 +19,8 @@ import Testimonios from '../components/Testimonios.astro';
 <!-- ===== HERO (exact reproduction: gspb_row-id-gsbp-87fe861) ===== -->
 <Hero />
 
-<!-- ===== FILOSOFÍA (matches original: y=727, h=734, padding 50px 0 40px) ===== -->
-<section class="filosofia-section">
-  <div class="container-site">
-    <span class="section-label">Nuestra Filosofía</span>
-    <h2>Más que una limpieza, una empresa de gestión ambiental en BARCELONA</h2>
-    
-    <div class="filosofia-grid">
-      <div class="filosofia-card">
-        <img src="/images/hero-overlay.webp" alt="" class="filosofia-icon" width="60" height="60" />
-        <div>
-          <p class="filosofia-pill">Residuo Cero</p>
-          <p class="filosofia-desc">Trabajamos para minimizar el impacto ambiental, asegurando que cada residuo reciba el tratamiento adecuado.</p>
-        </div>
-      </div>
-      <div class="filosofia-card">
-        <img src="/images/hero-overlay.webp" alt="" class="filosofia-icon" width="60" height="60" />
-        <div>
-          <p class="filosofia-pill">Garantía Legal Certificada</p>
-          <p class="filosofia-desc">Toda la documentación legal necesaria para que cumplas con la normativa vigente.</p>
-        </div>
-      </div>
-      <div class="filosofia-card">
-        <img src="/images/hero-overlay.webp" alt="" class="filosofia-icon" width="60" height="60" />
-        <div>
-          <p class="filosofia-pill">Acción en 24/48h</p>
-          <p class="filosofia-desc">Respuesta inmediata. Nos adaptamos a tu urgencia para liberar tu espacio cuanto antes.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ===== FILOSOFÍA (exact reproduction: gspb_row-id-gsbp-d281619, y=727, h=734) ===== -->
+<Filosofia />
 
 <!-- ===== SERVICIOS (exact reproduction: gspb_row-id-gsbp-b0a856b) ===== -->
 <Servicios />
@@ -71,70 +43,4 @@ import Testimonios from '../components/Testimonios.astro';
 </Layout>
 
 <style>
-  /* ===== FILOSOFÍA ===== */
-  .filosofia-section {
-    padding: 50px 0 40px;
-  }
-
-  .section-label {
-    display: inline-block;
-    color: #65C132;
-    font-family: 'SoinSans', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-  }
-
-  .filosofia-section h2 {
-    font-size: 35px;
-    color: #192a3d;
-    margin-bottom: 40px;
-    max-width: 800px;
-  }
-
-  .filosofia-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-
-  .filosofia-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 20px;
-    border-radius: 12px;
-    background: #f8faf9;
-  }
-
-  .filosofia-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
-
-  .filosofia-pill {
-    font-family: 'SoinSans', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    color: #00312D;
-    margin-bottom: 6px;
-  }
-
-  .filosofia-desc {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.5;
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 900px) {
-    .filosofia-grid { grid-template-columns: 1fr; }
-    
-    .filosofia-section h2 { font-size: 26px; }
-  }
 </style>
