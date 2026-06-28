@@ -2,9 +2,35 @@
 // Líderes section — exact reproduction from ecociclo.es #gspb_row-id-gsbp-022f526
 // Top: 3139px, Height: 847px
 // 3 value cards (left) + center image + 3 stats (right)
+// Desktop-only: hidden at ≤689.98px
+// Two floating decorative leaves with rotateZ animations
+// AOS-like fade/zoom animations via IntersectionObserver
 ---
 
-<section class="lideres-section">
+<section class="lideres-section" id="lideres">
+
+  <!-- ===== FLOATING DECORATIVE LEAVES ===== -->
+  <div class="lideres-leaf lideres-leaf--left" data-aos="fade-down-right" data-aos-easing="ease" data-aos-duration="800">
+    <img
+      src="https://ecociclo.es/wp-content/uploads/2026/03/ECOCICLO-_1_.webp"
+      alt=""
+      width="610"
+      height="150"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <div class="lideres-leaf lideres-leaf--right" data-aos="fade-up-left" data-aos-easing="ease" data-aos-duration="800">
+    <img
+      src="https://ecociclo.es/wp-content/uploads/2026/03/ECOCICLO-_1_.webp"
+      alt=""
+      width="610"
+      height="150"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
   <div class="container-site">
 
     <!-- ===== HEADER (centered, col-6 layout) ===== -->
@@ -17,8 +43,16 @@
           width="28"
           height="28"
           loading="lazy"
+          data-aos="zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-duration="800"
         />
-        <span class="lideres-header__label">Experiencia Comprobada</span>
+        <span
+          class="lideres-header__label"
+          data-aos="fade-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="800"
+        >Experiencia Comprobada</span>
       </div>
       <h2>Líderes en gestión de residuos en Barcelona</h2>
       <p class="lideres-header__desc">
@@ -32,34 +66,39 @@
     <div class="lideres-main">
       <!-- Left: 3 value cards -->
       <div class="lideres-cards">
+        <!-- Card 1 -->
         <div class="lideres-card">
           <div class="lideres-card__text">
-            <h3>Experiencia Real</h3>
-            <p>Llevamos más de una década ayudando a empresas a vaciar, limpiar y gestionar residuos de forma profesional y organizada.</p>
+            <h3 data-aos="fade-right" data-aos-easing="ease" data-aos-duration="800">Experiencia Real</h3>
+            <p data-aos="fade-right" data-aos-delay="100" data-aos-easing="ease" data-aos-duration="800">Llevamos más de una década ayudando a empresas a vaciar, limpiar y gestionar residuos de forma profesional y organizada.</p>
           </div>
-          <div class="lideres-card__icon">
+          <div class="lideres-card__icon" data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="800">
             <svg width="72" height="72" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path fill="#565D66" d="M1000 16h-55.422c-13.478 0-24.314 11.096-23.994 24.572l4.694 197.15c-88.854-133.636-240.766-221.722-413.278-221.722-242.374 0-444.134 173.848-487.408 403.648-2.776 14.738 8.616 28.352 23.614 28.352h57.152c11.348 0 21.084-7.964 23.474-19.058 38.050-176.686 195.002-308.942 383.168-308.942 159.090 0 295.884 94.564 357.352 230.604l-252.78-6.018c-13.474-0.32-24.572 10.514-24.572 23.994v55.42c0 13.254 10.746 24 24 24h384c13.254 0 24-10.746 24-24v-384c0-13.254-10.746-24-24-24zM975.794 576h-57.152c-11.348 0-21.084 7.964-23.474 19.058-38.050 176.686-195.002 308.942-383.168 308.942-159.092 0-295.884-94.564-357.352-230.604l252.78 6.018c13.474 0.32 24.572-10.514 24.572-23.994v-55.42c0-13.254-10.746-24-24-24h-384c-13.254 0-24 10.746-24 24v384c0 13.254 10.746 24 24 24h55.422c13.478 0 24.314-11.096 23.994-24.572l-4.694-197.15c88.854 133.636 240.766 221.722 413.278 221.722 242.374 0 444.134-173.848 487.408-403.648 2.776-14.738-8.616-28.352-23.614-28.352z"></path>
             </svg>
           </div>
         </div>
+
+        <!-- Card 2 -->
         <div class="lideres-card">
           <div class="lideres-card__text">
-            <h3>Capacidad Logística</h3>
-            <p>Podemos actuar en servicios puntuales, urgentes o planificados en naves, oficinas, locales, terrenos y espacios industriales.</p>
+            <h3 data-aos="fade-right" data-aos-delay="200" data-aos-easing="ease" data-aos-duration="800">Capacidad Logística</h3>
+            <p data-aos="fade-right" data-aos-delay="300" data-aos-easing="ease" data-aos-duration="800">Podemos actuar en servicios puntuales, urgentes o planificados en naves, oficinas, locales, terrenos y espacios industriales.</p>
           </div>
-          <div class="lideres-card__icon">
+          <div class="lideres-card__icon" data-aos="zoom-in" data-aos-delay="100" data-aos-easing="ease-in-out-back" data-aos-duration="800">
             <svg width="72" height="72" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path fill="#565D66" d="M1000 16h-55.422c-13.478 0-24.314 11.096-23.994 24.572l4.694 197.15c-88.854-133.636-240.766-221.722-413.278-221.722-242.374 0-444.134 173.848-487.408 403.648-2.776 14.738 8.616 28.352 23.614 28.352h57.152c11.348 0 21.084-7.964 23.474-19.058 38.050-176.686 195.002-308.942 383.168-308.942 159.090 0 295.884 94.564 357.352 230.604l-252.78-6.018c-13.474-0.32-24.572 10.514-24.572 23.994v55.42c0 13.254 10.746 24 24 24h384c13.254 0 24-10.746 24-24v-384c0-13.254-10.746-24-24-24zM975.794 576h-57.152c-11.348 0-21.084 7.964-23.474 19.058-38.050 176.686-195.002 308.942-383.168 308.942-159.092 0-295.884-94.564-357.352-230.604l252.78 6.018c13.474 0.32 24.572-10.514 24.572-23.994v-55.42c0-13.254-10.746-24-24-24h-384c-13.254 0-24 10.746-24 24v384c0 13.254 10.746 24 24 24h55.422c13.478 0 24.314-11.096 23.994-24.572l-4.694-197.15c88.854 133.636 240.766 221.722 413.278 221.722 242.374 0 444.134-173.848 487.408-403.648 2.776-14.738-8.616-28.352-23.614-28.352z"></path>
             </svg>
           </div>
         </div>
+
+        <!-- Card 3 -->
         <div class="lideres-card">
           <div class="lideres-card__text">
-            <h3>Seguridad Legal</h3>
-            <p>Cada intervención se prepara con criterio profesional para ofrecer orden, tranquilidad y una gestión responsable.</p>
+            <h3 data-aos="fade-right" data-aos-delay="400" data-aos-easing="ease" data-aos-duration="800">Seguridad Legal</h3>
+            <p data-aos="fade-right" data-aos-delay="500" data-aos-easing="ease" data-aos-duration="800">Cada intervención se prepara con criterio profesional para ofrecer orden, tranquilidad y una gestión responsable.</p>
           </div>
-          <div class="lideres-card__icon">
+          <div class="lideres-card__icon" data-aos="zoom-in" data-aos-delay="200" data-aos-easing="ease-in-out-back" data-aos-duration="800">
             <svg width="72" height="72" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path fill="#565D66" d="M1000 16h-55.422c-13.478 0-24.314 11.096-23.994 24.572l4.694 197.15c-88.854-133.636-240.766-221.722-413.278-221.722-242.374 0-444.134 173.848-487.408 403.648-2.776 14.738 8.616 28.352 23.614 28.352h57.152c11.348 0 21.084-7.964 23.474-19.058 38.050-176.686 195.002-308.942 383.168-308.942 159.090 0 295.884 94.564 357.352 230.604l-252.78-6.018c-13.474-0.32-24.572 10.514-24.572 23.994v55.42c0 13.254 10.746 24 24 24h384c13.254 0 24-10.746 24-24v-384c0-13.254-10.746-24-24-24zM975.794 576h-57.152c-11.348 0-21.084 7.964-23.474 19.058-38.050 176.686-195.002 308.942-383.168 308.942-159.092 0-295.884-94.564-357.352-230.604l252.78 6.018c13.474 0.32 24.572-10.514 24.572-23.994v-55.42c0-13.254-10.746-24-24-24h-384c-13.254 0-24 10.746-24 24v384c0 13.254 10.746 24 24 24h55.422c13.478 0 24.314-11.096 23.994-24.572l-4.694-197.15c88.854 133.636 240.766 221.722 413.278 221.722 242.374 0 444.134-173.848 487.408-403.648 2.776-14.738-8.616-28.352-23.614-28.352z"></path>
             </svg>
@@ -75,42 +114,50 @@
           width="377"
           height="377"
           loading="lazy"
+          data-aos="zoom-out"
+          data-aos-easing="ease"
+          data-aos-duration="800"
         />
       </div>
 
       <!-- Right: 3 stats -->
       <div class="lideres-stats">
+        <!-- Stat 1 -->
         <div class="lideres-stat">
-          <div class="lideres-stat__icon">
+          <div class="lideres-stat__icon" data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="800">
             <svg width="72" height="72" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path fill="#565D66" d="M1000 16h-55.422c-13.478 0-24.314 11.096-23.994 24.572l4.694 197.15c-88.854-133.636-240.766-221.722-413.278-221.722-242.374 0-444.134 173.848-487.408 403.648-2.776 14.738 8.616 28.352 23.614 28.352h57.152c11.348 0 21.084-7.964 23.474-19.058 38.050-176.686 195.002-308.942 383.168-308.942 159.090 0 295.884 94.564 357.352 230.604l-252.78-6.018c-13.474-0.32-24.572 10.514-24.572 23.994v55.42c0 13.254 10.746 24 24 24h384c13.254 0 24-10.746 24-24v-384c0-13.254-10.746-24-24-24zM975.794 576h-57.152c-11.348 0-21.084 7.964-23.474 19.058-38.050 176.686-195.002 308.942-383.168 308.942-159.092 0-295.884-94.564-357.352-230.604l252.78 6.018c13.474 0.32 24.572-10.514 24.572-23.994v-55.42c0-13.254-10.746-24-24-24h-384c-13.254 0-24 10.746-24 24v384c0 13.254 10.746 24 24 24h55.422c13.478 0 24.314-11.096 23.994-24.572l-4.694-197.15c88.854 133.636 240.766 221.722 413.278 221.722 242.374 0 444.134-173.848 487.408-403.648 2.776-14.738-8.616-28.352-23.614-28.352z"></path>
             </svg>
           </div>
           <div class="lideres-stat__text">
-            <h3>Más de 2.500 servicios realizados</h3>
-            <p>Nuestra experiencia práctica nos permite adaptarnos a distintos tipos de clientes, residuos y espacios</p>
+            <h3 data-aos="fade-left" data-aos-easing="ease" data-aos-duration="800"><strong>Más de 2.500 servicios realizados</strong></h3>
+            <p data-aos="fade-left" data-aos-delay="100" data-aos-easing="ease" data-aos-duration="800">Nuestra experiencia práctica nos permite adaptarnos a distintos tipos de clientes, residuos y espacios</p>
           </div>
         </div>
+
+        <!-- Stat 2 -->
         <div class="lideres-stat">
-          <div class="lideres-stat__icon">
+          <div class="lideres-stat__icon" data-aos="zoom-in" data-aos-delay="100" data-aos-easing="ease-in-out-back" data-aos-duration="800">
             <svg width="72" height="72" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path fill="#565D66" d="M1000 16h-55.422c-13.478 0-24.314 11.096-23.994 24.572l4.694 197.15c-88.854-133.636-240.766-221.722-413.278-221.722-242.374 0-444.134 173.848-487.408 403.648-2.776 14.738 8.616 28.352 23.614 28.352h57.152c11.348 0 21.084-7.964 23.474-19.058 38.050-176.686 195.002-308.942 383.168-308.942 159.090 0 295.884 94.564 357.352 230.604l-252.78-6.018c-13.474-0.32-24.572 10.514-24.572 23.994v55.42c0 13.254 10.746 24 24 24h384c13.254 0 24-10.746 24-24v-384c0-13.254-10.746-24-24-24zM975.794 576h-57.152c-11.348 0-21.084 7.964-23.474 19.058-38.050 176.686-195.002 308.942-383.168 308.942-159.092 0-295.884-94.564-357.352-230.604l252.78 6.018c13.474 0.32 24.572-10.514 24.572-23.994v-55.42c0-13.254-10.746-24-24-24h-384c-13.254 0-24 10.746-24 24v384c0 13.254 10.746 24 24 24h55.422c13.478 0 24.314-11.096 23.994-24.572l-4.694-197.15c88.854 133.636 240.766 221.722 413.278 221.722 242.374 0 444.134-173.848 487.408-403.648 2.776-14.738-8.616-28.352-23.614-28.352z"></path>
             </svg>
           </div>
           <div class="lideres-stat__text">
-            <h3>Respuesta rápida en Cataluña</h3>
-            <p>Priorizamos la agilidad para que las empresas recuperen operatividad y espacio útil lo antes posible.</p>
+            <h3 data-aos="fade-left" data-aos-delay="200" data-aos-easing="ease" data-aos-duration="800"><strong>Respuesta rápida en Cataluña</strong></h3>
+            <p data-aos="fade-left" data-aos-delay="300" data-aos-easing="ease" data-aos-duration="800">Priorizamos la agilidad para que las empresas recuperen operatividad y espacio útil lo antes posible.</p>
           </div>
         </div>
+
+        <!-- Stat 3 -->
         <div class="lideres-stat">
-          <div class="lideres-stat__icon">
+          <div class="lideres-stat__icon" data-aos="zoom-in" data-aos-delay="200" data-aos-easing="ease-in-out-back" data-aos-duration="800">
             <svg width="72" height="72" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path fill="#565D66" d="M1000 16h-55.422c-13.478 0-24.314 11.096-23.994 24.572l4.694 197.15c-88.854-133.636-240.766-221.722-413.278-221.722-242.374 0-444.134 173.848-487.408 403.648-2.776 14.738 8.616 28.352 23.614 28.352h57.152c11.348 0 21.084-7.964 23.474-19.058 38.050-176.686 195.002-308.942 383.168-308.942 159.090 0 295.884 94.564 357.352 230.604l-252.78-6.018c-13.474-0.32-24.572 10.514-24.572 23.994v55.42c0 13.254 10.746 24 24 24h384c13.254 0 24-10.746 24-24v-384c0-13.254-10.746-24-24-24zM975.794 576h-57.152c-11.348 0-21.084 7.964-23.474 19.058-38.050 176.686-195.002 308.942-383.168 308.942-159.092 0-295.884-94.564-357.352-230.604l252.78 6.018c13.474 0.32 24.572-10.514 24.572-23.994v-55.42c0-13.254-10.746-24-24-24h-384c-13.254 0-24 10.746-24 24v384c0 13.254 10.746 24 24 24h55.422c13.478 0 24.314-11.096 23.994-24.572l-4.694-197.15c88.854 133.636 240.766 221.722 413.278 221.722 242.374 0 444.134-173.848 487.408-403.648 2.776-14.738-8.616-28.352-23.614-28.352z"></path>
             </svg>
           </div>
           <div class="lideres-stat__text">
-            <h3>Compromiso ambiental</h3>
-            <p>Apostamos por una gestión responsable de los residuos y por una forma de trabajar eficaz, seria y sostenible.</p>
+            <h3 data-aos="fade-left" data-aos-delay="400" data-aos-easing="ease" data-aos-duration="800"><strong>Compromiso ambiental</strong></h3>
+            <p data-aos="fade-left" data-aos-delay="500" data-aos-easing="ease" data-aos-duration="800">Apostamos por una gestión responsable de los residuos y por una forma de trabajar eficaz, seria y sostenible.</p>
           </div>
         </div>
       </div>
@@ -122,8 +169,163 @@
 <style>
   /* ===== LÍDERES SECTION (exact: #gspb_row-id-gsbp-022f526, top:3139, h:847) ===== */
   .lideres-section {
+    position: relative;
+    overflow: hidden;
     padding-top: 70px;
     padding-bottom: 70px;
+  }
+
+  /* ===== DESKTOP-ONLY: hidden on mobile ===== */
+  @media (max-width: 689.98px) {
+    .lideres-section {
+      display: none !important;
+    }
+  }
+
+  /* ===== FLOATING DECORATIVE LEAVES ===== */
+  .lideres-leaf {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .lideres-leaf img {
+    display: block;
+    height: 150px;
+    width: auto;
+  }
+
+  /* Leaf 1 — top:155px, left:50px, rotateZ(98deg) */
+  .lideres-leaf--left {
+    top: 155px;
+    left: 50px;
+  }
+
+  .lideres-leaf--left img {
+    transform: rotateZ(98deg);
+    transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  /* Leaf 2 — top:160px, right:0, rotateZ(50deg), transform-origin: top right */
+  .lideres-leaf--right {
+    top: 160px;
+    right: 0;
+  }
+
+  .lideres-leaf--right img {
+    transform: rotateZ(50deg);
+    transform-origin: top right;
+    transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  /* ===== AOS ANIMATIONS (via IntersectionObserver) ===== */
+  /* Hidden state — elements with [data-aos] start hidden */
+  [data-aos] {
+    transition-duration: 0.8s;
+    transition-property: opacity, transform, filter;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  /* Fade-right: slide from left */
+  [data-aos="fade-right"] {
+    opacity: 0;
+    transform: translate3d(calc(max(50px, 15%) * -1), 0, 0);
+  }
+  [data-aos="fade-right"].aos-animate {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+
+  /* Fade-left: slide from right */
+  [data-aos="fade-left"] {
+    opacity: 0;
+    transform: translate3d(calc(max(50px, 15%)), 0, 0);
+  }
+  [data-aos="fade-left"].aos-animate {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+
+  /* Fade-down-right: slide from top-left */
+  [data-aos="fade-down-right"] {
+    opacity: 0;
+    transform: translate3d(calc(max(50px, 15%) * -1), calc(max(50px, 15%) * -1), 0);
+  }
+  [data-aos="fade-down-right"].aos-animate {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+  /* Leaf left keeps its rotation when animated */
+  .lideres-leaf--left[data-aos="fade-down-right"] {
+    transform: translate3d(calc(max(50px, 15%) * -1), calc(max(50px, 15%) * -1), 0);
+  }
+  .lideres-leaf--left[data-aos="fade-down-right"].aos-animate {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+
+  /* Fade-up-left: slide from bottom-right */
+  [data-aos="fade-up-left"] {
+    opacity: 0;
+    transform: translate3d(calc(max(50px, 15%)), calc(max(50px, 15%)), 0);
+  }
+  [data-aos="fade-up-left"].aos-animate {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+  .lideres-leaf--right[data-aos="fade-up-left"] {
+    transform: translate3d(calc(max(50px, 15%)), calc(max(50px, 15%)), 0);
+  }
+  .lideres-leaf--right[data-aos="fade-up-left"].aos-animate {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+
+  /* Zoom-in: scale from 0.6 */
+  [data-aos="zoom-in"] {
+    opacity: 0;
+    transform: scale(0.6);
+    transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  }
+  [data-aos="zoom-in"].aos-animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Zoom-out: scale from 1.2 */
+  [data-aos="zoom-out"] {
+    opacity: 0;
+    transform: scale(1.2);
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  }
+  [data-aos="zoom-out"].aos-animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Easing overrides via data-aos-easing */
+  [data-aos-easing="ease"] {
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  }
+  [data-aos-easing="ease-out-cubic"] {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  [data-aos-easing="ease-in-back"] {
+    transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  }
+  [data-aos-easing="ease-in-out-back"] {
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Duration override */
+  [data-aos-duration="800"] {
+    transition-duration: 0.8s;
+  }
+
+  /* Icon box wrapper uses its own inline-flex display and zoom-in */
+  .lideres-card__icon,
+  .lideres-stat__icon {
+    /* These host the zoom-in animation */
   }
 
   /* ===== HEADER ===== */
@@ -304,7 +506,7 @@
     font-family: 'SoinSans', sans-serif;
   }
 
-  /* ===== RESPONSIVE ===== */
+  /* ===== RESPONSIVE (tablet only — section is hidden on mobile) ===== */
   @media (max-width: 999px) {
     .lideres-main {
       flex-direction: column;
@@ -328,39 +530,44 @@
       max-width: 250px;
     }
   }
-
-  @media (max-width: 690px) {
-    .lideres-section {
-      padding-top: 70px;
-      padding-bottom: 40px;
-    }
-
-    .lideres-header__label {
-      font-size: 14px;
-    }
-
-    .lideres-header h2 {
-      font-size: 22px;
-    }
-
-    .lideres-header__desc {
-      font-size: 16px;
-    }
-
-    .lideres-card__text h3,
-    .lideres-stat__text h3 {
-      font-size: 18px;
-    }
-
-    .lideres-card__text p,
-    .lideres-stat__text p {
-      font-size: 16px;
-    }
-
-    .lideres-card__icon svg,
-    .lideres-stat__icon svg {
-      width: 56px;
-      height: 56px;
-    }
-  }
 </style>
+
+<!-- ===== AOS-LIKE INTERSECTION OBSERVER ===== -->
+<script>
+  function initAOS() {
+    const elements = document.querySelectorAll('[data-aos]');
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const delay = parseInt(el.getAttribute('data-aos-delay') || '0', 10);
+            if (delay > 0) {
+              setTimeout(() => {
+                el.classList.add('aos-animate');
+              }, delay);
+            } else {
+              el.classList.add('aos-animate');
+            }
+            observer.unobserve(el);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  }
+
+  // Run on load + after DOM is ready (works for Astro static output)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAOS);
+  } else {
+    initAOS();
+  }
+</script>

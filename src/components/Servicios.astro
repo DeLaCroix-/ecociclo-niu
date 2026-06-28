@@ -1,8 +1,12 @@
 ---
-// Servicios.astro — EXACT pixel-perfect reproduction of ecociclo.es servicios section
-// Extracted via Playwright from https://ecociclo.es/
-// Greenshift row gspb_row-id-gsbp-b0a856b, y=1461, h=908
-// 8 service cards in 4-column grid
+// Servicios.astro — SwiperJS carousel matching ecociclo.es original
+// Greenshift block gspb_row-id-gsbp-b0a856b
+// Background overlay: 19.webp at 0.18 opacity
+// 3 slides visible desktop, 1 mobile, 8 service cards
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const services = [
   {
@@ -47,9 +51,7 @@ const services = [
   },
 ];
 
-// Split title on whitespace and wrap each line in <strong> — matches original HTML pattern
 function formatTitle(title: string): { line1: string; line2: string } {
-  // Split roughly in half — original uses <br> to split title into two lines
   const words = title.split(' ');
   const mid = Math.ceil(words.length / 2);
   return {
@@ -60,100 +62,217 @@ function formatTitle(title: string): { line1: string; line2: string } {
 ---
 
 <!-- ================================================================
-     SERVICIOS SECTION — Exact reproduction of ecociclo.es
+     SERVICIOS SECTION — SwiperJS carousel matching ecociclo.es
      Greenshift block gspb_row-id-gsbp-b0a856b
-     Section label: "Soluciones integrales a medida"
-     H2: "¿Qué hacemos en ecociclo?"
+     Background overlay 19.webp at 0.18 opacity
   ================================================================ -->
-<section class="servicios">
+<section class="servicios-section">
 
-  <!-- ===== Section Header ===== -->
-  <div class="servicios__header">
-    <div class="servicios__label-row">
-      <img
-        src="/images/servicios/ECOCICLO.webp"
-        alt=""
-        width="28"
-        height="28"
-        class="servicios__label-icon"
-        loading="lazy"
-        decoding="async"
-      />
-      <span class="servicios__label">Soluciones integrales a medida</span>
+  <!-- Background overlay: 19.webp at 0.18 opacity -->
+  <div class="servicios-bg-overlay"></div>
+
+  <div class="servicios-container">
+
+    <!-- ===== Section Header (55% / 45% split) ===== -->
+    <div class="servicios-header">
+      <!-- Left: label + H2 -->
+      <div class="servicios-header__left">
+        <div class="servicios-label-row">
+          <img
+            src="/images/servicios/ECOCICLO.webp"
+            alt=""
+            width="28"
+            height="28"
+            class="servicios-label-icon"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="servicios-label">Soluciones integrales a medida</span>
+        </div>
+        <h2 class="servicios-title">
+          <strong>¿QUÉ HACEMOS</strong><br /><strong>EN ECOCICLO?</strong>
+        </h2>
+      </div>
+
+      <!-- Right: description -->
+      <div class="servicios-header__right">
+        <p class="servicios-header-desc">
+          Nos encargamos del <strong>vaciado de naves industriales, locales y oficinas</strong>, asegurando una gestión de residuos responsable y eficiente.
+        </p>
+      </div>
     </div>
-    <h2 class="servicios__title">
-      <strong>¿QUÉ HACEMOS</strong><br /><strong>EN ECOCICLO?</strong>
-    </h2>
-  </div>
 
-  <!-- ===== 4-Column Services Grid ===== -->
-  <div class="servicios__grid">
-    {
-      services.map((s) => {
-        const { line1, line2 } = formatTitle(s.title);
-        return (
-          <div class="servicio-card">
-            <!-- Icon Box -->
-            <div class="servicio-card__icon-wrap">
-              <div class="servicio-card__icon-box">
-                <img
-                  src="/images/servicios/35.webp"
-                  alt=""
-                  width="40"
-                  height="40"
-                  loading="lazy"
-                  decoding="async"
-                />
+    <!-- ===== Swiper Carousel ===== -->
+    <div class="swiper servicios-swiper">
+      <div class="swiper-wrapper">
+        {
+          services.map((s) => {
+            const { line1, line2 } = formatTitle(s.title);
+            return (
+              <div class="swiper-slide">
+                <div class="servicio-card">
+                  <!-- Icon box -->
+                  <div class="servicio-card__icon-wrap">
+                    <div class="servicio-card__icon-box">
+                      <img
+                        src="/images/servicios/35.webp"
+                        alt=""
+                        width="40"
+                        height="40"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Title -->
+                  <h3 class="servicio-card__title">
+                    <strong>{line1}</strong><br /><strong>{line2}</strong>
+                  </h3>
+
+                  <!-- Description -->
+                  <p class="servicio-card__desc">{s.desc}</p>
+
+                  <!-- Button -->
+                  <div class="servicio-card__btn-wrap">
+                    <a href={s.href} class="servicio-card__btn">Ver Servicio</a>
+                  </div>
+                </div>
               </div>
-            </div>
+            );
+          })
+        }
+      </div>
 
-            <!-- Title -->
-            <h3 class="servicio-card__title">
-              <strong>{line1}</strong><br /><strong>{line2}</strong>
-            </h3>
+      <!-- Navigation -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
 
-            <!-- Description -->
-            <p class="servicio-card__desc">{s.desc}</p>
+    <!-- ===== "Ver todos los servicios" CTA ===== -->
+    <div class="servicios-cta">
+      <a href="/servicios-de-gestion-ambiental" class="servicios-cta__btn">
+        <strong>Ver todos los servicios</strong>
+      </a>
+    </div>
 
-            <!-- Button -->
-            <div class="servicio-card__btn-wrap">
-              <a href={s.href} class="servicio-card__btn">Ver Servicio</a>
-            </div>
-          </div>
-        );
-      })
-    }
   </div>
-
 </section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Mousewheel } from 'swiper/modules';
+
+  new Swiper('.servicios-swiper', {
+    modules: [Navigation, Pagination, Mousewheel],
+    slidesPerView: 3,
+    slidesPerGroup: 1,
+    spaceBetween: 10,
+    speed: 400,
+    loop: false,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      nextEl: '.servicios-swiper .swiper-button-next',
+      prevEl: '.servicios-swiper .swiper-button-prev',
+    },
+    pagination: {
+      el: '.servicios-swiper .swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      690: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      1000: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+    },
+  });
+</script>
 
 <style>
   /* ================================================================
      SERVICIOS SECTION STYLES
-     Exact computed CSS from ecociclo.es
+     Matching ecociclo.es Greenshift row gspb_row-id-gsbp-b0a856b
   ================================================================ */
 
-  /* ---- Section ---- */
-  .servicios {
+  /* ---- Section Wrapper ---- */
+  .servicios-section {
     position: relative;
-    padding: 15px 20px 20px;
+    isolation: isolate;
+    padding: 15px min(3vw, 20px);
     box-sizing: border-box;
   }
 
-  /* ---- Header ---- */
-  .servicios__header {
-    margin-bottom: 30px;
+  /* ---- Background Overlay: 19.webp at 0.18 opacity ---- */
+  .servicios-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.18;
+    background-image: url('/images/19.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
-  /* Label row: icon + text */
-  .servicios__label-row {
+  /* ---- Inner Container (max-width 1200px) ---- */
+  .servicios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* ================================================================
+     HEADER — 55% / 45% split row
+  ================================================================ */
+  .servicios-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-top: 70px;
+  }
+
+  .servicios-header__left {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding-right: 160px;
+    box-sizing: border-box;
+  }
+
+  .servicios-header__right {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    box-sizing: border-box;
+  }
+
+  /* ---- Label row: icon + text ---- */
+  .servicios-label-row {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 0;
   }
 
-  .servicios__label-icon {
+  .servicios-label-icon {
     width: 28px;
     height: auto;
     display: inline-block;
@@ -162,59 +281,136 @@ function formatTitle(title: string): { line1: string; line2: string } {
     max-width: 100%;
   }
 
-  .servicios__label {
-    color: #65C132;                          /* --palette-color-3 */
+  .servicios-label {
+    color: #65C132;
     font-family: 'SoinSans', sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 1.4;
   }
 
-  /* H2 title */
-  .servicios__title {
+  /* ---- H2 Title ---- */
+  .servicios-title {
     font-family: 'SoinSans', sans-serif;
     font-weight: 700;
     font-size: 35px;
-    line-height: 1.5;                         /* 52.5px / 35px */
+    line-height: 1.5;
     color: #00312D;
     text-transform: uppercase;
     margin: 0;
   }
 
-  .servicios__title strong {
+  .servicios-title strong {
     font-weight: 700;
   }
 
-  /* ---- 4-Column Grid ---- */
-  .servicios__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+  /* ---- Header Description ---- */
+  .servicios-header-desc {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #192a3d;
+    margin: 0;
+    text-align: right;
   }
 
-  /* ---- Service Card ---- */
+  .servicios-header-desc strong {
+    font-weight: 700;
+  }
+
+  /* ================================================================
+     SWIPER CAROUSEL
+  ================================================================ */
+  .servicios-swiper {
+    width: 100%;
+    padding-bottom: 40px; /* space for pagination */
+    overflow: hidden;
+  }
+
+  .servicios-swiper .swiper-slide {
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  /* ---- Navigation Arrows (hidden until hover, matching original) ---- */
+  .servicios-swiper .swiper-button-prev,
+  .servicios-swiper .swiper-button-next {
+    top: 40%;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    visibility: hidden;
+    background-color: rgba(101, 194, 50, 0.34);
+    color: #ffffff;
+    box-shadow: 20px 20px 60px rgba(88, 102, 125, 0.37);
+    border-radius: 50%;
+    transition: visibility 0.2s, opacity 0.2s;
+  }
+
+  .servicios-swiper:hover .swiper-button-prev,
+  .servicios-swiper:hover .swiper-button-next {
+    visibility: visible;
+  }
+
+  .servicios-swiper .swiper-button-prev::after,
+  .servicios-swiper .swiper-button-next::after {
+    font-size: 20px;
+  }
+
+  /* ---- Pagination Bullets ---- */
+  .servicios-swiper .swiper-pagination {
+    bottom: 2px !important;
+    text-align: center !important;
+  }
+
+  .servicios-swiper .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    border-radius: 100px;
+    background-color: #65C132;
+    opacity: 1;
+    transition: width 0.4s ease-out;
+  }
+
+  .servicios-swiper .swiper-pagination-bullet-active {
+    width: 21px;
+    background-color: #45891E;
+  }
+
+  /* ================================================================
+     SERVICE CARDS
+     Dark bg #00312D → hover #EAFDE7
+  ================================================================ */
   .servicio-card {
-    background-color: #00312D;                /* dark green */
+    background-color: #00312D;
+    border: 1px solid #65C132;
     border-radius: 15px;
     padding: 40px;
+    margin: 5px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
     box-sizing: border-box;
-    transition: background-color 0.2s ease;
+    height: 100%;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    position: relative;
   }
 
-  /* Hover: card background changes to light green, text to dark green */
   .servicio-card:hover {
     background-color: #EAFDE7;
+    transform: scale(1.01);
   }
 
+  /* Hover text color changes */
   .servicio-card:hover .servicio-card__title,
-  .servicio-card:hover .servicio-card__title strong,
+  .servicio-card:hover .servicio-card__title strong {
+    color: #00312D !important;
+  }
+
   .servicio-card:hover .servicio-card__desc {
     color: #00312D !important;
-    fill: #00312D !important;
   }
 
   /* ---- Icon Box ---- */
@@ -222,11 +418,12 @@ function formatTitle(title: string): { line1: string; line2: string } {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 0;
+    flex-shrink: 0;
   }
 
   .servicio-card__icon-box {
     display: inline-flex;
-    background-color: #65C132;               /* green */
+    background-color: #65C132;
     border-radius: 10px;
     padding: 20px;
     border: 0 solid #65C132;
@@ -240,7 +437,7 @@ function formatTitle(title: string): { line1: string; line2: string } {
     margin: 0 !important;
   }
 
-  /* ---- Title (H3) ---- */
+  /* ---- Card Title (H3) ---- */
   .servicio-card__title {
     font-family: 'SoinSans', sans-serif;
     font-weight: 700;
@@ -250,7 +447,8 @@ function formatTitle(title: string): { line1: string; line2: string } {
     margin: 0;
     padding-top: 20px;
     padding-bottom: 10px;
-    transition: color 0.2s ease;
+    transition: color 0.5s ease-out;
+    flex-shrink: 0;
   }
 
   .servicio-card__title strong {
@@ -258,7 +456,7 @@ function formatTitle(title: string): { line1: string; line2: string } {
     color: inherit;
   }
 
-  /* ---- Description ---- */
+  /* ---- Card Description ---- */
   .servicio-card__desc {
     font-family: 'SoinSans', sans-serif;
     font-weight: 400;
@@ -271,10 +469,11 @@ function formatTitle(title: string): { line1: string; line2: string } {
     transition: color 0.2s ease;
   }
 
-  /* ---- Button ---- */
+  /* ---- Card Button ---- */
   .servicio-card__btn-wrap {
     width: 100%;
     margin-top: auto;
+    flex-shrink: 0;
   }
 
   .servicio-card__btn {
@@ -288,7 +487,7 @@ function formatTitle(title: string): { line1: string; line2: string } {
     font-family: 'SoinSans', sans-serif;
     font-weight: 500;
     font-size: 15px;
-    line-height: 1.6;                         /* 24px / 15px */
+    line-height: 1.6;
     text-decoration: none;
     text-align: center;
     padding: 5px 20px;
@@ -303,32 +502,97 @@ function formatTitle(title: string): { line1: string; line2: string } {
     color: #00312D;
   }
 
-  /* ===== RESPONSIVE ===== */
+  /* ================================================================
+     "VER TODOS LOS SERVICIOS" CTA
+  ================================================================ */
+  .servicios-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    padding-bottom: 70px;
+  }
+
+  .servicios-cta__btn {
+    display: inline-block;
+    align-self: center;
+    padding: 10px 25px;
+    background-color: #65C132;
+    color: #ffffff;
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.5;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 30px;
+    border: 0 none;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+    transition: box-shadow 0.25s, transform 0.25s, background-color 0.25s;
+    cursor: pointer;
+  }
+
+  .servicios-cta__btn:hover {
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+    color: #ffffff;
+    background-color: #45891E;
+  }
+
+  .servicios-cta__btn:active {
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(3px);
+  }
+
+  .servicios-cta__btn strong {
+    font-weight: 700;
+  }
+
+  /* ================================================================
+     RESPONSIVE
+  ================================================================ */
   @media (max-width: 999.98px) {
-    .servicios__grid {
-      grid-template-columns: repeat(2, 1fr);
+    .servicios-header__left {
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+
+    .servicios-header__right {
+      width: 100%;
+      padding-left: 0;
+    }
+
+    .servicios-header-desc {
+      text-align: left;
     }
   }
 
   @media (max-width: 689.98px) {
-    .servicios {
+    .servicios-section {
       padding: 15px 20px 20px;
     }
 
-    .servicios__label {
+    .servicios-header {
+      padding-top: 0;
+    }
+
+    .servicios-label {
       font-size: 14px;
     }
 
-    .servicios__title {
+    .servicios-title {
       font-size: 28px;
-    }
-
-    .servicios__grid {
-      grid-template-columns: 1fr;
     }
 
     .servicio-card {
       padding: 30px;
+    }
+
+    .servicios-swiper .swiper-button-prev,
+    .servicios-swiper .swiper-button-next {
+      display: none;
     }
   }
 </style>
