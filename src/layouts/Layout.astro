@@ -76,7 +76,7 @@ const navItems = [
   
   <body>
     <!-- ===== HEADER: transparent over hero ===== -->
-    <header class="site-header">
+    <header class="site-header" id="site-header">
       <!-- Top bar: phone + email -->
       <div class="header-top">
         <div class="container-site">
@@ -154,6 +154,19 @@ const navItems = [
       document.getElementById('mobile-toggle')?.addEventListener('click', () => {
         document.getElementById('mobile-panel')?.classList.toggle('open');
       });
+
+      // Scroll behavior: toggle scrolled state
+      const header = document.getElementById('site-header');
+      let lastScroll = 0;
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        if (scrollY > 0) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        lastScroll = scrollY;
+      }, {passive: true});
     </script>
   </body>
 </html>
@@ -395,6 +408,41 @@ const navItems = [
     font-weight: 700;
     font-size: 16px;
     text-decoration: none;
+  }
+
+  /* ===== SCROLL STATE: top bar green, middle row white, nav text dark ===== */
+  .site-header.scrolled .header-top {
+    background: #65C132;
+  }
+  .site-header.scrolled .header-main {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .site-header.scrolled .nav-link {
+    color: #00312D;
+  }
+  .site-header.scrolled .nav-link:hover,
+  .site-header.scrolled .nav-link.active {
+    color: #65C132;
+  }
+  .site-header.scrolled .search-btn {
+    color: #00312D;
+  }
+  .site-header.scrolled .mobile-toggle span {
+    background: #00312D;
+  }
+  .site-header.scrolled .cta-btn {
+    background: #65C132;
+    color: #fff;
+  }
+  .header-main {
+    transition: background 0.2s;
+  }
+  .header-top {
+    transition: background 0.2s;
+  }
+  .nav-link {
+    transition: color 0.2s;
   }
 
   /* Responsive */

@@ -1,0 +1,437 @@
+{
+  "hero": {
+    "tag": "SECTION",
+    "classes": "wp-block-greenshift-blocks-row alignfull gspb_row gs-on-view gspb_row-id-gsbp-87fe861 block__row gs-active-view",
+    "id": "gspb_row-id-gsbp-87fe861",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 726.546875
+    },
+    "computed": {
+      "backgroundColor": "rgb(136, 136, 136)",
+      "backgroundImage": "url(\"https://ecociclo.es/wp-content/uploads/2026/03/23.webp\")",
+      "backgroundSize": "cover",
+      "backgroundPosition": "50% 49%",
+      "backgroundAttachment": "fixed",
+      "backgroundRepeat": "no-repeat",
+      "minHeight": "0px",
+      "display": "flex",
+      "justifyContent": "space-between",
+      "flexWrap": "wrap",
+      "padding": "0px",
+      "margin": "0px",
+      "position": "relative",
+      "overflow": "visible"
+    }
+  },
+  "columns": [
+    {
+      "index": 0,
+      "id": "gspb_col-id-gsbp-6af6a8a",
+      "classes": "wp-block-greenshift-blocks-row-column gspb_row__col--12 gspb_col-id-gsbp-6af6a8a block__row-column",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 726.546875
+      },
+      "computed": {
+        "width": "1440px",
+        "display": "block",
+        "flexDirection": "row",
+        "justifyContent": "normal",
+        "alignItems": "normal",
+        "padding": "160px 20px 0px",
+        "margin": "0px",
+        "gap": "normal",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "index": 1,
+      "id": "gspb_col-id-gsbp-0cc5f26",
+      "classes": "wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_col-id-gsbp-0cc5f26 block__row-column",
+      "rect": {
+        "x": 75,
+        "y": 160,
+        "w": 430,
+        "h": 566.546875
+      },
+      "computed": {
+        "width": "430px",
+        "display": "flex",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "stretch",
+        "padding": "70px 20px 15px",
+        "margin": "0px",
+        "gap": "10px normal",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "index": 2,
+      "id": "gspb_col-id-gsbp-5372409",
+      "classes": "wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_col-id-gsbp-5372409 block__row-column",
+      "rect": {
+        "x": 505,
+        "y": 160,
+        "w": 430,
+        "h": 566.546875
+      },
+      "computed": {
+        "width": "430px",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "flex-end",
+        "padding": "0px",
+        "margin": "0px",
+        "gap": "normal",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "index": 3,
+      "id": "gspb_col-id-gsbp-ae5d3d4",
+      "classes": "wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_col-id-gsbp-ae5d3d4 block__row-column",
+      "rect": {
+        "x": 935,
+        "y": 160,
+        "w": 430,
+        "h": 566.546875
+      },
+      "computed": {
+        "width": "430px",
+        "display": "flex",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "alignItems": "flex-end",
+        "padding": "15px 20px 15px 60px",
+        "margin": "0px",
+        "gap": "20px normal",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "index": 4,
+      "id": "gspb_col-id-gsbp-6bed9f4",
+      "classes": "wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_row__col--xs-3 gspb_col-id-gsbp-6bed9f4 block__row-column",
+      "rect": {
+        "x": 995,
+        "y": 294.265625,
+        "w": 87.5,
+        "h": 86
+      },
+      "computed": {
+        "width": "87.5px",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "padding": "15px 20px",
+        "margin": "0px",
+        "gap": "normal",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "index": 5,
+      "id": "gspb_col-id-gsbp-32cb071",
+      "classes": "wp-block-greenshift-blocks-row-column gspb_row__col--8 gspb_row__col--xs-9 gspb_col-id-gsbp-32cb071 block__row-column",
+      "rect": {
+        "x": 1082.5,
+        "y": 294.265625,
+        "w": 262.5,
+        "h": 86
+      },
+      "computed": {
+        "width": "262.5px",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "center",
+        "padding": "15px 20px",
+        "margin": "0px",
+        "gap": "normal",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "index": 6,
+      "id": "gspb_col-id-gsbp-f3580ed",
+      "classes": "wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_row__col--xs-3 gspb_col-id-gsbp-f3580ed block__row-column",
+      "rect": {
+        "x": 995,
+        "y": 400.265625,
+        "w": 87.5,
+        "h": 86
+      },
+      "computed": {
+        "width": "87.5px",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "padding": "15px 20px",
+        "margin": "0px",
+        "gap": "normal",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "index": 7,
+      "id": "gspb_col-id-gsbp-9567c2c",
+      "classes": "wp-block-greenshift-blocks-row-column gspb_row__col--8 gspb_row__col--xs-9 gspb_col-id-gsbp-9567c2c block__row-column",
+      "rect": {
+        "x": 1082.5,
+        "y": 400.265625,
+        "w": 262.5,
+        "h": 86
+      },
+      "computed": {
+        "width": "262.5px",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "center",
+        "padding": "15px 20px",
+        "margin": "0px",
+        "gap": "normal",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "index": 8,
+      "id": "gspb_col-id-gsbp-631230f",
+      "classes": "wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_row__col--xs-3 gspb_col-id-gsbp-631230f block__row-column",
+      "rect": {
+        "x": 1004,
+        "y": 506.265625,
+        "w": 85.25,
+        "h": 86
+      },
+      "computed": {
+        "width": "85.25px",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "padding": "15px 20px",
+        "margin": "0px",
+        "gap": "normal",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "index": 9,
+      "id": "gspb_col-id-gsbp-ae3f81a",
+      "classes": "wp-block-greenshift-blocks-row-column gspb_row__col--8 gspb_row__col--xs-9 gspb_col-id-gsbp-ae3f81a block__row-column",
+      "rect": {
+        "x": 1089.25,
+        "y": 506.265625,
+        "w": 255.75,
+        "h": 86
+      },
+      "computed": {
+        "width": "255.75px",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "center",
+        "padding": "15px 20px",
+        "margin": "0px",
+        "gap": "normal",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    }
+  ],
+  "heading": {
+    "text": "Gestión de residuos en Barcelona para empresas, industria y locales",
+    "tag": "H1",
+    "rect": {
+      "x": 95,
+      "y": 230,
+      "w": 540,
+      "h": 171
+    },
+    "computed": {
+      "fontSize": "38px",
+      "fontWeight": "700",
+      "fontFamily": "SoinSans-Bold, sans-serif",
+      "color": "rgb(255, 255, 255)",
+      "textTransform": "uppercase",
+      "lineHeight": "57px",
+      "margin": "0px -150px 0px 0px",
+      "padding": "0px"
+    }
+  },
+  "description": {
+    "html": "En <strong>Ecociclo</strong> ayudamos a empresas, naves industriales, locales, oficinas y almacenes con servicios de <strong>gestión de residuos en Barcelona</strong>, vaciados, limpiezas técnicas y soluciones ambientales adaptadas a cada necesidad.",
+    "text": "En Ecociclo ayudamos a empresas, naves industriales, locales, oficinas y almacenes con servicios de gestión de residuos en Barcelona, vaciados, limpiezas técnicas y soluciones ambientales adaptadas a ",
+    "rect": {
+      "x": 95,
+      "y": 411,
+      "w": 450,
+      "h": 115.1875
+    },
+    "computed": {
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "fontFamily": "SoinSans-Roman, sans-serif",
+      "color": "rgb(255, 255, 255)",
+      "lineHeight": "28.8px",
+      "margin": "0px -60px 0px 0px"
+    }
+  },
+  "ctaButton": {
+    "text": "Solicitar presupuesto",
+    "href": "https://ecociclo.es/contacto/",
+    "rect": {
+      "x": 95,
+      "y": 551.1875,
+      "w": 203,
+      "h": 48.796875
+    },
+    "computed": {
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "fontFamily": "SoinSans-Roman, sans-serif",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(101, 193, 50)",
+      "borderRadius": "15px",
+      "padding": "10px 25px",
+      "boxShadow": "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px",
+      "borderWidth": "0px",
+      "borderColor": "rgb(26, 26, 26)",
+      "display": "inline-block"
+    }
+  },
+  "overlayImage": {
+    "src": "https://ecociclo.es/wp-content/uploads/2026/03/25.webp",
+    "alt": "",
+    "naturalWidth": 610,
+    "naturalHeight": 1080,
+    "rect": {
+      "x": 560,
+      "y": 160,
+      "w": 320,
+      "h": 566.546875
+    }
+  },
+  "featureCards": [
+    {
+      "index": 0,
+      "id": "gspb_container-id-gsbp-deabda5",
+      "rect": {
+        "x": 995,
+        "y": 294.265625,
+        "w": 350,
+        "h": 86
+      },
+      "computed": {
+        "backgroundColor": "rgb(234, 253, 231)",
+        "borderRadius": "10px",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": "normal"
+      },
+      "icon": {
+        "viewBox": "0 0 1024 1024",
+        "width": "40px",
+        "height": "40px",
+        "fill": "rgb(255, 255, 255)"
+      },
+      "text": {
+        "content": "Gestión legal de  residuos electrónicos",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "fontFamily": "SoinSans-Roman, sans-serif",
+        "color": "rgb(0, 49, 45)"
+      },
+      "iconContainer": {
+        "backgroundColor": "rgb(101, 193, 50)",
+        "borderRadius": "5px",
+        "padding": "8px"
+      }
+    },
+    {
+      "index": 1,
+      "id": "gspb_container-id-gsbp-4ab0947",
+      "rect": {
+        "x": 995,
+        "y": 400.265625,
+        "w": 350,
+        "h": 86
+      },
+      "computed": {
+        "backgroundColor": "rgb(234, 253, 231)",
+        "borderRadius": "10px",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": "normal"
+      },
+      "icon": {
+        "viewBox": "0 0 1024 1024",
+        "width": "40px",
+        "height": "40px",
+        "fill": "rgb(255, 255, 255)"
+      },
+      "text": {
+        "content": "Operaciones 100% aseguradas y garantizadas.",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "fontFamily": "SoinSans-Roman, sans-serif",
+        "color": "rgb(0, 49, 45)"
+      },
+      "iconContainer": {
+        "backgroundColor": "rgb(101, 193, 50)",
+        "borderRadius": "5px",
+        "padding": "8px"
+      }
+    },
+    {
+      "index": 2,
+      "id": "gspb_container-id-gsbp-55b93bd",
+      "rect": {
+        "x": 1004,
+        "y": 506.265625,
+        "w": 341,
+        "h": 86
+      },
+      "computed": {
+        "backgroundColor": "rgb(234, 253, 231)",
+        "borderRadius": "10px",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": "normal"
+      },
+      "icon": {
+        "viewBox": "0 0 1152 1024",
+        "width": "40px",
+        "height": "40px",
+        "fill": "rgb(255, 255, 255)"
+      },
+      "text": {
+        "content": "Sabes donde termina cada residuo",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "fontFamily": "SoinSans-Roman, sans-serif",
+        "color": "rgb(0, 49, 45)"
+      },
+      "iconContainer": {
+        "backgroundColor": "rgb(101, 193, 50)",
+        "borderRadius": "5px",
+        "padding": "8px"
+      }
+    }
+  ]
+}
