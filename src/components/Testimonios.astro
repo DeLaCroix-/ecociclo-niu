@@ -1,0 +1,218 @@
+---
+// Testimonios.astro — Testimonios section extracted from ecociclo.es
+// Source: gspb_row-id-gsbp-a640774, padding 70px 0
+// Trustindex Google review carousel (slider layout)
+---
+
+<section class="testimonios-section">
+  <div class="container-site">
+    <!-- Section Label -->
+    <div class="testimonios-label-row">
+      <img
+        src="/images/ECOCICLO.webp"
+        alt=""
+        width="28"
+        height="28"
+        class="testimonios-label-icon"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="testimonios-label">Testimonios</span>
+    </div>
+
+    <!-- Heading -->
+    <h2 class="testimonios-heading">Confianza avalada por más de 2.500 servicios</h2>
+
+    <!-- Trustindex Google Reviews Carousel -->
+    <div class="testimonios-carousel">
+      <div
+        class="ti-widget ti-goog ti-review-text-mode-readmore ti-text-align-left"
+        data-no-translation="true"
+        data-time-locale="hace %d %s|hoy|día|días|semana|semanas|mes|meses|año|años"
+        data-plugin-version="13.3.1"
+        data-layout-id="4"
+        data-layout-category="slider"
+        data-set-id="ligth-border"
+        data-pid=""
+        data-language="es"
+        data-close-locale="Cerca"
+        data-review-target-width="300"
+        data-css-version="2"
+        data-reply-by-locale="Respuesta del propietario"
+        data-only-rating-locale="Este usuario solo dejó una calificación."
+        data-pager-autoplay-timeout="6"
+      >
+        <div class="ti-widget-container ti-col-3">
+          <div class="ti-reviews-container">
+            <div class="ti-controls">
+              <div class="ti-next" aria-label="Siguiente reseña" role="button" tabindex="0"></div>
+              <div class="ti-prev" aria-label="Reseña anterior" role="button" tabindex="0"></div>
+            </div>
+            <div class="ti-reviews-container-wrapper">
+              <!-- Reviews are loaded dynamically by Trustindex script -->
+            </div>
+            <div class="ti-controls-line">
+              <div class="dot" role="button" aria-label="Ir a la reseña 1" tabindex="0"></div>
+            </div>
+          </div>
+          <!-- Trustindex will populate reviews here -->
+          <div class="ti-footer source-Google">
+            <div class="ti-rating-text">
+              <span class="ti-stars">
+                <span class="ti-star f"></span><span class="ti-star f"></span><span class="ti-star f"></span><span class="ti-star f"></span><span class="ti-star f"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trustindex Loader Script -->
+<script>
+  (function() {
+    // Only load once
+    if (window.__trustindexLoaded) return;
+    window.__trustindexLoaded = true;
+    
+    const script = document.createElement('script');
+    script.src = 'https://cdn.trustindex.io/loader.js?ver=1';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  })();
+</script>
+
+<style>
+  /* ================================================================
+     TESTIMONIOS SECTION STYLES — Matches ecociclo.es
+     Outer section: gspb_row-id-gsbp-a640774, padding 70px 0
+     Trustindex carousel with light border set
+  ================================================================ */
+
+  .testimonios-section {
+    padding: 70px 0;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #f8faf9;
+  }
+
+  /* ---- Label Row ---- */
+  .testimonios-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .testimonios-label-icon {
+    width: 28px;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  .testimonios-label {
+    color: #65C132;
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  /* ---- Heading ---- */
+  .testimonios-heading {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.5;
+    color: #00312D;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 40px;
+  }
+
+  /* ---- Trustindex Carousel Wrapper ---- */
+  .testimonios-carousel {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .testimonios-carousel .ti-widget {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Trustindex fallback/loading styles */
+  .testimonios-carousel .ti-widget-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonios-carousel .ti-reviews-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .testimonios-carousel .ti-reviews-container-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .testimonios-carousel .ti-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Fallback star rating while Trustindex loads */
+  .testimonios-carousel .ti-stars {
+    display: inline-flex;
+    gap: 2px;
+    color: #f1c40f;
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .testimonios-carousel .ti-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+  }
+
+  .testimonios-carousel .ti-footer .ti-rating-text {
+    font-family: 'SoinSans', sans-serif;
+    font-size: 16px;
+    color: #666;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 689.98px) {
+    .testimonios-section {
+      padding: 50px 0;
+    }
+
+    .testimonios-label {
+      font-size: 14px;
+    }
+
+    .testimonios-heading {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+  }
+</style>

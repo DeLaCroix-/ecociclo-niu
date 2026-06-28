@@ -2,17 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Servicios from '../components/Servicios.astro';
-
-const faqs = [
-  { q: '¿Qué tipo de servicios ofrece Ecociclo en Cataluña?', a: 'Ofrecemos servicios de vaciado, limpieza, retirada de residuos, gestión de residuos banales, residuos especiales líquidos, residuos especiales sólidos, retirada de fibrocemento, limpieza de terrenos, limpieza de síndrome de Diógenes y trasvases y acondicionamiento de residuos peligrosos y no peligrosos.' },
-  { q: '¿Trabajáis solo con empresas o también con particulares?', a: 'Principalmente trabajamos con empresas, industria, locales, oficinas, almacenes y espacios profesionales, aunque también realizamos determinados servicios para particulares cuando el proyecto lo requiere.' },
-  { q: '¿Prestáis servicio en toda Cataluña?', a: 'Sí, Ecociclo ofrece servicios de gestión de residuos en Cataluña, adaptándose a la ubicación, al volumen de trabajo y a las necesidades logísticas de cada proyecto.' },
-  { q: '¿Puedo solicitar presupuesto sin compromiso?', a: 'Sí. Estudiamos cada caso y preparamos una propuesta adaptada al servicio necesario y sin compromiso.' },
-  { q: '¿Podéis actuar con rapidez?', a: 'Sí. Siempre que la planificación lo permita, priorizamos una respuesta ágil para que el cliente pueda resolver el problema cuanto antes.' },
-  { q: '¿Qué tipo de espacios podéis vaciar o limpiar?', a: 'Trabajamos en naves industriales, locales, oficinas, almacenes, pisos, terrenos, parcelas, solares y otros espacios que necesitan vaciado, limpieza o gestión de residuos.' },
-  { q: '¿Gestionáis residuos no peligrosos y también residuos especiales?', a: 'Sí. En Ecociclo trabajamos tanto con residuos banales o no peligrosos como con residuos especiales líquidos y sólidos, ajustando el servicio a cada caso según la normativa aplicable.' },
-  { q: '¿Qué diferencia a Ecociclo de otras empresas?', a: 'Nuestra experiencia, con más de 10 años y más de 2.500 servicios realizados, junto con una operativa rápida, profesional y orientada a empresa, nos permite ofrecer soluciones eficaces donde otros no llegan.' },
-];
+import Lideres from '../components/Lideres.astro';
+import Proceso from '../components/Proceso.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Faq from '../components/Faq.astro';
+import Testimonios from '../components/Testimonios.astro';
 ---
 
 <Layout 
@@ -59,101 +53,20 @@ const faqs = [
 <!-- ===== SERVICIOS (exact reproduction: gspb_row-id-gsbp-b0a856b) ===== -->
 <Servicios />
 
-<!-- ===== PROCESO (matches original: y=2368, h=771) ===== -->
-<section class="proceso-section">
-  <div class="container-site">
-    <span class="section-label">Proceso de Gestión</span>
-    <h2>Tu espacio libre de residuos en tres pasos</h2>
+<!-- ===== PROCESO (exact reproduction: gspb_row-id-gsbp-e906f9a, y=2368, h=771) ===== -->
+<Proceso />
 
-    <div class="proceso-grid">
-      <div class="proceso-card">
-        <div class="proceso-num">1</div>
-        <h3>Análisis técnico sin compromiso</h3>
-        <p>Estudiamos el espacio, el volumen, el tipo de residuos y las necesidades operativas para preparar una propuesta clara y ajustada.</p>
-      </div>
-      <div class="proceso-card">
-        <div class="proceso-num">2</div>
-        <h3>Vaciado y logística avanzada</h3>
-        <p>Ejecutamos la retirada con rapidez, orden y planificación para reducir molestias y recuperar el espacio cuanto antes.</p>
-      </div>
-      <div class="proceso-card">
-        <div class="proceso-num">3</div>
-        <h3>Documentación legal de gestión</h3>
-        <p>Organizamos cada intervención para que la gestión de residuos siga el procedimiento correspondiente y se realice de forma documentada y responsable.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ===== LÍDERES (exact: gspb_row-id-gsbp-022f526, y=3139, h=847) ===== -->
+<Lideres />
 
-<!-- ===== LÍDERES (matches original: y=3139, h=847) ===== -->
-<section class="lideres-section">
-  <div class="container-site">
-    <h2>Líderes en gestión de residuos en Barcelona</h2>
+<!-- ===== CTA (exact: gspb_row-id-gsbp-9ffae62 + gsbp-423aa83, y=3986, h=580, bg #00312D) ===== -->
+<CtaSection />
 
-    <div class="lideres-grid">
-      <div class="lideres-card">
-        <h3>Experiencia Real</h3>
-        <p>Llevamos más de una década ayudando a empresas a vaciar, limpiar y gestionar residuos de forma profesional y organizada.</p>
-      </div>
-      <div class="lideres-card">
-        <h3>Capacidad Logística</h3>
-        <p>Podemos actuar en servicios puntuales, urgentes o planificados en naves, oficinas, locales, terrenos y espacios industriales.</p>
-      </div>
-      <div class="lideres-card">
-        <h3>Seguridad Legal</h3>
-        <p>Cada intervención se prepara con criterio profesional para ofrecer orden, tranquilidad y una gestión responsable.</p>
-      </div>
-    </div>
+<!-- ===== FAQ (exact: gspb_row-id-gsbp-b8efaa8, y=4566, h=914, 8-question accordion) ===== -->
+<Faq />
 
-    <div class="lideres-stats">
-      <div class="stat-item">
-        <div class="stat-number">+2.500</div>
-        <p>Más de 2.500 servicios realizados</p>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">24/48h</div>
-        <p>Respuesta rápida en Cataluña</p>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">🌱</div>
-        <p>Compromiso ambiental</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA (matches original: y=3986, h=580, bg #00312D) ===== -->
-<section class="cta-section">
-  <div class="container-site">
-    <h2>Recupera tu espacio hoy mismo en cualquier punto de barcelona</h2>
-    <p>No dejes que la acumulación de residuos, materiales o elementos innecesarios afecte la imagen, la seguridad o el funcionamiento de tu empresa. En Ecociclo te ofrecemos una solución completa, rápida y profesional para que recuperes el control de tus espacios.</p>
-    <a href="/contacto" class="hero-cta">Solicitar presupuesto</a>
-  </div>
-</section>
-
-<!-- ===== FAQ (matches original: y=4566, h=914) ===== -->
-<section class="faq-section">
-  <div class="container-site">
-    <h2>Preguntas frecuentes sobre gestión de residuos en barcelona</h2>
-
-    <div class="faq-list">
-      {faqs.map((faq) => (
-        <details class="faq-item">
-          <summary>{faq.q}</summary>
-          <div class="faq-answer">{faq.a}</div>
-        </details>
-      ))}
-    </div>
-  </div>
-</section>
-
-<!-- ===== TESTIMONIOS (matches original: y=5480, h=334) ===== -->
-<section class="testimonios-section">
-  <div class="container-site">
-    <h2>Confianza avalada por más de 2.500 servicios</h2>
-    <p class="testimonios-placeholder">★ ★ ★ ★ ★ — Testimonios de Google</p>
-  </div>
-</section>
+<!-- ===== TESTIMONIOS (exact: gspb_row-id-gsbp-a640774, y=5480, h=334, Trustindex carousel) ===== -->
+<Testimonios />
 
 </Layout>
 
@@ -218,228 +131,10 @@ const faqs = [
     line-height: 1.5;
   }
 
-  /* ===== PROCESO ===== */
-  .proceso-section {
-    padding: 40px 0 60px;
-    background: #f8faf9;
-  }
-  .proceso-section h2 {
-    font-size: 35px;
-    color: #192a3d;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-
-  .proceso-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .proceso-card {
-    text-align: center;
-  }
-
-  .proceso-num {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #36611C;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-  }
-
-  .proceso-card h3 {
-    font-size: 18px;
-    color: #192a3d;
-    margin-bottom: 10px;
-  }
-
-  .proceso-card p {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.5;
-  }
-
-  /* ===== LÍDERES ===== */
-  .lideres-section {
-    padding: 40px 0 60px;
-  }
-  .lideres-section h2 {
-    font-size: 35px;
-    color: #192a3d;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-
-  .lideres-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 1000px;
-    margin: 0 auto 40px;
-  }
-
-  .lideres-card {
-    background: #f8faf9;
-    padding: 24px;
-    border-radius: 12px;
-    text-align: center;
-  }
-  .lideres-card h3 {
-    font-size: 18px;
-    color: #192a3d;
-    margin-bottom: 10px;
-  }
-  .lideres-card p {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.5;
-  }
-
-  .lideres-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .stat-number {
-    font-size: 48px;
-    font-weight: 700;
-    color: #65C132;
-    margin-bottom: 8px;
-  }
-  .stat-item p {
-    font-size: 14px;
-    color: #666;
-  }
-
-  /* ===== CTA ===== */
-  .cta-section {
-    background: #00312D;
-    color: #fff;
-    padding: 60px 0;
-    text-align: center;
-  }
-  .cta-section h2 {
-    color: #fff;
-    font-size: 35px;
-    margin-bottom: 16px;
-  }
-  .cta-section p {
-    color: rgba(255,255,255,0.85);
-    font-size: 16px;
-    max-width: 700px;
-    margin: 0 auto 30px;
-    line-height: 1.6;
-  }
-
-  /* ===== FAQ ===== */
-  .faq-section {
-    padding: 60px 0;
-  }
-  .faq-section h2 {
-    font-size: 35px;
-    color: #192a3d;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-
-  .faq-list {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid #e5e7eb;
-  }
-  .faq-item summary {
-    padding: 16px 0;
-    font-weight: 600;
-    font-size: 15px;
-    color: #192a3d;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .faq-item summary::after {
-    content: '▾';
-    color: #65C132;
-    font-size: 18px;
-    transition: transform 0.2s;
-  }
-  .faq-item[open] summary::after {
-    transform: rotate(180deg);
-  }
-  .faq-answer {
-    padding: 0 0 16px;
-    font-size: 14px;
-    color: #666;
-    line-height: 1.6;
-  }
-
-  /* ===== TESTIMONIOS ===== */
-  .testimonios-section {
-    padding: 40px 0 60px;
-    text-align: center;
-    background: #f8faf9;
-  }
-  .testimonios-section h2 {
-    font-size: 35px;
-    color: #192a3d;
-    margin-bottom: 20px;
-  }
-  .testimonios-placeholder {
-    color: #999;
-    font-size: 18px;
-  }
-
-  /* ===== CTA BUTTON (global, used by bottom CTA section) ===== */
-  .hero-cta {
-    display: inline-block;
-    background: #65C132;
-    color: #ffffff;
-    font-family: 'SoinSans', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    border-radius: 15px;
-    padding: 10px 25px;
-    text-decoration: none;
-    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-  }
-  .hero-cta:hover {
-    background: #45891E;
-    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.25);
-    transform: translateY(-3px);
-  }
-  .hero-cta:active {
-    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
-    transform: translateY(3px);
-  }
-
   /* ===== RESPONSIVE ===== */
   @media (max-width: 900px) {
-    .filosofia-grid,
-    .lideres-grid,
-    .lideres-stats,
-    .proceso-grid { grid-template-columns: 1fr; }
+    .filosofia-grid { grid-template-columns: 1fr; }
     
-    .filosofia-section h2,
-    .proceso-section h2,
-    .lideres-section h2,
-    .cta-section h2,
-    .faq-section h2 { font-size: 26px; }
+    .filosofia-section h2 { font-size: 26px; }
   }
 </style>

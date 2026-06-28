@@ -1,0 +1,345 @@
+---
+// Proceso.astro — EXACT pixel-perfect reproduction of ecociclo.es proceso section
+// Extracted via Playwright from https://ecociclo.es/
+// Greenshift row gspb_row-id-gsbp-e906f9a, y=2368, h=771
+// 2-column layout: left (45%) with icon+text+image, right (55%) with 3 step cards
+
+const steps = [
+  {
+    number: '01',
+    title: 'Análisis técnico sin compromiso',
+    desc: 'Estudiamos el espacio, el volumen, el tipo de residuos y las necesidades operativas para preparar una propuesta clara y adaptada al servicio.',
+  },
+  {
+    number: '02',
+    title: 'Vaciado y logística avanzada',
+    desc: 'Ejecutamos la retirada con rapidez, orden y planificación para reducir molestias y recuperar el espacio cuanto antes.',
+  },
+  {
+    number: '03',
+    title: 'Documentación legal de gestión',
+    desc: 'Organizamos cada intervención para que la gestión de residuos siga el procedimiento correspondiente y se realice de forma profesional.',
+  },
+];
+---
+
+<!-- ================================================================
+     PROCESO SECTION — Exact reproduction of ecociclo.es
+     Greenshift block gspb_row-id-gsbp-e906f9a
+     Section label: "Proceso de Gestión"
+     H2: "Tu espacio libre de residuos en tres pasos"
+  ================================================================ -->
+<section class="proceso">
+
+  <!-- ===== LEFT COLUMN (45%) ===== -->
+  <div class="proceso__left">
+    <!-- Decorative background overlay -->
+    <div class="proceso__left-overlay"></div>
+
+    <!-- Label row: ECOCICLO icon + text -->
+    <div class="proceso__label-row">
+      <img
+        src="/images/proceso/ECOCICLO.webp"
+        alt=""
+        width="28"
+        height="28"
+        class="proceso__label-icon"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="proceso__label">Proceso de Gestión</span>
+    </div>
+
+    <!-- H2 Title -->
+    <h2 class="proceso__title">
+      <strong>Tu espacio libre de residuos en tres pasos</strong>
+    </h2>
+
+    <!-- Description -->
+    <p class="proceso__desc">
+      Hemos simplificado nuestro sistema de trabajo para ofrecer un servicio de <strong>gestión de residuos en Barcelona</strong> rápido, eficaz y adaptado a cada cliente.
+    </p>
+
+    <!-- Bottom image -->
+    <div class="proceso__image-wrap">
+      <img
+        src="/images/proceso/46.webp"
+        alt=""
+        width="1366"
+        height="662"
+        class="proceso__image"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </div>
+
+  <!-- ===== RIGHT COLUMN (55%) ===== -->
+  <div class="proceso__right">
+    {
+      steps.map((step) => (
+        <div class="proceso-step">
+          <!-- Number circle — overlaps the card -->
+          <span class="proceso-step__number">{step.number}</span>
+
+          <!-- Light green card -->
+          <div class="proceso-step__card">
+            <h3 class="proceso-step__title">
+              <strong>{step.title}</strong>
+            </h3>
+            <p class="proceso-step__desc">{step.desc}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+</section>
+
+<style>
+  /* ================================================================
+     PROCESO SECTION STYLES
+     Exact computed CSS from ecociclo.es
+  ================================================================ */
+
+  /* ---- Section ---- */
+  .proceso {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  /* ---- Left Column (45%) ---- */
+  .proceso__left {
+    width: 45%;
+    background-color: #00312D;
+    padding: 100px 30px 100px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    box-sizing: border-box;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  /* Background overlay: decorative image at 0.6 opacity */
+  .proceso__left-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+    background-image: url('https://ecociclo.es/wp-content/uploads/2026/03/22.webp');
+    background-repeat: no-repeat;
+    background-position: 34% 48%;
+    background-size: cover;
+  }
+
+  /* Label row: icon + text */
+  .proceso__label-row {
+    display: flex;
+    align-items: center;
+    gap: 10.72px;
+  }
+
+  .proceso__label-icon {
+    width: 28px;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  .proceso__label {
+    color: #65C132;
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;                         /* 28.8px / 18px */
+    letter-spacing: 6px;
+  }
+
+  /* H2 title */
+  .proceso__title {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.5;                         /* 52.5px / 35px */
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .proceso__title strong {
+    font-weight: 700;
+  }
+
+  /* Description */
+  .proceso__desc {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;                         /* 28.8px / 18px */
+    color: rgb(255, 255, 252);
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .proceso__desc strong {
+    font-weight: 700;
+  }
+
+  /* Bottom image */
+  .proceso__image-wrap {
+    text-align: left;
+  }
+
+  .proceso__image {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  /* ---- Right Column (55%) ---- */
+  .proceso__right {
+    width: 55%;
+    background-color: #00312D;
+    padding: 100px 60px 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    box-sizing: border-box;
+  }
+
+  /* ---- Step Card ---- */
+  .proceso-step {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Number circle — positioned to overlap the card's top-left */
+  .proceso-step__number {
+    position: absolute;
+    left: 55px;
+    top: 0;
+    z-index: 1;
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.2;
+    color: #ffffff;
+    background-color: #65C132;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+
+  /* Light green card */
+  .proceso-step__card {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #EAFDE7;
+    border-radius: 20px;
+    padding: 30px 70px;
+    margin-top: 0;
+  }
+
+  /* H3 title inside card */
+  .proceso-step__title {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.5;                         /* 37.5px / 25px */
+    color: #00312D;
+    margin: 0;
+    padding: 0;
+  }
+
+  .proceso-step__title strong {
+    font-weight: 700;
+  }
+
+  /* Description inside card */
+  .proceso-step__desc {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;                         /* 28.8px / 18px */
+    color: #00312D;
+    margin: 0;
+  }
+
+  /* ===== RESPONSIVE ===== */
+
+  /* Tablet and below: stack columns */
+  @media (max-width: 999.98px) {
+    .proceso {
+      flex-direction: column;
+    }
+
+    .proceso__left,
+    .proceso__right {
+      width: 100%;
+    }
+  }
+
+  /* Mobile: reduce padding and font sizes */
+  @media (max-width: 689.98px) {
+    .proceso__left {
+      padding: 50px 20px;
+    }
+
+    .proceso__right {
+      padding: 50px 20px;
+    }
+
+    .proceso__label {
+      font-size: 14px;
+      letter-spacing: 4px;
+    }
+
+    .proceso__title {
+      font-size: 28px;
+    }
+
+    .proceso__desc {
+      font-size: 16px;
+    }
+
+    .proceso-step__number {
+      font-size: 30px;
+      left: 20px;
+      padding: 8px 16px;
+    }
+
+    .proceso-step__card {
+      padding: 20px;
+    }
+
+    .proceso-step__title {
+      font-size: 22px;
+    }
+
+    .proceso-step__desc {
+      font-size: 16px;
+    }
+  }
+</style>

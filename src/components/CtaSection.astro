@@ -1,0 +1,167 @@
+---
+// CtaSection.astro — CTA section extracted from ecociclo.es
+// Source: gspb_row-id-gsbp-9ffae62 (dark bg #00312D)
+// Inner row: gspb_row-id-gsbp-423aa83
+---
+
+<section class="cta-section">
+  <div class="container-site">
+    <!-- Section Label -->
+    <div class="cta-label-row">
+      <img
+        src="/images/ECOCICLO.webp"
+        alt=""
+        width="28"
+        height="28"
+        class="cta-label-icon"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="cta-label">Transformación Ambiental</span>
+    </div>
+
+    <!-- Heading -->
+    <h2 class="cta-heading">Recupera tu espacio hoy mismo en cualquier punto de barcelona</h2>
+
+    <!-- Description -->
+    <p class="cta-desc">
+      No dejes que la acumulación de residuos, materiales o elementos innecesarios afecte la imagen, la seguridad o el funcionamiento de tu empresa. En Ecociclo te ayudamos con una solución profesional de <strong>gestión de residuos en Cataluña</strong>, adaptada a tus necesidades y con respuesta rápida.
+    </p>
+
+    <!-- Button -->
+    <a href="/contacto" class="cta-btn">
+      <strong>Solicitar presupuesto</strong>
+    </a>
+  </div>
+</section>
+
+<style>
+  /* ================================================================
+     CTA SECTION — Exact reproduction of ecociclo.es
+     Outer section: gspb_row-id-gsbp-9ffae62, bg #00312D
+     Inner row: gspb_row-id-gsbp-423aa83
+  ================================================================ */
+
+  .cta-section {
+    background-color: #00312D;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .cta-section .container-site {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 80px;
+    max-width: var(--theme-container-width, 1200px);
+    margin: 0 auto;
+  }
+
+  /* ---- Label Row ---- */
+  .cta-label-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .cta-label-icon {
+    width: 28px;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  .cta-label {
+    color: #65C132;
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  /* ---- Heading ---- */
+  .cta-heading {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.5;
+    color: #fffffd;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ---- Description ---- */
+  .cta-desc {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fffffd;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    max-width: 700px;
+  }
+
+  .cta-desc strong {
+    font-weight: 700;
+  }
+
+  /* ---- Button ---- */
+  .cta-btn {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #65C132;
+    color: #ffffff;
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 15px;
+    border: 0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+    transition: background-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  .cta-btn strong {
+    font-weight: 700;
+  }
+
+  .cta-btn:hover {
+    background-color: #45891E;
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+    color: #ffffff;
+  }
+
+  .cta-btn:active {
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(3px);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 689.98px) {
+    .cta-label {
+      font-size: 14px;
+    }
+
+    .cta-heading {
+      font-size: 26px;
+    }
+
+    .cta-desc {
+      font-size: 16px;
+    }
+
+    .cta-section .container-site {
+      padding: 60px 20px 60px;
+    }
+  }
+</style>

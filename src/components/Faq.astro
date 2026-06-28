@@ -1,0 +1,294 @@
+---
+// Faq.astro — FAQ section extracted from ecociclo.es
+// Source: gspb_row-id-gsbp-b8efaa8, padding 70px 0
+// Accordion: gspb_accordion-id-gsbp-5baa306, dark green titles (#00312D)
+
+const faqs = [
+  {
+    q: '¿Qué tipo de servicios ofrece Ecociclo en Cataluña?',
+    a: 'Ofrecemos servicios de vaciado, limpieza, retirada de residuos, gestión de residuos banales, residuos especiales líquidos, residuos especiales sólidos, limpieza de terrenos, retirada de fibrocemento y otras soluciones ambientales para empresas.',
+  },
+  {
+    q: '¿Trabajáis solo con empresas o también con particulares?',
+    a: 'Principalmente trabajamos con empresas, industria, locales, oficinas, almacenes y espacios profesionales, aunque también realizamos determinados servicios para particulares según el tipo de intervención.',
+  },
+  {
+    q: '¿Prestáis servicio en toda Cataluña?',
+    a: 'Sí, Ecociclo ofrece servicios de gestión de residuos en Cataluña, adaptándose a la ubicación, al volumen de trabajo y a las necesidades logísticas de cada cliente.',
+  },
+  {
+    q: '¿Puedo solicitar presupuesto sin compromiso?',
+    a: 'Sí. Estudiamos cada caso y preparamos una propuesta adaptada al servicio necesario y sin compromiso.',
+  },
+  {
+    q: '¿Podéis actuar con rapidez?',
+    a: 'Sí. Siempre que la planificación lo permita, priorizamos una respuesta ágil para que el cliente pueda resolver el problema cuanto antes.',
+  },
+  {
+    q: '¿Qué tipo de espacios podéis vaciar o limpiar?',
+    a: 'Trabajamos en naves industriales, locales, oficinas, almacenes, pisos, terrenos, parcelas, solares y otros espacios que necesitan vaciado, limpieza o retirada de residuos.',
+  },
+  {
+    q: '¿Gestionáis residuos no peligrosos y también residuos especiales?',
+    a: 'Sí. En Ecociclo trabajamos tanto con residuos banales o no peligrosos como con residuos especiales líquidos y sólidos, ajustando el servicio a cada caso.',
+  },
+  {
+    q: '¿Qué diferencia a Ecociclo de otras empresas?',
+    a: 'Nuestra experiencia, con más de 10 años y más de 2.500 servicios realizados, junto con una operativa rápida, profesional y orientada a empresa, nos permite ofrecer una solución más sólida y completa en Cataluña.',
+  },
+];
+---
+
+<!-- ================================================================
+     FAQ SECTION — Exact reproduction of ecociclo.es
+     GreenShift row gspb_row-id-gsbp-b8efaa8
+     Accordion: gspb_accordion-id-gsbp-5baa306
+     Section label: "Centro de Ayuda y Soporte"
+     H2: "Preguntas frecuentes sobre gestión de residuos en barcelona"
+  ================================================================ -->
+<section class="faq-section">
+  <div class="container-site">
+    <!-- Section Label -->
+    <div class="faq-label-row">
+      <img
+        src="/images/ECOCICLO.webp"
+        alt=""
+        width="28"
+        height="28"
+        class="faq-label-icon"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="faq-label">Centro de Ayuda y Soporte</span>
+    </div>
+
+    <!-- Heading -->
+    <h2 class="faq-heading">Preguntas frecuentes sobre gestión de residuos en barcelona</h2>
+
+    <!-- Description -->
+    <p class="faq-desc">
+      Resolvemos tus dudas principales para que puedas planificar el vaciado de tu inmueble o la retirada de materiales con total tranquilidad y transparencia.
+    </p>
+
+    <!-- Accordion List -->
+    <div class="faq-list">
+      {faqs.map((faq) => (
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M512 16c-273.914 0-496 222.166-496 496 0 273.994 222.086 496 496 496s496-222.006 496-496c0-273.834-222.086-496-496-496zM512 912c-221.064 0-400-178.862-400-400 0-220.99 178.944-400 400-400 220.982 0 400 178.942 400 400 0 221.060-178.862 400-400 400zM726.488 401.6c0 134.104-144.842 136.168-144.842 185.726v12.674c0 13.254-10.746 24-24 24h-91.294c-13.254 0-24-10.746-24-24v-17.318c0-71.49 54.2-100.068 95.158-123.032 35.122-19.69 56.648-33.082 56.648-59.158 0-34.492-43.998-57.386-79.568-57.386-46.378 0-67.788 21.954-97.884 59.938-8.114 10.24-22.92 12.142-33.332 4.248l-55.648-42.196c-10.214-7.744-12.502-22.132-5.288-32.726 47.254-69.388 107.442-108.37 201.15-108.37 98.142 0 202.9 76.608 202.9 177.6zM596 736c0 46.318-37.682 84-84 84s-84-37.682-84-84 37.682-84 84-84 84 37.682 84 84z"/>
+              </svg>
+            </span>
+            <span class="faq-question-text">{faq.q}</span>
+            <span class="faq-toggle">
+              <svg width="16" height="16" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M512 16c274 0 496 222 496 496s-222 496-496 496-496-222-496-496 222-496 496-496zM739.8 478l-271-271c-18.8-18.8-49.2-18.8-67.8 0l-34 34c-18.8 18.8-18.8 49.2 0 67.8l203.2 203.2-203.2 203.2c-18.8 18.8-18.8 49.2 0 67.8l34 34c18.8 18.8 49.2 18.8 67.8 0l271-271c18.8-18.8 18.8-49.2 0-68z"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>{faq.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ================================================================
+     FAQ SECTION STYLES — Matches ecociclo.es
+     Outer section: gspb_row-id-gsbp-b8efaa8, padding 70px 0
+     Accordion: GreenShift accordion with dark green titles
+  ================================================================ */
+
+  .faq-section {
+    padding: 70px 0;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  /* ---- Label Row ---- */
+  .faq-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .faq-label-icon {
+    width: 28px;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  .faq-label {
+    color: #65C132;
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  /* ---- Heading ---- */
+  .faq-heading {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.5;
+    color: #00312D;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 10px;
+  }
+
+  /* ---- Description ---- */
+  .faq-desc {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #00312D;
+    text-align: center;
+    margin: 0 0 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ---- Accordion List ---- */
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* ---- Accordion Item ---- */
+  .faq-item {
+    border: none;
+    margin-bottom: 0;
+  }
+
+  .faq-item[open] {
+    margin-bottom: 0;
+  }
+
+  /* ---- Question (summary) ---- */
+  .faq-question {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 20px;
+    background-color: #00312D;
+    color: #ffffff;
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4;
+    cursor: pointer;
+    border-radius: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.07);
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question:hover {
+    background-color: #003d37;
+  }
+
+  /* ---- Question Icon ---- */
+  .faq-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding-right: 10px;
+  }
+
+  .faq-icon svg {
+    height: 16px;
+    width: 16px;
+    min-width: 16px;
+    fill: #ffffff;
+  }
+
+  /* ---- Question Text ---- */
+  .faq-question-text {
+    flex: 1;
+    color: #ffffff;
+  }
+
+  /* ---- Toggle Arrow ---- */
+  .faq-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-toggle svg {
+    height: 16px;
+    width: 16px;
+    min-width: 16px;
+    fill: #ffffff;
+  }
+
+  .faq-item[open] .faq-toggle {
+    transform: rotate(90deg);
+  }
+
+  /* ---- Answer ---- */
+  .faq-answer {
+    padding: 20px 20px 10px;
+    overflow: hidden;
+  }
+
+  .faq-answer p {
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #00312D;
+    margin: 0;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 689.98px) {
+    .faq-section {
+      padding: 50px 0;
+    }
+
+    .faq-label {
+      font-size: 14px;
+    }
+
+    .faq-heading {
+      font-size: 26px;
+    }
+
+    .faq-desc {
+      font-size: 16px;
+    }
+
+    .faq-question {
+      font-size: 16px;
+      padding: 12px 16px;
+    }
+
+    .faq-answer p {
+      font-size: 16px;
+    }
+  }
+</style>
