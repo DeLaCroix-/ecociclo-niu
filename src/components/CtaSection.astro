@@ -2,36 +2,47 @@
 // CtaSection.astro — CTA section extracted from ecociclo.es
 // Source: gspb_row-id-gsbp-9ffae62 (dark bg #00312D)
 // Inner row: gspb_row-id-gsbp-423aa83
+// 2-column layout: left spacer (50%, hidden mobile) + right content (50%)
 ---
 
 <section class="cta-section">
-  <div class="container-site">
-    <!-- Section Label -->
-    <div class="cta-label-row">
-      <img
-        src="/images/ECOCICLO.webp"
-        alt=""
-        width="28"
-        height="28"
-        class="cta-label-icon"
-        loading="lazy"
-        decoding="async"
-      />
-      <span class="cta-label">Transformación Ambiental</span>
+  <!-- Background overlay: 14.webp at 0.55 opacity -->
+  <div class="cta-overlay"></div>
+
+  <!-- 2-column content wrapper -->
+  <div class="cta-inner">
+    <!-- Left: empty spacer column (hidden on mobile) -->
+    <div class="cta-col-left"></div>
+
+    <!-- Right: actual text + button content -->
+    <div class="cta-col-right">
+      <!-- Section Label -->
+      <div class="cta-label-row">
+        <img
+          src="/images/ECOCICLO.webp"
+          alt=""
+          width="28"
+          height="28"
+          class="cta-label-icon"
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="cta-label">Transformación Ambiental</span>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="cta-heading">Recupera tu espacio hoy mismo en cualquier punto de barcelona</h2>
+
+      <!-- Description -->
+      <p class="cta-desc">
+        No dejes que la acumulación de residuos, materiales o elementos innecesarios afecte la imagen, la seguridad o el funcionamiento de tu empresa. En Ecociclo te ayudamos con una solución profesional de <strong>gestión de residuos en Cataluña</strong>, adaptada a tus necesidades y con respuesta rápida.
+      </p>
+
+      <!-- Button -->
+      <a href="/contacto" class="cta-btn">
+        <strong>Solicitar presupuesto</strong>
+      </a>
     </div>
-
-    <!-- Heading -->
-    <h2 class="cta-heading">Recupera tu espacio hoy mismo en cualquier punto de barcelona</h2>
-
-    <!-- Description -->
-    <p class="cta-desc">
-      No dejes que la acumulación de residuos, materiales o elementos innecesarios afecte la imagen, la seguridad o el funcionamiento de tu empresa. En Ecociclo te ayudamos con una solución profesional de <strong>gestión de residuos en Cataluña</strong>, adaptada a tus necesidades y con respuesta rápida.
-    </p>
-
-    <!-- Button -->
-    <a href="/contacto" class="cta-btn">
-      <strong>Solicitar presupuesto</strong>
-    </a>
   </div>
 </section>
 
@@ -40,21 +51,49 @@
      CTA SECTION — Exact reproduction of ecociclo.es
      Outer section: gspb_row-id-gsbp-9ffae62, bg #00312D
      Inner row: gspb_row-id-gsbp-423aa83
+     Overlay: 14.webp at 0.55 opacity, z-index -1
+     2-column layout: left spacer (hidden mobile) + right content
   ================================================================ */
 
   .cta-section {
     background-color: #00312D;
-    padding: 0;
+    padding: 70px 20px;
     position: relative;
+    isolation: isolate;
     box-sizing: border-box;
   }
 
-  .cta-section .container-site {
+  /* ---- Background Overlay ---- */
+  .cta-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.55;
+    background-image: url('/images/14.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  /* ---- 2-Column Inner Wrapper ---- */
+  .cta-inner {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: var(--container-max, 1290px);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .cta-col-left {
+    width: 50%;
+    box-sizing: border-box;
+  }
+
+  .cta-col-right {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    padding: 80px 20px 80px;
-    max-width: var(--theme-container-width, 1200px);
-    margin: 0 auto;
+    box-sizing: border-box;
   }
 
   /* ---- Label Row ---- */
@@ -147,7 +186,21 @@
   }
 
   /* ===== RESPONSIVE ===== */
+
+  /* Hide left spacer column on mobile */
   @media (max-width: 689.98px) {
+    .cta-col-left {
+      display: none !important;
+    }
+
+    .cta-col-right {
+      width: 100%;
+    }
+
+    .cta-section {
+      padding: 40px 20px;
+    }
+
     .cta-label {
       font-size: 14px;
     }
@@ -158,10 +211,6 @@
 
     .cta-desc {
       font-size: 16px;
-    }
-
-    .cta-section .container-site {
-      padding: 60px 20px 60px;
     }
   }
 </style>

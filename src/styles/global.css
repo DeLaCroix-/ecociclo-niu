@@ -25,19 +25,20 @@ body {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+/* Heading defaults — LOW specificity via :where() so components can override easily */
+:where(h1, h2, h3, h4, h5, h6) {
+  font-family: 'SoinSans', 'Plus Jakarta Sans', system-ui, sans-serif;
   font-weight: 700;
-  color: var(--palette-7);
+  color: #00312D;
   line-height: 1.5;
 }
 
-h1 { font-size: 40px; }
-h2 { font-size: 35px; }
-h3 { font-size: 25px; }
-h4 { font-size: 25px; }
-h5 { font-size: 20px; }
-h6 { font-size: 16px; }
+:where(h1) { font-size: 40px; }
+:where(h2) { font-size: 35px; }
+:where(h3) { font-size: 25px; }
+:where(h4) { font-size: 25px; }
+:where(h5) { font-size: 20px; }
+:where(h6) { font-size: 16px; }
 
 .container-site {
   max-width: var(--container-max);
@@ -50,8 +51,8 @@ h6 { font-size: 16px; }
     --container-site-padding: 20px;
   }
   .container-site { padding: 0 20px; }
-  h1 { font-size: 30px; }
-  h2 { font-size: 22px; }
-  h3 { font-size: 24px; }
-  h4 { font-size: 20px; }
+  :where(h1) { font-size: 30px; }
+  :where(h2) { font-size: 22px; }
+  :where(h3) { font-size: 24px; }
+  :where(h4) { font-size: 20px; }
 }
