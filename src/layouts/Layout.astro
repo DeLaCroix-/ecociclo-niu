@@ -18,12 +18,13 @@ const {
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { label: 'Inicio', href: '/', isHome: true },
+  { label: 'Inicio', href: '/' },
   { label: 'Quiénes somos', href: '/empresa-de-gestion-de-residuos' },
   { 
     label: 'Servicios', 
     href: '/servicios-de-gestion-ambiental',
     children: [
+      { label: 'Vaciado de naves industriales, pisos y locales', href: '/servicios/vaciado-de-naves-industriales-pisos-y-locales-en-barcelona' },
       { label: 'Limpieza de Diógenes', href: '/servicios/limpieza-de-diogenes-en-barcelona' },
       { label: 'Trasvases y acondicionamiento de residuos peligrosos y no peligrosos', href: '/servicios/acondicionamiento-de-residuos-peligrosos-en-barcelona' },
       { label: 'Residuos Banales', href: '/servicios/gestion-de-residuos-banales-en-barcelona' },
@@ -34,6 +35,7 @@ const navItems = [
     ]
   },
   { label: 'Productos', href: '/productos-sdr' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contacto', href: '/contacto' },
 ];
 ---
@@ -66,95 +68,77 @@ const navItems = [
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    <!-- Google Fonts for button only -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet" />
   </head>
   
   <body>
-    <!-- ===== HEADER (Blocksy type-1 clone) ===== -->
-    <header class="header-blocksy" data-header="type-1">
-      <!-- Sticky container -->
-      <div class="header-sticky">
-        <!-- Top Row: phone + email -->
-        <div class="header-top-row">
-          <div class="header-container">
-            <div class="header-top-content">
-              <div class="header-contact-text">
-                <a href="tel:+34692063213">692 06 32 13</a> / <a href="mailto:info@ecociclo.es"><strong>info@ecociclo.es</strong></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Middle Row: logo + nav + actions -->
-        <div class="header-middle-row">
-          <div class="header-container header-middle-grid">
-            <!-- Logo -->
-            <div class="header-logo-col">
-              <div class="site-branding">
-                <a href="/" class="site-logo-container">
-                  <img 
-                    src="/images/logo.webp" 
-                    class="default-logo" 
-                    alt="Ecociclo"
-                    width="2560"
-                    height="949"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <!-- Desktop Navigation -->
-            <nav class="header-nav-col desktop-nav">
-              <ul class="main-menu">
-                {navItems.map((item) => (
-                  <li class={`menu-item${item.children ? ' has-submenu' : ''}${item.isHome ? ' current' : ''}${currentPath === item.href ? ' current' : ''}`}>
-                    <a href={item.href} class="menu-link">
-                      {item.label}
-                      {item.children && <span class="submenu-arrow">▾</span>}
-                    </a>
-                    {item.children && (
-                      <ul class="sub-menu">
-                        {item.children.map((child) => (
-                          <li><a href={child.href} class="sub-menu-link">{child.label}</a></li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-
-            <!-- Actions: CTA + Search -->
-            <div class="header-actions-col">
-              <a href="/contacto" class="header-cta-btn">Presupuesto</a>
-              <button class="header-search-btn" aria-label="Buscar">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-              </button>
-            </div>
-
-            <!-- Mobile Toggle -->
-            <button class="mobile-toggle" aria-label="Menú" id="mobile-toggle">
-              <span></span><span></span><span></span>
-            </button>
-          </div>
+    <!-- ===== HEADER: transparent over hero ===== -->
+    <header class="site-header">
+      <!-- Top bar: phone + email -->
+      <div class="header-top">
+        <div class="container-site">
+          <p class="header-contact">
+            <a href="tel:+34692063213">692 06 32 13</a> / <a href="mailto:info@ecociclo.es"><strong>info@ecociclo.es</strong></a>
+          </p>
         </div>
       </div>
 
-      <!-- Mobile Menu Panel -->
-      <div class="mobile-menu-panel" id="mobile-panel">
-        <div class="mobile-menu-inner">
+      <!-- Main nav bar: transparent -->
+      <div class="header-main">
+        <div class="container-site header-main-grid">
+          <!-- Logo -->
+          <a href="/" class="logo-link">
+            <img src="/images/logo.webp" alt="Ecociclo" class="logo-img" width="2560" height="949" />
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav class="desktop-nav">
+            {navItems.map((item) => (
+              <div class="nav-item-wrapper">
+                <a href={item.href} class={`nav-link${currentPath === item.href ? ' active' : ''}${item.children ? ' has-dropdown' : ''}`}>
+                  {item.label}
+                  {item.children && <span class="dropdown-arrow">▾</span>}
+                </a>
+                {item.children && (
+                  <div class="dropdown">
+                    {item.children.map((child) => (
+                      <a href={child.href} class="dropdown-link">{child.label}</a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
+
+          <!-- CTA Button -->
+          <a href="tel:692063213" class="cta-btn">Llámanos</a>
+
+          <!-- Search icon -->
+          <button class="search-btn" aria-label="Buscar">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </button>
+
+          <!-- Mobile toggle -->
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Menú">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile panel -->
+      <div class="mobile-panel" id="mobile-panel">
+        <div class="mobile-panel-inner">
           {navItems.map((item) => (
             <div>
-              <a href={item.href} class="mobile-menu-link">{item.label}</a>
-              {item.children && item.children.map((child) => (
-                <a href={child.href} class="mobile-menu-sublink">{child.label}</a>
+              <a href={item.href} class="mobile-link">{item.label}</a>
+              {item.children?.map((child) => (
+                <a href={child.href} class="mobile-sublink">{child.label}</a>
               ))}
             </div>
           ))}
-          <a href="/contacto" class="mobile-cta-btn">Solicitar presupuesto</a>
+          <a href="tel:692063213" class="mobile-cta">Llámanos</a>
         </div>
       </div>
     </header>
@@ -163,7 +147,6 @@ const navItems = [
       <slot />
     </main>
 
-    <!-- Footer placeholder - next step -->
     <footer class="site-footer">
       <div class="footer-container">
         <p style="color:white;text-align:center;padding:40px">Footer — paso 2</p>
@@ -179,216 +162,184 @@ const navItems = [
 </html>
 
 <style is:global>
-  /* ===== HEADER CSS (cloned from Blocksy) ===== */
-  
-  .header-blocksy {
-    --header-height: 140px;
-    position: sticky;
+  /* ===== FONTS ===== */
+  @font-face {
+    font-family: 'SoinSans';
+    src: url('/fonts/Soin-Sans-Pro-Roman.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'SoinSans';
+    src: url('/fonts/Soin-Sans-Pro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'SoinSans';
+    src: url('/fonts/Soin-Sans-Pro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 50;
   }
-  
-  .header-sticky {
-    position: relative;
-  }
-  
-  /* Top Row */
-  .header-top-row {
-    background: var(--palette-7); /* #00312D */
+
+  /* Top bar */
+  .header-top {
+    background: #00312D;
     height: 40px;
     display: flex;
     align-items: center;
   }
-  
-  .header-container {
-    max-width: var(--container-max);
-    margin: 0 auto;
-    padding: 0 35px;
-    width: 100%;
-  }
-  
-  .header-top-content {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-  }
-  
-  .header-contact-text {
-    font-family: var(--font-body);
-    font-weight: 100;
-    font-size: 13px;
+
+  .header-contact {
+    margin: 0;
+    font-family: 'SoinSans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
     line-height: 1;
-    color: #ffffff;
-    max-width: 50%;
+    color: #fff;
+    text-align: left;
   }
-  
-  .header-contact-text a {
-    color: #ffffff;
+  .header-contact a {
+    color: #fff;
     text-decoration: none;
   }
-  
-  .header-contact-text a:hover {
-    color: var(--palette-3);
+  .header-contact a:hover {
+    color: #65C132;
   }
-  
-  /* Middle Row */
-  .header-middle-row {
+
+  /* Main bar - TRANSPARENT */
+  .header-main {
     height: 100px;
-    background: var(--palette-8);
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--palette-8);
+    transition: background 0.2s;
   }
-  
-  .header-middle-grid {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+  .header-main-grid {
+    display: flex;
     align-items: center;
-    gap: 30px;
-    width: 100%;
+    gap: 0;
   }
-  
+
   /* Logo */
-  .header-logo-col {
-    display: flex;
-    align-items: center;
+  .logo-link {
+    flex-shrink: 0;
+    margin-right: auto;
   }
-  
-  .site-logo-container img {
-    max-height: 75px;
+  .logo-img {
+    height: 75px;
     width: auto;
     display: block;
   }
-  
-  /* Desktop Navigation */
+
+  /* Desktop Nav */
   .desktop-nav {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-right: 30px;
   }
-  
-  .main-menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 5px;
-  }
-  
-  .menu-item {
+  .nav-item-wrapper {
     position: relative;
   }
-  
-  .menu-link {
+  .nav-link {
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 8px 14px;
-    font-family: var(--font-heading);
+    padding: 0 15px;
+    height: 100px;
+    font-family: 'SoinSans', sans-serif;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
     text-transform: capitalize;
-    color: var(--palette-7);
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.2s;
     white-space: nowrap;
   }
-  
-  .menu-link:hover,
-  .menu-item.current > .menu-link {
-    color: var(--palette-3);
+  .nav-link:hover,
+  .nav-link.active {
+    color: #65C132;
   }
-  
-  .submenu-arrow {
-    font-size: 10px;
-    margin-left: 2px;
-  }
-  
-  /* Sub-menu dropdown */
-  .sub-menu {
+
+  /* Dropdown */
+  .dropdown {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background: var(--palette-2);
-    min-width: 320px;
-    list-style: none;
-    margin: 0;
+    background: #45891E;
+    min-width: 380px;
     padding: 8px 0;
     border-radius: 0 0 2px 2px;
     box-shadow: 0 10px 20px rgba(41,51,61,0.1);
-    z-index: 100;
   }
-  
-  .menu-item.has-submenu:hover .sub-menu {
+  .nav-item-wrapper:hover .dropdown {
     display: block;
   }
-  
-  .sub-menu li {
-    border-bottom: 1px dashed rgba(255,255,255,0.1);
-  }
-  
-  .sub-menu li:last-child {
-    border-bottom: none;
-  }
-  
-  .sub-menu-link {
+  .dropdown-link {
     display: block;
     padding: 10px 20px;
+    font-family: 'SoinSans', sans-serif;
     font-weight: 500;
     font-size: 16px;
-    color: var(--palette-8);
+    color: #ffffff;
     text-decoration: none;
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
     transition: color 0.2s;
   }
-  
-  .sub-menu-link:hover {
-    color: var(--palette-6);
+  .dropdown-link:last-child {
+    border-bottom: none;
   }
-  
-  /* Header Actions */
-  .header-actions-col {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  .dropdown-link:hover {
+    color: #f2f5f7;
   }
-  
-  .header-cta-btn {
+
+  /* CTA Button */
+  .cta-btn {
     display: inline-flex;
     align-items: center;
-    background: var(--palette-3);
-    color: var(--palette-8);
-    font-family: var(--font-heading);
+    background: #65C132;
+    color: #f2f5f7;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 16px;
     border: none;
     border-radius: 20px;
-    padding: 5px 20px;
+    padding: 12px 24px;
     min-height: 40px;
     text-decoration: none;
     transition: background 0.2s;
     white-space: nowrap;
+    margin-right: 12px;
   }
-  
-  .header-cta-btn:hover {
-    background: var(--palette-2);
-    color: var(--palette-7);
+  .cta-btn:hover {
+    background: #45891E;
   }
-  
-  .header-search-btn {
+
+  /* Search */
+  .search-btn {
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--palette-3);
+    color: #65C132;
     padding: 8px;
     display: flex;
     align-items: center;
   }
-  
-  .header-search-btn:hover {
-    color: var(--palette-3);
-  }
-  
-  /* Mobile Toggle */
+
+  /* Mobile toggle */
   .mobile-toggle {
     display: none;
     flex-direction: column;
@@ -397,74 +348,69 @@ const navItems = [
     border: none;
     cursor: pointer;
     padding: 10px;
+    margin-left: 8px;
   }
-  
   .mobile-toggle span {
     display: block;
     width: 18px;
     height: 2px;
-    background: var(--palette-3);
+    background: #65C132;
     border-radius: 1px;
-    transition: all 0.2s;
   }
-  
-  /* Mobile Panel */
-  .mobile-menu-panel {
+
+  /* Mobile panel */
+  .mobile-panel {
     display: none;
     background: rgba(18,21,25,0.98);
-    max-height: calc(100vh - var(--header-height));
+    max-height: calc(100vh - 140px);
     overflow-y: auto;
   }
-  
-  .mobile-menu-panel.open {
+  .mobile-panel.open {
     display: block;
   }
-  
-  .mobile-menu-inner {
+  .mobile-panel-inner {
     padding: 20px 35px;
   }
-  
-  .mobile-menu-link {
+  .mobile-link {
     display: block;
-    padding: 12px 0;
+    padding: 14px 0;
+    font-family: 'SoinSans', sans-serif;
     font-weight: 700;
     font-size: 20px;
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
-    border-bottom: none;
   }
-  
-  .mobile-menu-sublink {
+  .mobile-sublink {
     display: block;
     padding: 8px 0 8px 20px;
+    font-family: 'SoinSans', sans-serif;
     font-size: 16px;
     color: rgba(255,255,255,0.8);
     text-decoration: none;
   }
-  
-  .mobile-cta-btn {
+  .mobile-cta {
     display: inline-block;
     margin-top: 20px;
-    background: var(--palette-3);
-    color: var(--palette-8);
+    background: #65C132;
+    color: #fff;
     padding: 12px 24px;
     border-radius: 20px;
     font-weight: 700;
     font-size: 16px;
     text-decoration: none;
   }
-  
+
   /* Responsive */
-  @media (max-width: 1000px) {
+  @media (max-width: 1100px) {
     .desktop-nav { display: none; }
-    .header-actions-col { display: none; }
+    .cta-btn { display: none; }
+    .search-btn { display: none; }
     .mobile-toggle { display: flex; }
-    .header-middle-grid { grid-template-columns: 1fr auto; }
+    .header-main-grid { justify-content: space-between; }
   }
-  
   @media (max-width: 690px) {
-    .header-container { padding: 0 20px; }
-    .header-contact-text { font-size: 14px; }
-    .header-middle-row { height: 80px; }
+    .header-main { height: 80px; }
+    .logo-img { height: 55px; }
+    .header-contact { font-size: 16px; }
   }
 </style>

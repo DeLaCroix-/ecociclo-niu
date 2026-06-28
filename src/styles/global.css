@@ -1,48 +1,43 @@
-/* ===== EXTRACTED FROM BLOCKSY THEME CSS ===== */
 @import "tailwindcss";
 
-/* Blocksy color palette */
 :root {
-  --palette-1: #36611C;  /* dark green */
-  --palette-2: #45891E;  /* medium green */
-  --palette-3: #65C132;  /* bright green accent */
-  --palette-4: #192a3d;  /* dark blue */
-  --palette-5: #EAFDE7;  /* light green */
-  --palette-6: #f2f5f7;  /* light gray */
-  --palette-7: #00312D;  /* darkest teal */
-  --palette-8: #ffffff;  /* white */
-
-  /* Typography (matching original) */
-  --font-body: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
-  --font-heading: 'Plus Jakarta Sans', sans-serif;
-  
-  /* Spacing */
+  --palette-1: #36611C;
+  --palette-2: #45891E;
+  --palette-3: #65C132;
+  --palette-4: #192a3d;
+  --palette-5: #EAFDE7;
+  --palette-6: #f2f5f7;
+  --palette-7: #00312D;
+  --palette-8: #ffffff;
   --container-max: 1290px;
-  --header-total-height: 140px;
-  --header-top-row: 40px;
-  --header-middle-row: 100px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: 'SoinSans', 'Plus Jakarta Sans', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.65;
   color: var(--palette-7);
   background: radial-gradient(rgb(255,255,255) 15%, rgb(234,253,231) 91%);
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
   color: var(--palette-7);
+  line-height: 1.5;
 }
 
-h1 { font-size: 40px; line-height: 1.5; }
-h2 { font-size: 35px; line-height: 1.5; }
-h3 { font-size: 25px; line-height: 1.5; }
-h4 { font-size: 25px; line-height: 1.5; }
-h5 { font-size: 20px; line-height: 1.5; }
-h6 { font-size: 16px; line-height: 1.5; }
+h1 { font-size: 40px; }
+h2 { font-size: 35px; }
+h3 { font-size: 25px; }
+h4 { font-size: 25px; }
+h5 { font-size: 20px; }
+h6 { font-size: 16px; }
 
 .container-site {
   max-width: var(--container-max);
@@ -50,25 +45,13 @@ h6 { font-size: 16px; line-height: 1.5; }
   padding: 0 35px;
 }
 
-/* Buttons match original */
-.btn-primary {
-  display: inline-block;
-  background: var(--palette-3);
-  color: var(--palette-8);
-  font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: 15px;
-  border: none;
-  border-radius: 20px;
-  padding: 5px 20px;
-  min-height: 40px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-  text-decoration: none;
-}
-.btn-primary:hover {
-  background: var(--palette-2);
-  color: var(--palette-7);
+@media (max-width: 690px) {
+  :root {
+    --container-site-padding: 20px;
+  }
+  .container-site { padding: 0 20px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 22px; }
+  h3 { font-size: 24px; }
+  h4 { font-size: 20px; }
 }
