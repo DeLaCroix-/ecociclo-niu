@@ -12,10 +12,30 @@ const {
   title,
   description,
   canonical = 'https://ecociclonew.netlify.app',
-  ogImage = 'https://ecociclo.es/wp-content/uploads/2026/03/Ecociclo-Logo-Horizontal3-scaled.png',
+  ogImage = 'https://ecociclo.es/wp-content/uploads/2026/03/cropped-Ecociclo-Logo-Horizontal-scaled-1.png',
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: 'Inicio', href: '/', isHome: true },
+  { label: 'Quiénes somos', href: '/empresa-de-gestion-de-residuos' },
+  { 
+    label: 'Servicios', 
+    href: '/servicios-de-gestion-ambiental',
+    children: [
+      { label: 'Limpieza de Diógenes', href: '/servicios/limpieza-de-diogenes-en-barcelona' },
+      { label: 'Trasvases y acondicionamiento de residuos peligrosos y no peligrosos', href: '/servicios/acondicionamiento-de-residuos-peligrosos-en-barcelona' },
+      { label: 'Residuos Banales', href: '/servicios/gestion-de-residuos-banales-en-barcelona' },
+      { label: 'Residuos Especiales Sólidos', href: '/servicios/transporte-de-residuos-especiales-solidos-en-barcelona' },
+      { label: 'Residuos Especiales Líquidos', href: '/servicios/transporte-de-residuos-especiales-liquidos-en-barcelona' },
+      { label: 'Retirada de Fibrocemento', href: '/servicios/retirada-de-fibrocemento-en-barcelona' },
+      { label: 'Limpieza de Terrenos', href: '/servicios/limpieza-de-terrenos-y-parcelas-en-barcelona' },
+    ]
+  },
+  { label: 'Productos', href: '/productos-sdr' },
+  { label: 'Contacto', href: '/contacto' },
+];
 ---
 
 <!doctype html>
@@ -23,208 +43,428 @@ const currentPath = Astro.url.pathname;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <link rel="icon" type="image/png" href="https://ecociclo.es/wp-content/uploads/2026/03/Ecociclo-Logo-Horizontal3-scaled.png" />
+    <link rel="icon" type="image/png" href="https://ecociclo.es/wp-content/uploads/2026/03/cropped-Ecociclo-Logo-Horizontal-scaled-1.png" />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO -->
     <title>{title} | Ecociclo</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    
+    <!-- Open Graph -->
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content={`${title} | Ecociclo`} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content="Ecociclo" />
-    <meta property="og:locale" content="es_ES" />
+    <meta property="og:image" content={ogImage} />
+    
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${title} | Ecociclo`} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Ecociclo",
-        "url": "https://ecociclonew.netlify.app",
-        "logo": "https://ecociclo.es/wp-content/uploads/2026/03/Ecociclo-Logo-Horizontal3-scaled.png",
-        "description": "Gestión de residuos en Barcelona para empresas, industria y locales",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Barcelona",
-          "addressRegion": "Cataluña",
-          "addressCountry": "ES"
-        },
-        "telephone": "+34 692 06 32 13",
-        "email": "info@ecociclo.es",
-        "priceRange": "€€",
-        "openingHours": "Mo-Fr 08:30-13:30, Mo-Fr 15:00-18:00"
-      }
-    </script>
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="min-h-screen flex flex-col bg-white text-gray-800 font-sans">
-    <!-- Header -->
-    <header class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
-      <!-- Top bar: phone + email + search -->
-      <div class="bg-[#192a3d] text-white text-sm">
-        <div class="container-site flex items-center justify-end gap-6 py-1.5 px-4">
-          <a href="tel:+34692063213" class="hover:text-[#65C132] transition-colors flex items-center gap-1.5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            692 06 32 13
-          </a>
-          <a href="mailto:info@ecociclo.es" class="hover:text-[#65C132] transition-colors flex items-center gap-1.5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            info@ecociclo.es
-          </a>
-        </div>
-      </div>
-
-      <!-- Main nav -->
-      <div class="container-site flex items-center justify-between py-2 px-4">
-        <!-- Logo -->
-        <a href="/" class="flex-shrink-0">
-          <img 
-            src="https://ecociclo.es/wp-content/uploads/2026/03/Ecociclo-Logo-Horizontal3-scaled.png" 
-            alt="Ecociclo" 
-            class="h-10 md:h-12 w-auto"
-            width="220"
-            height="55"
-          />
-        </a>
-
-        <!-- Desktop Nav -->
-        <nav class="hidden lg:flex items-center gap-1">
-          <a href="/" class={`px-3 py-2 text-sm font-medium rounded transition-colors ${currentPath === '/' ? 'text-[#36611C] bg-[#EAFDE7]' : 'text-gray-700 hover:text-[#36611C] hover:bg-gray-50'}`}>Inicio</a>
-          <a href="/empresa-de-gestion-de-residuos" class={`px-3 py-2 text-sm font-medium rounded transition-colors ${currentPath === '/empresa-de-gestion-de-residuos' ? 'text-[#36611C] bg-[#EAFDE7]' : 'text-gray-700 hover:text-[#36611C] hover:bg-gray-50'}`}>Quiénes somos</a>
-          
-          <!-- Services Dropdown -->
-          <div class="relative group">
-            <a href="/servicios-de-gestion-ambiental" class={`px-3 py-2 text-sm font-medium rounded transition-colors flex items-center gap-1 ${currentPath.startsWith('/servicios') ? 'text-[#36611C] bg-[#EAFDE7]' : 'text-gray-700 hover:text-[#36611C] hover:bg-gray-50'}`}>
-              Servicios
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
-            </a>
-            <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-              <div class="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[380px]">
-                <a href="/servicios/vaciado-de-naves-industriales-pisos-y-locales-en-barcelona" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors">Vaciado de naves industriales, pisos y locales</a>
-                <a href="/servicios/limpieza-de-diogenes-en-barcelona" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors">Limpieza de Diógenes</a>
-                <a href="/servicios/acondicionamiento-de-residuos-peligrosos-en-barcelona" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors">Trasvases y acondicionamiento de residuos peligrosos y no peligrosos</a>
-                <a href="/servicios/gestion-de-residuos-banales-en-barcelona" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors">Residuos Banales</a>
-                <a href="/servicios/transporte-de-residuos-especiales-solidos-en-barcelona" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors">Residuos Especiales Sólidos</a>
-                <a href="/servicios/transporte-de-residuos-especiales-liquidos-en-barcelona" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors">Residuos Especiales Líquidos</a>
-                <a href="/servicios/retirada-de-fibrocemento-en-barcelona" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors">Retirada de Fibrocemento</a>
-                <a href="/servicios/limpieza-de-terrenos-y-parcelas-en-barcelona" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] transition-colors">Limpieza de Terrenos</a>
+  
+  <body>
+    <!-- ===== HEADER (Blocksy type-1 clone) ===== -->
+    <header class="header-blocksy" data-header="type-1">
+      <!-- Sticky container -->
+      <div class="header-sticky">
+        <!-- Top Row: phone + email -->
+        <div class="header-top-row">
+          <div class="header-container">
+            <div class="header-top-content">
+              <div class="header-contact-text">
+                <a href="tel:+34692063213">692 06 32 13</a> / <a href="mailto:info@ecociclo.es"><strong>info@ecociclo.es</strong></a>
               </div>
             </div>
           </div>
+        </div>
 
-          <a href="/productos-sdr" class={`px-3 py-2 text-sm font-medium rounded transition-colors ${currentPath === '/productos-sdr' ? 'text-[#36611C] bg-[#EAFDE7]' : 'text-gray-700 hover:text-[#36611C] hover:bg-gray-50'}`}>Productos</a>
-          <a href="/contacto" class={`px-3 py-2 text-sm font-medium rounded transition-colors ${currentPath === '/contacto' ? 'text-[#36611C] bg-[#EAFDE7]' : 'text-gray-700 hover:text-[#36611C] hover:bg-gray-50'}`}>Contacto</a>
-        </nav>
+        <!-- Middle Row: logo + nav + actions -->
+        <div class="header-middle-row">
+          <div class="header-container header-middle-grid">
+            <!-- Logo -->
+            <div class="header-logo-col">
+              <div class="site-branding">
+                <a href="/" class="site-logo-container">
+                  <img 
+                    src="/images/logo.webp" 
+                    class="default-logo" 
+                    alt="Ecociclo"
+                    width="2560"
+                    height="949"
+                  />
+                </a>
+              </div>
+            </div>
 
-        <!-- CTA + Mobile toggle -->
-        <div class="flex items-center gap-3">
-          <a href="/contacto" class="hidden sm:inline-flex bg-[#65C132] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#45891E] transition-colors shadow-sm">
-            Solicitar presupuesto
-          </a>
-          <button id="hamburger" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
-            <span class="block w-5 h-0.5 bg-gray-700 transition-transform"></span>
-            <span class="block w-5 h-0.5 bg-gray-700 transition-opacity"></span>
-            <span class="block w-5 h-0.5 bg-gray-700 transition-transform"></span>
-          </button>
+            <!-- Desktop Navigation -->
+            <nav class="header-nav-col desktop-nav">
+              <ul class="main-menu">
+                {navItems.map((item) => (
+                  <li class={`menu-item${item.children ? ' has-submenu' : ''}${item.isHome ? ' current' : ''}${currentPath === item.href ? ' current' : ''}`}>
+                    <a href={item.href} class="menu-link">
+                      {item.label}
+                      {item.children && <span class="submenu-arrow">▾</span>}
+                    </a>
+                    {item.children && (
+                      <ul class="sub-menu">
+                        {item.children.map((child) => (
+                          <li><a href={child.href} class="sub-menu-link">{child.label}</a></li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <!-- Actions: CTA + Search -->
+            <div class="header-actions-col">
+              <a href="/contacto" class="header-cta-btn">Presupuesto</a>
+              <button class="header-search-btn" aria-label="Buscar">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </button>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" aria-label="Menú" id="mobile-toggle">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-lg">
-        <div class="container-site py-4 px-4 flex flex-col space-y-1">
-          <a href="/" class="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] rounded transition-colors">Inicio</a>
-          <a href="/empresa-de-gestion-de-residuos" class="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] rounded transition-colors">Quiénes somos</a>
-          <a href="/servicios-de-gestion-ambiental" class="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] rounded transition-colors">Servicios</a>
-          <a href="/productos-sdr" class="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] rounded transition-colors">Productos</a>
-          <a href="/contacto" class="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-[#EAFDE7] hover:text-[#36611C] rounded transition-colors">Contacto</a>
-          <a href="/contacto" class="mt-2 bg-[#65C132] text-white px-4 py-2.5 rounded-full text-sm font-semibold hover:bg-[#45891E] transition-colors text-center">Solicitar presupuesto</a>
+      <!-- Mobile Menu Panel -->
+      <div class="mobile-menu-panel" id="mobile-panel">
+        <div class="mobile-menu-inner">
+          {navItems.map((item) => (
+            <div>
+              <a href={item.href} class="mobile-menu-link">{item.label}</a>
+              {item.children && item.children.map((child) => (
+                <a href={child.href} class="mobile-menu-sublink">{child.label}</a>
+              ))}
+            </div>
+          ))}
+          <a href="/contacto" class="mobile-cta-btn">Solicitar presupuesto</a>
         </div>
       </div>
     </header>
 
-    <main class="flex-1">
+    <main>
       <slot />
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-[#192a3d] text-white pt-16 pb-8">
-      <div class="container-site px-4">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12">
-          <!-- Logo & Description -->
-          <div class="md:col-span-4">
-            <img 
-              src="https://ecociclo.es/wp-content/uploads/2026/03/Ecociclo-Logo-Horizontal3-scaled.png" 
-              alt="Ecociclo" 
-              class="h-10 w-auto brightness-0 invert mb-4"
-              width="200"
-              height="50"
-            />
-            <p class="text-gray-300 text-sm leading-relaxed mb-4">
-              En ECOCICLO ofrecemos un servicio profesional de limpieza y desalojo de naves industriales, locales, oficinas y pisos.
-            </p>
-          </div>
-
-          <!-- Enlaces directos -->
-          <div class="md:col-span-2">
-            <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Enlaces directos</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="/" class="text-gray-300 hover:text-[#65C132] transition-colors">Inicio</a></li>
-              <li><a href="/empresa-de-gestion-de-residuos" class="text-gray-300 hover:text-[#65C132] transition-colors">Quiénes somos</a></li>
-              <li><a href="/servicios-de-gestion-ambiental" class="text-gray-300 hover:text-[#65C132] transition-colors">Servicios</a></li>
-              <li><a href="/productos-sdr" class="text-gray-300 hover:text-[#65C132] transition-colors">Productos</a></li>
-              <li><a href="/faqs" class="text-gray-300 hover:text-[#65C132] transition-colors">FAQs</a></li>
-              <li><a href="/contacto" class="text-gray-300 hover:text-[#65C132] transition-colors">Contacto</a></li>
-            </ul>
-          </div>
-
-          <!-- Soporte -->
-          <div class="md:col-span-2">
-            <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Soporte</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="/faqs" class="text-gray-300 hover:text-[#65C132] transition-colors">FAQs</a></li>
-              <li><a href="/contacto" class="text-gray-300 hover:text-[#65C132] transition-colors">Contacto</a></li>
-              <li><a href="/politica-privacidad" class="text-gray-300 hover:text-[#65C132] transition-colors">Políticas de privacidad</a></li>
-            </ul>
-          </div>
-
-          <!-- Horarios -->
-          <div class="md:col-span-2">
-            <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Horarios</h3>
-            <p class="text-gray-300 text-sm font-medium">Lunes a Viernes</p>
-            <p class="text-gray-400 text-sm">De 8:30h a 13:30h</p>
-            <p class="text-gray-400 text-sm">De 15:00h a 18:00h</p>
-          </div>
-
-          <!-- Contacto Footer -->
-          <div class="md:col-span-2">
-            <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contacto</h3>
-            <ul class="space-y-2 text-sm">
-              <li class="flex items-center gap-2 text-gray-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#65C132" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <a href="tel:+34692063213" class="hover:text-[#65C132] transition-colors">692 06 32 13</a>
-              </li>
-              <li class="flex items-center gap-2 text-gray-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#65C132" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <a href="mailto:info@ecociclo.es" class="hover:text-[#65C132] transition-colors">info@ecociclo.es</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="border-t border-gray-700 pt-8 text-center">
-          <p class="text-gray-400 text-sm">Copyright &copy; 2026 - Ecociclo</p>
-        </div>
+    <!-- Footer placeholder - next step -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p style="color:white;text-align:center;padding:40px">Footer — paso 2</p>
       </div>
     </footer>
 
-    <!-- Mobile menu toggle -->
     <script>
-      document.getElementById('hamburger')?.addEventListener('click', () => {
-        document.getElementById('mobile-menu')?.classList.toggle('hidden');
+      document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+        document.getElementById('mobile-panel')?.classList.toggle('open');
       });
     </script>
   </body>
 </html>
+
+<style is:global>
+  /* ===== HEADER CSS (cloned from Blocksy) ===== */
+  
+  .header-blocksy {
+    --header-height: 140px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  
+  .header-sticky {
+    position: relative;
+  }
+  
+  /* Top Row */
+  .header-top-row {
+    background: var(--palette-7); /* #00312D */
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 35px;
+    width: 100%;
+  }
+  
+  .header-top-content {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .header-contact-text {
+    font-family: var(--font-body);
+    font-weight: 100;
+    font-size: 13px;
+    line-height: 1;
+    color: #ffffff;
+    max-width: 50%;
+  }
+  
+  .header-contact-text a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .header-contact-text a:hover {
+    color: var(--palette-3);
+  }
+  
+  /* Middle Row */
+  .header-middle-row {
+    height: 100px;
+    background: var(--palette-8);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--palette-8);
+  }
+  
+  .header-middle-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+  }
+  
+  /* Logo */
+  .header-logo-col {
+    display: flex;
+    align-items: center;
+  }
+  
+  .site-logo-container img {
+    max-height: 75px;
+    width: auto;
+    display: block;
+  }
+  
+  /* Desktop Navigation */
+  .desktop-nav {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 5px;
+  }
+  
+  .menu-item {
+    position: relative;
+  }
+  
+  .menu-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 14px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: var(--palette-7);
+    text-decoration: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  
+  .menu-link:hover,
+  .menu-item.current > .menu-link {
+    color: var(--palette-3);
+  }
+  
+  .submenu-arrow {
+    font-size: 10px;
+    margin-left: 2px;
+  }
+  
+  /* Sub-menu dropdown */
+  .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--palette-2);
+    min-width: 320px;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 10px 20px rgba(41,51,61,0.1);
+    z-index: 100;
+  }
+  
+  .menu-item.has-submenu:hover .sub-menu {
+    display: block;
+  }
+  
+  .sub-menu li {
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
+  }
+  
+  .sub-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .sub-menu-link {
+    display: block;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--palette-8);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .sub-menu-link:hover {
+    color: var(--palette-6);
+  }
+  
+  /* Header Actions */
+  .header-actions-col {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .header-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    background: var(--palette-3);
+    color: var(--palette-8);
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 15px;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 20px;
+    min-height: 40px;
+    text-decoration: none;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  
+  .header-cta-btn:hover {
+    background: var(--palette-2);
+    color: var(--palette-7);
+  }
+  
+  .header-search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--palette-3);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-search-btn:hover {
+    color: var(--palette-3);
+  }
+  
+  /* Mobile Toggle */
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .mobile-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--palette-3);
+    border-radius: 1px;
+    transition: all 0.2s;
+  }
+  
+  /* Mobile Panel */
+  .mobile-menu-panel {
+    display: none;
+    background: rgba(18,21,25,0.98);
+    max-height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+  }
+  
+  .mobile-menu-panel.open {
+    display: block;
+  }
+  
+  .mobile-menu-inner {
+    padding: 20px 35px;
+  }
+  
+  .mobile-menu-link {
+    display: block;
+    padding: 12px 0;
+    font-weight: 700;
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: none;
+  }
+  
+  .mobile-menu-sublink {
+    display: block;
+    padding: 8px 0 8px 20px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+  }
+  
+  .mobile-cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--palette-3);
+    color: var(--palette-8);
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1000px) {
+    .desktop-nav { display: none; }
+    .header-actions-col { display: none; }
+    .mobile-toggle { display: flex; }
+    .header-middle-grid { grid-template-columns: 1fr auto; }
+  }
+  
+  @media (max-width: 690px) {
+    .header-container { padding: 0 20px; }
+    .header-contact-text { font-size: 14px; }
+    .header-middle-row { height: 80px; }
+  }
+</style>
